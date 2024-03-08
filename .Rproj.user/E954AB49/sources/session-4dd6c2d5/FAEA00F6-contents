@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "sta104.github.io"
-  author: "Norah Jones"
+  title: "Introduction to Statistics for UiTM"
+  author: "Kamarul Ariffin Mansor"
   date: "08/03/2024"
   chapters:
     - index.qmd
