@@ -205,23 +205,32 @@ data <- data.frame(
 # Reshape data for clustered and stacked bar charts
 data_long <- tidyr::gather(data, key = "Category", value = "Value", -Group)
 
+# Calculate percentages
+data_long$Percentage <- round((data_long$Value / sum(data_long$Value)) * 100, 1)
+
 # Simple Bar Chart
 simple_bar <- ggplot(data_long, aes(x = Group, y = Value, fill = Category)) +
-  geom_bar(stat = "identity", position = "identity") +
+  geom_bar(stat = "identity") +
   labs(title = "Simple Bar Chart", x = "Group", y = "Value") +
-  theme_minimal()
+  theme_minimal() +
+  geom_text(aes(label = paste0(Percentage, "%")), 
+            position = position_stack(vjust = 0.5))
 
 # Clustered Bar Chart
 clustered_bar <- ggplot(data_long, aes(x = Group, y = Value, fill = Category)) +
   geom_bar(stat = "identity", position = "dodge") +
   labs(title = "Clustered Bar Chart", x = "Group", y = "Value") +
-  theme_minimal()
+  theme_minimal() +
+  geom_text(aes(label = paste0(Percentage, "%")), 
+            position = position_dodge(width = 0.9), vjust = -0.5)
 
 # Stacked Bar Chart
 stacked_bar <- ggplot(data_long, aes(x = Group, y = Value, fill = Category)) +
   geom_bar(stat = "identity", position = "stack") +
   labs(title = "Stacked Bar Chart", x = "Group", y = "Value") +
-  theme_minimal()
+  theme_minimal() +
+  geom_text(aes(label = paste0(Percentage, "%")), 
+            position = position_stack(vjust = 0.5))
 
 # Display the plots
 print(simple_bar)
