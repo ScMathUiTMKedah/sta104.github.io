@@ -1,0 +1,58 @@
+# Correlation
+
+In this chapter, we will delve into the concept of correlation, which is a statistical measure that describes the strength and direction of a relationship between two variables. We will cover the definition of dependent and independent variables, explore scatter plots as a visualization tool, and discuss Pearson's correlation coefficient as a measure of correlation strength.
+
+## Definition of Dependent and Independent Variables
+
+In statistical analysis, variables are classified as either dependent or independent based on their roles in a study:
+
+- **Dependent Variable**: Also known as the response variable or outcome variable, the dependent variable is the variable being studied and measured. It depends on other factors in the study and is influenced by changes in the independent variable(s).
+
+- **Independent Variable**: Also known as the predictor variable or explanatory variable, the independent variable is manipulated or controlled by the researcher. It is used to predict or explain changes in the dependent variable.
+
+## Scatter Plot
+
+A scatter plot is a graphical representation of the relationship between two continuous variables. Each point on the plot represents an observation, with one variable plotted on the x-axis (horizontal) and the other variable plotted on the y-axis (vertical). Scatter plots help visualize patterns, trends, and relationships between variables.
+
+### Example:
+
+```{r}
+# Sample data
+x <- c(1, 2, 3, 4, 5)
+y <- c(3, 4, 2, 5, 6)
+
+# Create scatter plot
+plot(x, y, main = "Scatter Plot", xlab = "Independent Variable", ylab = "Dependent Variable")
+```
+
+## 3. Pearson’s Correlation Coefficient
+
+Pearson's correlation coefficient, denoted by \( r \), is a statistical measure that quantifies the strength and direction of the linear relationship between two continuous variables. It ranges from -1 to +1, where:
+
+- $( r = 1 )$: Perfect positive correlation
+- $( r = -1 )$: Perfect negative correlation
+- $( r = 0 )$: No correlation
+
+The formula to calculate Pearson's correlation coefficient \( r \) between variables \( X \) and \( Y \) is given by:
+
+\[
+r = \frac{{\sum{(X_i - \bar{X})(Y_i - \bar{Y})}}}{{\sqrt{\sum{(X_i - \bar{X})^2} \sum{(Y_i - \bar{Y})^2}}}}
+\]
+
+Where:
+- \( X_i \) and \( Y_i \) are individual data points.
+- \( \bar{X} \) and \( \bar{Y} \) are the means of variables \( X \) and \( Y \), respectively.
+
+### Example:
+
+```{r}
+# Calculate Pearson's correlation coefficient
+correlation_coefficient <- cor(x, y)
+
+# Print the correlation coefficient
+print(paste("Pearson's correlation coefficient (r):", correlation_coefficient))
+```
+
+This concludes our discussion on correlation, covering the definition of dependent and independent variables, the use of scatter plots for visualization, and the calculation of Pearson's correlation coefficient as a measure of correlation strength.
+
+In the next chapter, we will explore simple linear regression, which builds upon the concepts discussed here to predict the value of a dependent variable based on the value of an independent variable.
