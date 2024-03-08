@@ -113,3 +113,157 @@ hierarchy
 ```
 
 This R code creates a hierarchical data structure using lists.
+
+## Graphical Method for Qualitative Data
+
+In this section, we will explore various methods for presenting data effectively. From graphical representations to frequency distribution tables, we will cover a range of techniques to convey information clearly and intuitively.
+
+Graphical representations are powerful tools for visualizing qualitative data. Let's consider an example where we have survey data on the preferred mode of transportation for commuters. We'll create a pie chart to visualize the distribution of responses.
+
+```{r}
+# Sample data
+commute_modes <- c("Car", "Public Transit", "Bicycle", "Walking")
+responses <- c(75, 50, 20, 30)
+
+# Create a pie chart
+pie(responses, labels = commute_modes, main = "Preferred Mode of Transportation")
+```
+
+### Frequency Distribution Table
+
+Frequency distribution tables provide a systematic summary of the frequencies or counts of different categories within a dataset. Let's create a frequency distribution table for a set of exam scores.
+
+```{r}
+# Sample data
+scores <- c(75, 80, 85, 90, 95, 80, 85, 90, 85, 90, 95, 100)
+
+# Create a frequency table
+table(scores)
+```
+
+### Pie Chart
+
+Pie charts are useful for illustrating the relative proportions of different categories within a dataset. Let's use the same survey data on commuting preferences to create a pie chart.
+
+```{r}
+# Sample data (assuming already defined)
+pie(responses, labels = commute_modes, main = "Preferred Mode of Transportation")
+```
+
+### Bar Chart (Simple, Cluster, Stacked)
+
+Bar charts are effective for comparing the frequencies or counts of different categories across a dataset. We'll create simple, cluster, and stacked bar charts for the exam scores dataset.
+
+```{r}
+# Simple Bar Chart
+barplot(table(scores), main = "Exam Scores", xlab = "Score", ylab = "Frequency")
+
+# Clustered Bar Chart (with different conditions)
+condition <- c("Condition A", "Condition B", "Condition C")
+counts <- c(20, 30, 25)
+counts2 <- c(15, 25, 20)
+
+barplot(rbind(counts, counts2), beside = TRUE, legend = TRUE, names.arg = condition, main = "Clustered Bar Chart")
+
+# Stacked Bar Chart
+counts3 <- c(10, 15, 20)
+counts4 <- c(25, 20, 15)
+
+barplot(rbind(counts3, counts4), legend = TRUE, beside = TRUE, names.arg = condition, main = "Stacked Bar Chart")
+```
+
+### Cross Tabulation
+
+Cross-tabulation, also known as contingency tables, is a method for summarizing the relationship between two categorical variables. Let's create a cross-tabulation table for the survey data on commuting preferences and gender.
+
+```{r}
+# Sample data
+gender <- c("Male", "Female", "Female", "Male", "Male")
+commute_modes <- c("Car", "Public Transit", "Bicycle", "Walking", "Car")
+
+# Create a cross-tabulation table
+xt <- table(gender, commute_modes)
+xt
+```
+
+In this section, we explored various methods for presenting data effectively, including graphical representations, frequency distribution tables, pie charts, bar charts, and cross-tabulation tables. Each method offers unique insights into the data and helps convey information clearly to the audience. By utilizing these techniques, researchers and analysts can communicate their findings in a compelling and informative manner.
+
+## Graphical Methods for Quantitative
+
+In this section, we will explore various graphical methods for presenting quantitative data effectively. We will cover frequency distribution tables, stem-and-leaf plots, histograms, frequency polygons, and ogives. Each method offers unique insights into the distribution and characteristics of quantitative data. We will provide examples for each display along with R code to create them.
+
+### Frequency Distribution Table
+
+A frequency distribution table summarizes the distribution of quantitative data into intervals or classes along with their corresponding frequencies. It provides a concise summary of the data's distribution, making it easier to identify patterns and trends.
+
+#### Example:
+Suppose we have a dataset of exam scores for a class of students. We can create a frequency distribution table to summarize the scores into intervals and their respective frequencies.
+
+```{r}
+# Sample dataset of exam scores
+scores <- c(65, 72, 78, 83, 90, 72, 85, 92, 68, 75, 80, 88, 93, 72, 82, 95, 78, 85, 90)
+
+# Create frequency distribution table
+freq_table <- table(cut(scores, breaks = seq(60, 100, by = 5), include.lowest = TRUE))
+
+# Print frequency distribution table
+print(freq_table)
+```
+
+### Stem and Leaf Plot
+
+A stem-and-leaf plot provides a visual representation of the distribution of quantitative data. It organizes the data by separating the leading digit (stem) from the trailing digit (leaf) to display individual data points.
+
+#### Example:
+Using the same dataset of exam scores, we can create a stem-and-leaf plot to visualize the distribution of scores.
+
+```{r}
+# Create stem-and-leaf plot
+stem(scores)
+```
+
+### Histogram
+
+A histogram is a graphical representation of the frequency distribution of quantitative data. It consists of bars where the height represents the frequency of observations within each interval or class.
+
+#### Example:
+Let's create a histogram for the exam scores dataset to visualize the distribution of scores.
+
+```{r}
+# Create histogram
+hist(scores, breaks = seq(60, 100, by = 5), main = "Exam Scores Histogram", xlab = "Scores", ylab = "Frequency")
+```
+
+### Frequency Polygon
+
+A frequency polygon is a line graph that displays the frequencies of quantitative data plotted against the midpoints of the intervals or classes.
+
+#### Example:
+We can create a frequency polygon using the exam scores dataset to show the distribution of scores.
+
+```{r}
+# Create frequency polygon
+midpoints <- seq(62.5, 97.5, by = 5)
+plot(midpoints, freq_table, type = "l", col = "blue", lwd = 2, main = "Exam Scores Frequency Polygon", xlab = "Scores", ylab = "Frequency")
+```
+
+### Ogive
+
+An ogive, also known as a cumulative frequency curve, represents the cumulative frequencies of quantitative data. It can be used to analyze the cumulative distribution of data and calculate percentiles.
+
+#### Example:
+We will create both greater than or equal ogive and less than ogive using the exam scores dataset.
+
+```{r}
+# Calculate cumulative frequencies
+cum_freq <- cumsum(freq_table)
+
+# Greater than or equal ogive
+plot(midpoints, cum_freq, type = "s", col = "red", lwd = 2, main = "Greater than or Equal Ogive", xlab = "Scores", ylab = "Cumulative Frequency")
+
+# Less than ogive
+plot(midpoints, cum_freq, type = "s", col = "green", lwd = 2, main = "Less than Ogive", xlab = "Scores", ylab = "Cumulative Frequency", ylim = c(0, max(cum_freq)))
+```
+
+In this section, we have explored various graphical methods for presenting quantitative data, including frequency distribution tables, stem-and-leaf plots, histograms, frequency polygons, and ogives. These visualizations help us understand the distribution and characteristics of quantitative data effectively.
+

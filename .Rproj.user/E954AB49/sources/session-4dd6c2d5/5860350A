@@ -3,7 +3,7 @@
     "path": "~/GitHub/sta104.github.io/02.qmd",
     "project_path": "02.qmd",
     "type": "quarto_markdown",
-    "hash": "4046395909",
+    "hash": "1835864730",
     "contents": "",
     "dirty": false,
     "created": 1709872298914.0,
@@ -12,8 +12,8 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "115,0",
-        "scrollLine": "97",
+        "cursorPosition": "269,0",
+        "scrollLine": "257",
         "rmdVisualMode": "false",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "3590:1351.199951171875",
@@ -21,11 +21,11 @@
         "docOutlineVisible": "1"
     },
     "folds": "",
-    "lastKnownWriteTime": 1709873866,
+    "lastKnownWriteTime": 1709880920,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1709873866071,
+    "last_content_update": 1709880920214,
     "read_only": false,
     "read_only_alternatives": []
 }
