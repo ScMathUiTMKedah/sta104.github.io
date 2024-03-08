@@ -198,6 +198,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#tabular-data" id="toc-tabular-data" class="nav-link" data-scroll-target="#tabular-data"><span class="header-section-number">2.5.1</span> Tabular Data</a></li>
   <li><a href="#hierarchical-data" id="toc-hierarchical-data" class="nav-link" data-scroll-target="#hierarchical-data"><span class="header-section-number">2.5.2</span> Hierarchical Data</a></li>
   </ul></li>
+  <li><a href="#graphical-method-for-qualitative-data" id="toc-graphical-method-for-qualitative-data" class="nav-link" data-scroll-target="#graphical-method-for-qualitative-data"><span class="header-section-number">2.6</span> Graphical Method for Qualitative Data</a>
+  <ul class="collapse">
+  <li><a href="#frequency-distribution-table" id="toc-frequency-distribution-table" class="nav-link" data-scroll-target="#frequency-distribution-table"><span class="header-section-number">2.6.1</span> Frequency Distribution Table</a></li>
+  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"><span class="header-section-number">2.6.2</span> Pie Chart</a></li>
+  <li><a href="#bar-chart-simple-cluster-stacked" id="toc-bar-chart-simple-cluster-stacked" class="nav-link" data-scroll-target="#bar-chart-simple-cluster-stacked"><span class="header-section-number">2.6.3</span> Bar Chart (Simple, Cluster, Stacked)</a></li>
+  <li><a href="#cross-tabulation" id="toc-cross-tabulation" class="nav-link" data-scroll-target="#cross-tabulation"><span class="header-section-number">2.6.4</span> Cross Tabulation</a></li>
+  </ul></li>
+  <li><a href="#graphical-methods-for-quantitative" id="toc-graphical-methods-for-quantitative" class="nav-link" data-scroll-target="#graphical-methods-for-quantitative"><span class="header-section-number">2.7</span> Graphical Methods for Quantitative</a>
+  <ul class="collapse">
+  <li><a href="#frequency-distribution-table-1" id="toc-frequency-distribution-table-1" class="nav-link" data-scroll-target="#frequency-distribution-table-1"><span class="header-section-number">2.7.1</span> Frequency Distribution Table</a></li>
+  <li><a href="#stem-and-leaf-plot" id="toc-stem-and-leaf-plot" class="nav-link" data-scroll-target="#stem-and-leaf-plot"><span class="header-section-number">2.7.2</span> Stem and Leaf Plot</a></li>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="header-section-number">2.7.3</span> Histogram</a></li>
+  <li><a href="#frequency-polygon" id="toc-frequency-polygon" class="nav-link" data-scroll-target="#frequency-polygon"><span class="header-section-number">2.7.4</span> Frequency Polygon</a></li>
+  <li><a href="#ogive" id="toc-ogive" class="nav-link" data-scroll-target="#ogive"><span class="header-section-number">2.7.5</span> Ogive</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -345,8 +360,238 @@ $Child
 </div>
 </div>
 <p>This R code creates a hierarchical data structure using lists.</p>
+</section>
+</section>
+<section id="graphical-method-for-qualitative-data" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="graphical-method-for-qualitative-data"><span class="header-section-number">2.6</span> Graphical Method for Qualitative Data</h2>
+<p>In this section, we will explore various methods for presenting data effectively. From graphical representations to frequency distribution tables, we will cover a range of techniques to convey information clearly and intuitively.</p>
+<p>Graphical representations are powerful tools for visualizing qualitative data. Let’s consider an example where we have survey data on the preferred mode of transportation for commuters. We’ll create a pie chart to visualize the distribution of responses.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>commute_modes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Car"</span>, <span class="st">"Public Transit"</span>, <span class="st">"Bicycle"</span>, <span class="st">"Walking"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>responses <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">75</span>, <span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a pie chart</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(responses, <span class="at">labels =</span> commute_modes, <span class="at">main =</span> <span class="st">"Preferred Mode of Transportation"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="frequency-distribution-table" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="frequency-distribution-table"><span class="header-section-number">2.6.1</span> Frequency Distribution Table</h3>
+<p>Frequency distribution tables provide a systematic summary of the frequencies or counts of different categories within a dataset. Let’s create a frequency distribution table for a set of exam scores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">95</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">95</span>, <span class="dv">100</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a frequency table</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(scores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>scores
+ 75  80  85  90  95 100 
+  1   2   3   3   2   1 </code></pre>
+</div>
+</div>
+</section>
+<section id="pie-chart" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="pie-chart"><span class="header-section-number">2.6.2</span> Pie Chart</h3>
+<p>Pie charts are useful for illustrating the relative proportions of different categories within a dataset. Let’s use the same survey data on commuting preferences to create a pie chart.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data (assuming already defined)</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(responses, <span class="at">labels =</span> commute_modes, <span class="at">main =</span> <span class="st">"Preferred Mode of Transportation"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="bar-chart-simple-cluster-stacked" class="level3" data-number="2.6.3">
+<h3 data-number="2.6.3" class="anchored" data-anchor-id="bar-chart-simple-cluster-stacked"><span class="header-section-number">2.6.3</span> Bar Chart (Simple, Cluster, Stacked)</h3>
+<p>Bar charts are effective for comparing the frequencies or counts of different categories across a dataset. We’ll create simple, cluster, and stacked bar charts for the exam scores dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple Bar Chart</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(scores), <span class="at">main =</span> <span class="st">"Exam Scores"</span>, <span class="at">xlab =</span> <span class="st">"Score"</span>, <span class="at">ylab =</span> <span class="st">"Frequency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clustered Bar Chart (with different conditions)</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>condition <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Condition A"</span>, <span class="st">"Condition B"</span>, <span class="st">"Condition C"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">25</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>counts2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">25</span>, <span class="dv">20</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">rbind</span>(counts, counts2), <span class="at">beside =</span> <span class="cn">TRUE</span>, <span class="at">legend =</span> <span class="cn">TRUE</span>, <span class="at">names.arg =</span> condition, <span class="at">main =</span> <span class="st">"Clustered Bar Chart"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stacked Bar Chart</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>counts3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>counts4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">20</span>, <span class="dv">15</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">rbind</span>(counts3, counts4), <span class="at">legend =</span> <span class="cn">TRUE</span>, <span class="at">beside =</span> <span class="cn">TRUE</span>, <span class="at">names.arg =</span> condition, <span class="at">main =</span> <span class="st">"Stacked Bar Chart"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_files/figure-html/unnamed-chunk-8-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="cross-tabulation" class="level3" data-number="2.6.4">
+<h3 data-number="2.6.4" class="anchored" data-anchor-id="cross-tabulation"><span class="header-section-number">2.6.4</span> Cross Tabulation</h3>
+<p>Cross-tabulation, also known as contingency tables, is a method for summarizing the relationship between two categorical variables. Let’s create a cross-tabulation table for the survey data on commuting preferences and gender.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>, <span class="st">"Male"</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>commute_modes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Car"</span>, <span class="st">"Public Transit"</span>, <span class="st">"Bicycle"</span>, <span class="st">"Walking"</span>, <span class="st">"Car"</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a cross-tabulation table</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>xt <span class="ot">&lt;-</span> <span class="fu">table</span>(gender, commute_modes)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>xt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        commute_modes
+gender   Bicycle Car Public Transit Walking
+  Female       1   0              1       0
+  Male         0   2              0       1</code></pre>
+</div>
+</div>
+<p>In this section, we explored various methods for presenting data effectively, including graphical representations, frequency distribution tables, pie charts, bar charts, and cross-tabulation tables. Each method offers unique insights into the data and helps convey information clearly to the audience. By utilizing these techniques, researchers and analysts can communicate their findings in a compelling and informative manner.</p>
+</section>
+</section>
+<section id="graphical-methods-for-quantitative" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="graphical-methods-for-quantitative"><span class="header-section-number">2.7</span> Graphical Methods for Quantitative</h2>
+<p>In this section, we will explore various graphical methods for presenting quantitative data effectively. We will cover frequency distribution tables, stem-and-leaf plots, histograms, frequency polygons, and ogives. Each method offers unique insights into the distribution and characteristics of quantitative data. We will provide examples for each display along with R code to create them.</p>
+<section id="frequency-distribution-table-1" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="frequency-distribution-table-1"><span class="header-section-number">2.7.1</span> Frequency Distribution Table</h3>
+<p>A frequency distribution table summarizes the distribution of quantitative data into intervals or classes along with their corresponding frequencies. It provides a concise summary of the data’s distribution, making it easier to identify patterns and trends.</p>
+<section id="example" class="level4" data-number="2.7.1.1">
+<h4 data-number="2.7.1.1" class="anchored" data-anchor-id="example"><span class="header-section-number">2.7.1.1</span> Example:</h4>
+<p>Suppose we have a dataset of exam scores for a class of students. We can create a frequency distribution table to summarize the scores into intervals and their respective frequencies.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample dataset of exam scores</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">72</span>, <span class="dv">78</span>, <span class="dv">83</span>, <span class="dv">90</span>, <span class="dv">72</span>, <span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">68</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">88</span>, <span class="dv">93</span>, <span class="dv">72</span>, <span class="dv">82</span>, <span class="dv">95</span>, <span class="dv">78</span>, <span class="dv">85</span>, <span class="dv">90</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create frequency distribution table</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>freq_table <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="fu">cut</span>(scores, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">60</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="at">include.lowest =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print frequency distribution table</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(freq_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ [60,65]  (65,70]  (70,75]  (75,80]  (80,85]  (85,90]  (90,95] (95,100] 
+       1        1        4        3        4        3        3        0 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="stem-and-leaf-plot" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="stem-and-leaf-plot"><span class="header-section-number">2.7.2</span> Stem and Leaf Plot</h3>
+<p>A stem-and-leaf plot provides a visual representation of the distribution of quantitative data. It organizes the data by separating the leading digit (stem) from the trailing digit (leaf) to display individual data points.</p>
+<section id="example-1" class="level4" data-number="2.7.2.1">
+<h4 data-number="2.7.2.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">2.7.2.1</span> Example:</h4>
+<p>Using the same dataset of exam scores, we can create a stem-and-leaf plot to visualize the distribution of scores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create stem-and-leaf plot</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(scores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  The decimal point is 1 digit(s) to the right of the |
+
+  6 | 58
+  7 | 222588
+  8 | 023558
+  9 | 00235</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="histogram" class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="histogram"><span class="header-section-number">2.7.3</span> Histogram</h3>
+<p>A histogram is a graphical representation of the frequency distribution of quantitative data. It consists of bars where the height represents the frequency of observations within each interval or class.</p>
+<section id="example-2" class="level4" data-number="2.7.3.1">
+<h4 data-number="2.7.3.1" class="anchored" data-anchor-id="example-2"><span class="header-section-number">2.7.3.1</span> Example:</h4>
+<p>Let’s create a histogram for the exam scores dataset to visualize the distribution of scores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create histogram</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(scores, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">60</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="at">main =</span> <span class="st">"Exam Scores Histogram"</span>, <span class="at">xlab =</span> <span class="st">"Scores"</span>, <span class="at">ylab =</span> <span class="st">"Frequency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="frequency-polygon" class="level3" data-number="2.7.4">
+<h3 data-number="2.7.4" class="anchored" data-anchor-id="frequency-polygon"><span class="header-section-number">2.7.4</span> Frequency Polygon</h3>
+<p>A frequency polygon is a line graph that displays the frequencies of quantitative data plotted against the midpoints of the intervals or classes.</p>
+<section id="example-3" class="level4" data-number="2.7.4.1">
+<h4 data-number="2.7.4.1" class="anchored" data-anchor-id="example-3"><span class="header-section-number">2.7.4.1</span> Example:</h4>
+<p>We can create a frequency polygon using the exam scores dataset to show the distribution of scores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create frequency polygon</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>midpoints <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">62.5</span>, <span class="fl">97.5</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(midpoints, freq_table, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">main =</span> <span class="st">"Exam Scores Frequency Polygon"</span>, <span class="at">xlab =</span> <span class="st">"Scores"</span>, <span class="at">ylab =</span> <span class="st">"Frequency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ogive" class="level3" data-number="2.7.5">
+<h3 data-number="2.7.5" class="anchored" data-anchor-id="ogive"><span class="header-section-number">2.7.5</span> Ogive</h3>
+<p>An ogive, also known as a cumulative frequency curve, represents the cumulative frequencies of quantitative data. It can be used to analyze the cumulative distribution of data and calculate percentiles.</p>
+<section id="example-4" class="level4" data-number="2.7.5.1">
+<h4 data-number="2.7.5.1" class="anchored" data-anchor-id="example-4"><span class="header-section-number">2.7.5.1</span> Example:</h4>
+<p>We will create both greater than or equal ogive and less than ogive using the exam scores dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate cumulative frequencies</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>cum_freq <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(freq_table)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Greater than or equal ogive</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(midpoints, cum_freq, <span class="at">type =</span> <span class="st">"s"</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">main =</span> <span class="st">"Greater than or Equal Ogive"</span>, <span class="at">xlab =</span> <span class="st">"Scores"</span>, <span class="at">ylab =</span> <span class="st">"Cumulative Frequency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Less than ogive</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(midpoints, cum_freq, <span class="at">type =</span> <span class="st">"s"</span>, <span class="at">col =</span> <span class="st">"green"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">main =</span> <span class="st">"Less than Ogive"</span>, <span class="at">xlab =</span> <span class="st">"Scores"</span>, <span class="at">ylab =</span> <span class="st">"Cumulative Frequency"</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(cum_freq)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In this section, we have explored various graphical methods for presenting quantitative data, including frequency distribution tables, stem-and-leaf plots, histograms, frequency polygons, and ogives. These visualizations help us understand the distribution and characteristics of quantitative data effectively.</p>
 
 
+</section>
 </section>
 </section>
 
