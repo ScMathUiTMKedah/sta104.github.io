@@ -172,7 +172,6 @@ print(pie_chart)
 ```
 
 ::: {.column-margin}
-Certainly! Here's an example R code to draw a pie chart using the ggplot2 package:
 Explanation:
 
 - We begin by loading the ggplot2 package.
@@ -276,7 +275,7 @@ In this section, we will explore various graphical methods for presenting quanti
 
 ### Frequency Distribution Table
 
-A frequency distribution table summarizes the distribution of quantitative data into intervals or classes along with their corresponding frequencies. It provides a concise summary of the data's distribution, making it easier to identify patterns and trends.
+A frequency distribution table summarizes the distribution of quantitative data into intervals or classes along with their corresponding frequencies. It is normally called as `grouped dataset`. It provides a concise summary of the data's distribution, making it easier to identify patterns and trends.
 
 #### Example:
 Suppose we have a dataset of exam scores for a class of students. We can create a frequency distribution table to summarize the scores into intervals and their respective frequencies.
@@ -286,15 +285,38 @@ Suppose we have a dataset of exam scores for a class of students. We can create 
 scores <- c(65, 72, 78, 83, 90, 72, 85, 92, 68, 75, 80, 88, 93, 72, 82, 95, 78, 85, 90)
 
 # Create frequency distribution table
-freq_table <- table(cut(scores, breaks = seq(60, 100, by = 5), include.lowest = TRUE))
+freq_table <- table(cut(scores, breaks = seq(60, 100, by = 6), include.lowest = TRUE))
 
-# Print frequency distribution table
-print(freq_table)
+# Transpose the frequency distribution table
+transposed_freq_table <- as.data.frame(t(freq_table))
+
+# Rename the columns
+colnames(transposed_freq_table) <- c("Class", "Class_Interval", "Frequency")
+
+# Print the transposed frequency distribution table
+print(transposed_freq_table)
 ```
+
+To create a frequency distribution table for a grouped dataset with both class limits and class boundaries, you can follow these steps:
+
+1. Determine the class intervals for your grouped dataset.
+2. Calculate the class limits and class boundaries for each class interval.
+3. Calculate the frequency of data points falling within each class interval.
+4. Create a table to display the class intervals, class limits, class boundaries, and frequencies.
+
+The following example illustrate the steps mentioned above.
+
+<!-- Insert example here. -->
 
 ### Stem and Leaf Plot
 
 A stem-and-leaf plot provides a visual representation of the distribution of quantitative data. It organizes the data by separating the leading digit (stem) from the trailing digit (leaf) to display individual data points.
+
+::: {.callout-important}
+It is crucial to determine the location for the cutoff to separate the digits into stem and leaf. The ideal guideline is the stem list should be between 5 to 15. If for the situation after the cutoff location, it leaves more than one digit after the cutoff location, just take the immediate digit after the cutoff as the leaf value.
+
+For example, consider the value 1368. Suppose the cutoff is between 3 and 6, i.e., 13|68. Thus, stem = 13 and leaf = 6.
+:::
 
 #### Example:
 Using the same dataset of exam scores, we can create a stem-and-leaf plot to visualize the distribution of scores.
