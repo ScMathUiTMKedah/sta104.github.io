@@ -1,9 +1,3 @@
----
-editor: 
-  markdown: 
-    wrap: sentence
----
-
 # Data organization and presentation 
 
 ## Overview of Data Organization
@@ -119,20 +113,3 @@ hierarchy
 ```
 
 This R code creates a hierarchical data structure using lists.
-
-### Relational Data
-
-Relational data organization involves structuring data into tables with relationships between them, commonly used in relational databases.
-
-**Example:**
-
-``` {r}
-# Creating a simple relational database
-library(DBI)
-con <- dbConnect(RSQLite::SQLite(), ":memory:")
-dbWriteTable(con, "Employees", data.frame(ID = 1:3, Name = c("John", "Emily", "Michael")))
-dbWriteTable(con, "Departments", data.frame(ID = c(1, 2), Department = c("HR", "Finance")))
-dbListTables(con)
-```
-
-This R code demonstrates how to create and manage relational tables using the DBI package.
