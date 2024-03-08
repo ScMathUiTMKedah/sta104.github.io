@@ -43,12 +43,19 @@ The regression line can be used to make predictions for new values of $x$. Simpl
 
 ## Example
 
+A manager desires to know whether the typing speed of a secretary (in words per minute) is related to the time (in hours) that it takes the secretary to learn to use a new word processing
+program. The data are recorded as follows:
+
+*Insert Data Table Here*
+
 Suppose we have the following data:
 
 ```{r}
 # Sample data
-x <- c(1, 2, 3, 4, 5)
-y <- c(2, 3, 4, 5, 6)
+x <- c(48,74,52,79,83,56,85,
+       63,88,74,90,92)
+y <- c(7,4,8,3.5,2,6,2.3,
+       5,2.1,4.5,1.9,1.5)
 ```
 
 ### Fitting the Regression Line
