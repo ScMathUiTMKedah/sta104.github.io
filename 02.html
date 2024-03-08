@@ -434,7 +434,7 @@ $Child
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p>Certainly! Here’s an example R code to draw a pie chart using the ggplot2 package: Explanation:</p>
+<p>Explanation:</p>
 <ul>
 <li>We begin by loading the ggplot2 package.</li>
 <li>Next, we create a dataframe called <code>data</code> containing the categories (Category A, B, C, D) and their corresponding values.</li>
@@ -561,7 +561,7 @@ gender   Bicycle Car Public Transit Walking
 <p>In this section, we will explore various graphical methods for presenting quantitative data effectively. We will cover frequency distribution tables, stem-and-leaf plots, histograms, frequency polygons, and ogives. Each method offers unique insights into the distribution and characteristics of quantitative data. We will provide examples for each display along with R code to create them.</p>
 <section id="frequency-distribution-table-1" class="level3" data-number="2.7.1">
 <h3 data-number="2.7.1" class="anchored" data-anchor-id="frequency-distribution-table-1"><span class="header-section-number">2.7.1</span> Frequency Distribution Table</h3>
-<p>A frequency distribution table summarizes the distribution of quantitative data into intervals or classes along with their corresponding frequencies. It provides a concise summary of the data’s distribution, making it easier to identify patterns and trends.</p>
+<p>A frequency distribution table summarizes the distribution of quantitative data into intervals or classes along with their corresponding frequencies. It is normally called as <code>grouped dataset</code>. It provides a concise summary of the data’s distribution, making it easier to identify patterns and trends.</p>
 <section id="example" class="level4" data-number="2.7.1.1">
 <h4 data-number="2.7.1.1" class="anchored" data-anchor-id="example"><span class="header-section-number">2.7.1.1</span> Example:</h4>
 <p>Suppose we have a dataset of exam scores for a class of students. We can create a frequency distribution table to summarize the scores into intervals and their respective frequencies.</p>
@@ -572,19 +572,54 @@ gender   Bicycle Car Public Transit Walking
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create frequency distribution table</span></span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>freq_table <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="fu">cut</span>(scores, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">60</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="at">include.lowest =</span> <span class="cn">TRUE</span>))</span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print frequency distribution table</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(freq_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Transpose the frequency distribution table</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>transposed_freq_table <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">t</span>(freq_table))</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the columns</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(transposed_freq_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Class"</span>, <span class="st">"Class_Interval"</span>, <span class="st">"Frequency"</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the transposed frequency distribution table</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(transposed_freq_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
- [60,65]  (65,70]  (70,75]  (75,80]  (80,85]  (85,90]  (90,95] (95,100] 
-       1        1        4        3        4        3        3        0 </code></pre>
+<pre><code>  Class Class_Interval Frequency
+1     A        [60,65]         1
+2     A        (65,70]         1
+3     A        (70,75]         4
+4     A        (75,80]         3
+5     A        (80,85]         4
+6     A        (85,90]         3
+7     A        (90,95]         3
+8     A       (95,100]         0</code></pre>
 </div>
 </div>
+<p>To create a frequency distribution table for a grouped dataset with both class limits and class boundaries, you can follow these steps:</p>
+<ol type="1">
+<li>Determine the class intervals for your grouped dataset.</li>
+<li>Calculate the class limits and class boundaries for each class interval.</li>
+<li>Calculate the frequency of data points falling within each class interval.</li>
+<li>Create a table to display the class intervals, class limits, class boundaries, and frequencies.</li>
+</ol>
+<p>The following example illustrate the steps mentioned above.</p>
+<!-- Insert example here. -->
 </section>
 </section>
 <section id="stem-and-leaf-plot" class="level3" data-number="2.7.2">
 <h3 data-number="2.7.2" class="anchored" data-anchor-id="stem-and-leaf-plot"><span class="header-section-number">2.7.2</span> Stem and Leaf Plot</h3>
 <p>A stem-and-leaf plot provides a visual representation of the distribution of quantitative data. It organizes the data by separating the leading digit (stem) from the trailing digit (leaf) to display individual data points.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is crucial to determine the location for the cutoff to separate the digits into stem and leaf. The ideal guideline is the stem list should be between 5 to 15. If for the situation after the cutoff location, it leaves more than one digit after the cutoff location, just take the immediate digit after the cutoff as the leaf value.</p>
+<p>For example, consider the value 1368. Suppose the cutoff is between 3 and 6, i.e., 13|68. Thus, stem = 13 and leaf = 6.</p>
+</div>
+</div>
 <section id="example-1" class="level4" data-number="2.7.2.1">
 <h4 data-number="2.7.2.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">2.7.2.1</span> Example:</h4>
 <p>Using the same dataset of exam scores, we can create a stem-and-leaf plot to visualize the distribution of scores.</p>
