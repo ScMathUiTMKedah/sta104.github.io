@@ -285,7 +285,7 @@ Suppose we have a dataset of exam scores for a class of students. We can create 
 scores <- c(65, 72, 78, 83, 90, 72, 85, 92, 68, 75, 80, 88, 93, 72, 82, 95, 78, 85, 90)
 
 # Create frequency distribution table
-freq_table <- table(cut(scores, breaks = seq(60, 100, by = 6), include.lowest = TRUE))
+freq_table <- table(cut(scores, breaks = seq(60, 100, by = 5), include.lowest = TRUE))
 
 # Transpose the frequency distribution table
 transposed_freq_table <- as.data.frame(t(freq_table))
