@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Statistics for UiTM - 2&nbsp; Numerical Descriptive Measures</title>
+<title>Introduction to Statistics for UiTM - 3&nbsp; Numerical Descriptive Measures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./references.html" rel="next">
-<link href="./01.html" rel="prev">
+<link href="./02.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Numerical Descriptive Measures</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Numerical Descriptive Measures</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -149,8 +149,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data organization and presentation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./04.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Numerical Descriptive Measures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Numerical Descriptive Measures</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -169,17 +175,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link active" data-scroll-target="#measures-of-central-tendency"><span class="header-section-number">2.1</span> Measures of Central Tendency</a>
+  <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link active" data-scroll-target="#measures-of-central-tendency"><span class="header-section-number">3.1</span> Measures of Central Tendency</a>
   <ul class="collapse">
-  <li><a href="#ungrouped-data" id="toc-ungrouped-data" class="nav-link" data-scroll-target="#ungrouped-data"><span class="header-section-number">2.1.1</span> Ungrouped Data</a></li>
+  <li><a href="#ungrouped-data" id="toc-ungrouped-data" class="nav-link" data-scroll-target="#ungrouped-data"><span class="header-section-number">3.1.1</span> Ungrouped Data</a></li>
   </ul></li>
-  <li><a href="#measure-of-position" id="toc-measure-of-position" class="nav-link" data-scroll-target="#measure-of-position"><span class="header-section-number">2.2</span> Measure of position</a>
+  <li><a href="#measure-of-position" id="toc-measure-of-position" class="nav-link" data-scroll-target="#measure-of-position"><span class="header-section-number">3.2</span> Measure of position</a>
   <ul class="collapse">
-  <li><a href="#quartiles" id="toc-quartiles" class="nav-link" data-scroll-target="#quartiles"><span class="header-section-number">2.2.1</span> Quartiles</a></li>
-  <li><a href="#grouped-data" id="toc-grouped-data" class="nav-link" data-scroll-target="#grouped-data"><span class="header-section-number">2.2.2</span> GROUPED DATA</a></li>
+  <li><a href="#quartiles" id="toc-quartiles" class="nav-link" data-scroll-target="#quartiles"><span class="header-section-number">3.2.1</span> Quartiles</a></li>
+  <li><a href="#grouped-data" id="toc-grouped-data" class="nav-link" data-scroll-target="#grouped-data"><span class="header-section-number">3.2.2</span> GROUPED DATA</a></li>
   </ul></li>
-  <li><a href="#skewness" id="toc-skewness" class="nav-link" data-scroll-target="#skewness"><span class="header-section-number">2.3</span> Skewness</a></li>
-  <li><a href="#measures-of-dispersion" id="toc-measures-of-dispersion" class="nav-link" data-scroll-target="#measures-of-dispersion"><span class="header-section-number">2.4</span> Measures of Dispersion</a></li>
+  <li><a href="#skewness" id="toc-skewness" class="nav-link" data-scroll-target="#skewness"><span class="header-section-number">3.3</span> Skewness</a></li>
+  <li><a href="#measures-of-dispersion" id="toc-measures-of-dispersion" class="nav-link" data-scroll-target="#measures-of-dispersion"><span class="header-section-number">3.4</span> Measures of Dispersion</a></li>
   </ul>
 </nav>
     </div>
@@ -188,7 +194,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Numerical Descriptive Measures</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Numerical Descriptive Measures</span></h1>
 </div>
 
 
@@ -205,12 +211,12 @@ window.Quarto = {
 </header>
 
 
-<section id="measures-of-central-tendency" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="measures-of-central-tendency"><span class="header-section-number">2.1</span> Measures of Central Tendency</h2>
-<section id="ungrouped-data" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="ungrouped-data"><span class="header-section-number">2.1.1</span> Ungrouped Data</h3>
-<section id="mean" class="level4" data-number="2.1.1.1">
-<h4 data-number="2.1.1.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">2.1.1.1</span> Mean</h4>
+<section id="measures-of-central-tendency" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="measures-of-central-tendency"><span class="header-section-number">3.1</span> Measures of Central Tendency</h2>
+<section id="ungrouped-data" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="ungrouped-data"><span class="header-section-number">3.1.1</span> Ungrouped Data</h3>
+<section id="mean" class="level4" data-number="3.1.1.1">
+<h4 data-number="3.1.1.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">3.1.1.1</span> Mean</h4>
 <p>The mean is the sum of the values, divided by the total number of values.<br>
 For population,<br>
 <span class="math display">\[
@@ -227,8 +233,8 @@ For sample,<br>
 <p>The mean bonus is</p>
 <p>Therefore, the mean bonus of the five executives is RM15400</p>
 </section>
-<section id="median" class="level4" data-number="2.1.1.2">
-<h4 data-number="2.1.1.2" class="anchored" data-anchor-id="median"><span class="header-section-number">2.1.1.2</span> Median</h4>
+<section id="median" class="level4" data-number="3.1.1.2">
+<h4 data-number="3.1.1.2" class="anchored" data-anchor-id="median"><span class="header-section-number">3.1.1.2</span> Median</h4>
 <p>The median is the midpoint of the data array.</p>
 <p>Steps in computing the median of raw data Step 1 Arrange the data in order Step 2 If there is an odd number of observations in the data, the median is the middle value of the data. However, if there is an even number of observations in the data, the median is the average of the two middle numbers.</p>
 <p><strong>Example 3</strong><br>
@@ -253,8 +259,8 @@ Arrange data in ascending order.<br>
 <p>Median = <span class="math inline">\(\frac{116+122}{2}=119\)</span></p>
 <p>The price of RM119000 is a reasonable of the price of 10 houses.</p>
 </section>
-<section id="mode" class="level4" data-number="2.1.1.3">
-<h4 data-number="2.1.1.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">2.1.1.3</span> MODE</h4>
+<section id="mode" class="level4" data-number="3.1.1.3">
+<h4 data-number="3.1.1.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">3.1.1.3</span> MODE</h4>
 <p>The mode is the value that occurs frequently in a data set. The mode is located by arranging the data in ascending or descending order.</p>
 <p><strong>Example 6</strong><br>
 The following data represent the duration (in days) of U.S. Space Shuttle voyages for the years 1992-1994. Find the mode<br>
@@ -266,14 +272,14 @@ therefore, the mode is 8.</p>
 </section>
 </section>
 </section>
-<section id="measure-of-position" class="level2 page-columns page-full" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="measure-of-position"><span class="header-section-number">2.2</span> Measure of position</h2>
+<section id="measure-of-position" class="level2 page-columns page-full" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="measure-of-position"><span class="header-section-number">3.2</span> Measure of position</h2>
 <aside>
 <a href="files/Chapter 4 Topic 2 - MOP.pdf">Download Slides - Measures of Position</a>
 </aside>
 <p>Box-and-whisker plot provides a useful graphical representation of the data.</p>
-<section id="quartiles" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="quartiles"><span class="header-section-number">2.2.1</span> Quartiles</h3>
+<section id="quartiles" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="quartiles"><span class="header-section-number">3.2.1</span> Quartiles</h3>
 <p>The quartiles are descriptive measures that split the ordered data into four quarters with three dividers.</p>
 <center>
 First quartile (Q1)<br>
@@ -310,17 +316,17 @@ x_{11} = 21.49\ and\ x_{12} = 22.47 \\
 Q_1 = 21.49 + 0.25(22.47-21.49) = 21.735
 \]</span></p>
 </section>
-<section id="grouped-data" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="grouped-data"><span class="header-section-number">2.2.2</span> GROUPED DATA</h3>
-<section id="mean-1" class="level4" data-number="2.2.2.1">
-<h4 data-number="2.2.2.1" class="anchored" data-anchor-id="mean-1"><span class="header-section-number">2.2.2.1</span> MEAN</h4>
+<section id="grouped-data" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="grouped-data"><span class="header-section-number">3.2.2</span> GROUPED DATA</h3>
+<section id="mean-1" class="level4" data-number="3.2.2.1">
+<h4 data-number="3.2.2.1" class="anchored" data-anchor-id="mean-1"><span class="header-section-number">3.2.2.1</span> MEAN</h4>
 <p>For grouped data, each class interval is represented by the mid-point of the interval, X_i.</p>
 <p><strong>Example 8</strong><br>
 The table shows the years of working experience for 120 employees of Jimmy’s Company.</p>
 <p><em>Solution:</em></p>
 </section>
-<section id="median-1" class="level4" data-number="2.2.2.2">
-<h4 data-number="2.2.2.2" class="anchored" data-anchor-id="median-1"><span class="header-section-number">2.2.2.2</span> MEDIAN</h4>
+<section id="median-1" class="level4" data-number="3.2.2.2">
+<h4 data-number="3.2.2.2" class="anchored" data-anchor-id="median-1"><span class="header-section-number">3.2.2.2</span> MEDIAN</h4>
 <p>For grouped data, median is calculated as follows.</p>
 <p>where <span class="math inline">\(n\)</span> = sample size,<br>
 <span class="math inline">\(L_m\)</span> = lower limit of the median class,<br>
@@ -334,8 +340,8 @@ Using the data in example 8, compute the median</p>
 <p>Step 2: Identify the class that contains the median and obtain the median location.</p>
 <p>Step 3: Apply the formula</p>
 </section>
-<section id="mode-1" class="level4" data-number="2.2.2.3">
-<h4 data-number="2.2.2.3" class="anchored" data-anchor-id="mode-1"><span class="header-section-number">2.2.2.3</span> MODE</h4>
+<section id="mode-1" class="level4" data-number="3.2.2.3">
+<h4 data-number="3.2.2.3" class="anchored" data-anchor-id="mode-1"><span class="header-section-number">3.2.2.3</span> MODE</h4>
 <p>The mode can be estimated by using histogram.</p>
 <p>Step 1: A histogram is drawn for the data and the class with the highest frequency (modal class) is identify.<br>
 Step 2: Two lines are drawn at the top of the column, one from the top right-hand corner to the top right-hand corner of the class before the modal class, and another from the top left-hand corner to the top left-hand corner of the column after the modal class.<br>
@@ -355,8 +361,8 @@ The modal class is 9 – 12 since the frequency of the class is the highest.</p>
 </section>
 </section>
 </section>
-<section id="skewness" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="skewness"><span class="header-section-number">2.3</span> Skewness</h2>
+<section id="skewness" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="skewness"><span class="header-section-number">3.3</span> Skewness</h2>
 <p>Measure the lack of symmetry in a data distribution The relationship between mean, median and mode Measure of position The position of grouped data can be measured by the first and the third quartile denoted as Q_1_ and Q_3_ respectively.</p>
 <p>Method 1<br>
 The first (Q1) and third (Q3) quartiles</p>
@@ -386,8 +392,8 @@ Step 3: The value of Q1 and Q3 are as follows</p>
 Step 2: From each of the quartile location marked on the y-axis, draw crosses the x-axis is the estimated quartile value.</p>
 <p>Exercise The speed of 120 cars that drove through a specific sharp corner on a federal road is given in the table below. Find mean, median and mode speed.</p>
 </section>
-<section id="measures-of-dispersion" class="level2 page-columns page-full" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="measures-of-dispersion"><span class="header-section-number">2.4</span> Measures of Dispersion</h2>
+<section id="measures-of-dispersion" class="level2 page-columns page-full" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="measures-of-dispersion"><span class="header-section-number">3.4</span> Measures of Dispersion</h2>
 <aside>
 <a href="files/Chapter 4 Topic 3 - MOD.pdf">Download Slides - Measures of Dispersion</a>
 </aside>
@@ -809,8 +815,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./02.html" class="pagination-link" aria-label="Data organization and presentation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data organization and presentation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

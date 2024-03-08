@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Statistics for UiTM - References</title>
+<title>Introduction to Statistics for UiTM - 2&nbsp; Data organization and presentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +64,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./04.html" rel="prev">
+<link href="./04.html" rel="next">
+<link href="./01.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -99,7 +115,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data organization and presentation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -138,7 +154,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.html" class="sidebar-item-text sidebar-link">
+  <a href="./02.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data organization and presentation</span></span></a>
   </div>
 </li>
@@ -150,7 +166,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -160,14 +176,37 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview-of-data-organization" id="toc-overview-of-data-organization" class="nav-link active" data-scroll-target="#overview-of-data-organization"><span class="header-section-number">2.1</span> Overview of Data Organization</a></li>
+  <li><a href="#importance-of-effective-data-presentation" id="toc-importance-of-effective-data-presentation" class="nav-link" data-scroll-target="#importance-of-effective-data-presentation"><span class="header-section-number">2.2</span> Importance of Effective Data Presentation</a></li>
+  <li><a href="#data-types-and-formats" id="toc-data-types-and-formats" class="nav-link" data-scroll-target="#data-types-and-formats"><span class="header-section-number">2.3</span> Data Types and Formats</a>
+  <ul class="collapse">
+  <li><a href="#introduction-to-data-types" id="toc-introduction-to-data-types" class="nav-link" data-scroll-target="#introduction-to-data-types"><span class="header-section-number">2.3.1</span> Introduction to Data Types</a></li>
+  <li><a href="#data-formats" id="toc-data-formats" class="nav-link" data-scroll-target="#data-formats"><span class="header-section-number">2.3.2</span> Data Formats</a></li>
+  <li><a href="#r-code-to-display-examples" id="toc-r-code-to-display-examples" class="nav-link" data-scroll-target="#r-code-to-display-examples"><span class="header-section-number">2.3.3</span> R Code to Display Examples:</a></li>
+  </ul></li>
+  <li><a href="#data-cleaning-and-preprocessing" id="toc-data-cleaning-and-preprocessing" class="nav-link" data-scroll-target="#data-cleaning-and-preprocessing"><span class="header-section-number">2.4</span> Data Cleaning and Preprocessing</a>
+  <ul class="collapse">
+  <li><a href="#importance-of-data-cleaning" id="toc-importance-of-data-cleaning" class="nav-link" data-scroll-target="#importance-of-data-cleaning"><span class="header-section-number">2.4.1</span> Importance of Data Cleaning</a></li>
+  <li><a href="#data-cleaning-techniques" id="toc-data-cleaning-techniques" class="nav-link" data-scroll-target="#data-cleaning-techniques"><span class="header-section-number">2.4.2</span> Data Cleaning Techniques</a></li>
+  </ul></li>
+  <li><a href="#data-organization-techniques" id="toc-data-organization-techniques" class="nav-link" data-scroll-target="#data-organization-techniques"><span class="header-section-number">2.5</span> Data Organization Techniques</a>
+  <ul class="collapse">
+  <li><a href="#tabular-data" id="toc-tabular-data" class="nav-link" data-scroll-target="#tabular-data"><span class="header-section-number">2.5.1</span> Tabular Data</a></li>
+  <li><a href="#hierarchical-data" id="toc-hierarchical-data" class="nav-link" data-scroll-target="#hierarchical-data"><span class="header-section-number">2.5.2</span> Hierarchical Data</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data organization and presentation</span></h1>
 </div>
 
 
@@ -184,11 +223,132 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" role="list" style="display: none">
-
+<section id="overview-of-data-organization" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="overview-of-data-organization"><span class="header-section-number">2.1</span> Overview of Data Organization</h2>
+<p>Data organization is a crucial step in the data analysis process. It involves structuring and arranging data in a meaningful way to facilitate analysis and interpretation.</p>
+</section>
+<section id="importance-of-effective-data-presentation" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="importance-of-effective-data-presentation"><span class="header-section-number">2.2</span> Importance of Effective Data Presentation</h2>
+<p>Effective data presentation is essential for conveying insights and findings to stakeholders. Well-organized and visually appealing presentations can enhance understanding and decision-making.</p>
+<p>To elaborate on each outline section separately in R Quarto document format, we’ll break down each section, provide explanations, examples, and R code to display relevant charts or tables. Let’s start with the first section:</p>
+</section>
+<section id="data-types-and-formats" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="data-types-and-formats"><span class="header-section-number">2.3</span> Data Types and Formats</h2>
+<section id="introduction-to-data-types" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="introduction-to-data-types"><span class="header-section-number">2.3.1</span> Introduction to Data Types</h3>
+<p>Data types categorize the nature of the data we work with, defining how we interpret and analyze it.</p>
+<p><strong>Examples:</strong> - <strong>Categorical Data:</strong> Gender (Male/Female), Marital Status (Single/Married/Divorced), Product Categories (Electronics/Clothing/Groceries). - <strong>Numerical Data:</strong> Age (continuous), Income (continuous), Number of Children (discrete).</p>
+</section>
+<section id="data-formats" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="data-formats"><span class="header-section-number">2.3.2</span> Data Formats</h3>
+<p>Data formats refer to the structure or arrangement of data, distinguishing between raw, summary, and aggregated data.</p>
+<p><strong>Examples:</strong> - <strong>Raw Data:</strong> Individual survey responses, transaction records. - <strong>Summary Data:</strong> Mean income by age group, median household size by region. - <strong>Aggregated Data:</strong> Total sales revenue by product category, average customer satisfaction score by month.</p>
+</section>
+<section id="r-code-to-display-examples" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="r-code-to-display-examples"><span class="header-section-number">2.3.3</span> R Code to Display Examples:</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of categorical data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>, <span class="st">"Male"</span>, <span class="st">"Female"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>gender
+Female   Male 
+     2      3 </code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of numerical data</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+     25      30      35      35      40      45 </code></pre>
+</div>
+</div>
+<p>This R code demonstrates how to display tables summarizing categorical and numerical data.</p>
+<p>Next, we’ll continue with the next section:</p>
+</section>
+</section>
+<section id="data-cleaning-and-preprocessing" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="data-cleaning-and-preprocessing"><span class="header-section-number">2.4</span> Data Cleaning and Preprocessing</h2>
+<section id="importance-of-data-cleaning" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="importance-of-data-cleaning"><span class="header-section-number">2.4.1</span> Importance of Data Cleaning</h3>
+<p>Data cleaning involves identifying and correcting errors or inconsistencies in the dataset to ensure its accuracy and reliability.</p>
+<p><strong>Example:</strong> - Handling missing values: Replace missing values with the mean or median, or remove incomplete records. - Outlier detection and treatment: Identify outliers using statistical methods (e.g., z-score) and decide whether to remove or adjust them.</p>
+</section>
+<section id="data-cleaning-techniques" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="data-cleaning-techniques"><span class="header-section-number">2.4.2</span> Data Cleaning Techniques</h3>
+<p>Various techniques are available for data cleaning, addressing common issues such as missing values, outliers, and data inconsistencies.</p>
+<p><strong>Example:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Handling missing values</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="cn">NA</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>clean_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10 20 30
+attr(,"na.action")
+[1] 2 5
+attr(,"class")
+[1] "omit"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Outlier detection and treatment</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>z_scores <span class="ot">&lt;-</span> (data <span class="sc">-</span> <span class="fu">mean</span>(data)) <span class="sc">/</span> <span class="fu">sd</span>(data)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> data[<span class="fu">abs</span>(z_scores) <span class="sc">&gt;</span> <span class="dv">2</span>]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>outliers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA NA NA NA NA</code></pre>
+</div>
+</div>
+<p>This R code demonstrates how to handle missing values and detect outliers in a dataset.</p>
+<p>Continuing to the next section:</p>
+</section>
+</section>
+<section id="data-organization-techniques" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="data-organization-techniques"><span class="header-section-number">2.5</span> Data Organization Techniques</h2>
+<section id="tabular-data" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="tabular-data"><span class="header-section-number">2.5.1</span> Tabular Data</h3>
+<p>Tabular data organization involves structuring data into rows and columns, facilitating easy comprehension and analysis.</p>
+<p><strong>Example:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a simple data frame</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Name =</span> <span class="fu">c</span>(<span class="st">"John"</span>, <span class="st">"Emily"</span>, <span class="st">"Michael"</span>),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Gender =</span> <span class="fu">c</span>(<span class="st">"Male"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Name Age Gender
+1    John  25   Male
+2   Emily  30 Female
+3 Michael  35   Male</code></pre>
+</div>
+</div>
+<p>This R code creates a basic tabular data structure using a data frame.</p>
+</section>
+<section id="hierarchical-data" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="hierarchical-data"><span class="header-section-number">2.5.2</span> Hierarchical Data</h3>
+<p>Hierarchical data organization represents data in a hierarchical structure, with parent-child relationships.</p>
+<p><strong>Example:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a hierarchical data structure</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>hierarchy <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Parent =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Child =</span> <span class="fu">c</span>(<span class="st">"A1"</span>, <span class="st">"B1"</span>, <span class="st">"B2"</span>, <span class="st">"C1"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>hierarchy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$Parent
+[1] "A" "B" "B" "C"
+
+$Child
+[1] "A1" "B1" "B2" "C1"</code></pre>
+</div>
+</div>
+<p>This R code creates a hierarchical data structure using lists.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -602,11 +762,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04.html" class="pagination-link" aria-label="Numerical Descriptive Measures">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Numerical Descriptive Measures</span></span>
+      <a href="./01.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./04.html" class="pagination-link" aria-label="Numerical Descriptive Measures">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Numerical Descriptive Measures</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
