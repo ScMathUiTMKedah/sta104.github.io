@@ -202,13 +202,16 @@ data <- data.frame(
 )
 
 # Reshape data for clustered and stacked bar charts
-data_long <- tidyr::gather(data, key = "Category", value = "Value", -Group)
+data_long <- tidyr::gather(data, key = "Category", 
+                           value = "Value", -Group)
 
 # Calculate percentages
 data_long$Percentage <- round((data_long$Value / sum(data_long$Value)) * 100, 1)
 
 # Simple Bar Chart
-simple_bar <- ggplot(data_long, aes(x = Group, y = Value, fill = Category)) +
+simple_bar <- ggplot(data_long, aes(x = Group, 
+                                    y = Value, 
+                                    fill = Category)) +
   geom_bar(stat = "identity") +
   labs(title = "Simple Bar Chart", x = "Group", y = "Value") +
   theme_minimal() +
@@ -216,7 +219,9 @@ simple_bar <- ggplot(data_long, aes(x = Group, y = Value, fill = Category)) +
             position = position_stack(vjust = 0.5))
 
 # Clustered Bar Chart
-clustered_bar <- ggplot(data_long, aes(x = Group, y = Value, fill = Category)) +
+clustered_bar <- ggplot(data_long, aes(x = Group, 
+                                       y = Value, 
+                                       fill = Category)) +
   geom_bar(stat = "identity", position = "dodge") +
   labs(title = "Clustered Bar Chart", x = "Group", y = "Value") +
   theme_minimal() +
@@ -224,7 +229,9 @@ clustered_bar <- ggplot(data_long, aes(x = Group, y = Value, fill = Category)) +
             position = position_dodge(width = 0.9), vjust = -0.5)
 
 # Stacked Bar Chart
-stacked_bar <- ggplot(data_long, aes(x = Group, y = Value, fill = Category)) +
+stacked_bar <- ggplot(data_long, aes(x = Group, 
+                                     y = Value, 
+                                     fill = Category)) +
   geom_bar(stat = "identity", position = "stack") +
   labs(title = "Stacked Bar Chart", x = "Group", y = "Value") +
   theme_minimal() +
@@ -259,8 +266,10 @@ Cross-tabulation, also known as contingency tables, is a method for summarizing 
 
 ```{r}
 # Sample data
-gender <- c("Male", "Female", "Female", "Male", "Male")
-commute_modes <- c("Car", "Public Transit", "Bicycle", "Walking", "Car")
+gender <- c("Male", "Female", "Female", 
+            "Male", "Male")
+commute_modes <- c("Car", "Public Transit", "Bicycle", 
+                   "Walking", "Car")
 
 # Create a cross-tabulation table
 xt <- table(gender, commute_modes)
@@ -282,10 +291,13 @@ Suppose we have a dataset of exam scores for a class of students. We can create 
 
 ```{r}
 # Sample dataset of exam scores
-scores <- c(65, 72, 78, 83, 90, 72, 85, 92, 68, 75, 80, 88, 93, 72, 82, 95, 78, 85, 90)
+scores <- c(65, 72, 78, 83, 90, 72, 85, 92, 68, 75, 
+            80, 88, 93, 72, 82, 95, 78, 85, 90)
 
 # Create frequency distribution table
-freq_table <- table(cut(scores, breaks = seq(60, 100, by = 5), include.lowest = TRUE))
+freq_table <- table(cut(scores, 
+                        breaks = seq(60, 100, by = 5), 
+                        include.lowest = TRUE))
 
 # Transpose the frequency distribution table
 transposed_freq_table <- as.data.frame(t(freq_table))
@@ -335,7 +347,9 @@ Let's create a histogram for the exam scores dataset to visualize the distributi
 
 ```{r}
 # Create histogram
-hist(scores, breaks = seq(60, 100, by = 5), main = "Exam Scores Histogram", xlab = "Scores", ylab = "Frequency")
+hist(scores, breaks = seq(60, 100, by = 5), 
+     main = "Exam Scores Histogram", 
+     xlab = "Scores", ylab = "Frequency")
 ```
 
 ### Frequency Polygon
@@ -348,7 +362,9 @@ We can create a frequency polygon using the exam scores dataset to show the dist
 ```{r}
 # Create frequency polygon
 midpoints <- seq(62.5, 97.5, by = 5)
-plot(midpoints, freq_table, type = "l", col = "blue", lwd = 2, main = "Exam Scores Frequency Polygon", xlab = "Scores", ylab = "Frequency")
+plot(midpoints, freq_table, type = "l", 
+     col = "blue", lwd = 2, main = "Exam Scores Frequency Polygon", 
+     xlab = "Scores", ylab = "Frequency")
 ```
 
 ### Ogive
@@ -363,10 +379,15 @@ We will create both greater than or equal ogive and less than ogive using the ex
 cum_freq <- cumsum(freq_table)
 
 # Greater than or equal ogive
-plot(midpoints, cum_freq, type = "s", col = "red", lwd = 2, main = "Greater than or Equal Ogive", xlab = "Scores", ylab = "Cumulative Frequency")
+plot(midpoints, cum_freq, type = "s", 
+     col = "red", lwd = 2, main = "Greater than or Equal Ogive", 
+     xlab = "Scores", ylab = "Cumulative Frequency")
 
 # Less than ogive
-plot(midpoints, cum_freq, type = "s", col = "green", lwd = 2, main = "Less than Ogive", xlab = "Scores", ylab = "Cumulative Frequency", ylim = c(0, max(cum_freq)))
+plot(midpoints, cum_freq, type = "s", 
+     col = "green", lwd = 2, main = "Less than Ogive", 
+     xlab = "Scores", ylab = "Cumulative Frequency", 
+     ylim = c(0, max(cum_freq)))
 ```
 
 In this section, we have explored various graphical methods for presenting quantitative data, including frequency distribution tables, stem-and-leaf plots, histograms, frequency polygons, and ogives. These visualizations help us understand the distribution and characteristics of quantitative data effectively.

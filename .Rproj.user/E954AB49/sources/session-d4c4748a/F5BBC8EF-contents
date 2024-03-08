@@ -1,0 +1,105 @@
+# Simple Linear Regression
+
+In this chapter, we explore the concept of simple linear regression, a statistical method used to model the relationship between a single independent variable (predictor) and a dependent variable (response). We cover the theory behind simple linear regression, how to fit a regression line to data, assess the goodness of fit, and make predictions using the regression model.
+
+## 1. Introduction to Simple Linear Regression
+
+Simple linear regression seeks to find the best-fitting straight line through a set of data points, assuming a linear relationship between the independent variable $ x $ and the dependent variable $ y $. The regression line is represented by the equation:
+
+$ y = \beta_0 + \beta_1x + \varepsilon $
+
+Where:
+- $ y $ is the dependent variable,
+- $ x $ is the independent variable,
+- $ \beta_0 $ is the intercept,
+- $ \beta_1 $ is the slope,
+- $ \varepsilon $ is the error term.
+
+## 2. Fitting the Regression Line
+
+The regression line is fitted using the method of least squares. The slope $ \beta_1 $ and intercept $ \beta_0 $ are calculated using the formulas:
+
+$ \beta_1 = \frac{{\sum(x_i - \bar{x})(y_i - \bar{y})}}{{\sum(x_i - \bar{x})^2}} $
+
+$ \beta_0 = \bar{y} - \beta_1\bar{x} $
+
+Where:
+- $ (x_i, y_i) $ are the individual data points,
+- $ \bar{x} $ and $ \bar{y} $ are the means of $ x $ and $ y $, respectively.
+
+## 3. Assessing Goodness of Fit
+
+The coefficient of determination $ R^2 $ measures the proportion of variance in the dependent variable explained by the independent variable. It ranges from 0 to 1, with higher values indicating a better fit.
+
+$ R^2 = \frac{{\text{SSR}}}{{\text{SST}}} $
+
+Where:
+- SSR (Sum of Squares Regression) measures explained variation,
+- SST (Total Sum of Squares) measures total variation.
+
+## 4. Making Predictions
+
+The regression line can be used to make predictions for new values of $ x $. Simply plug the new value into the regression equation and calculate the corresponding predicted value of $ y $.
+
+## Example
+
+Suppose we have the following data:
+
+```r
+# Sample data
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 3, 4, 5, 6)
+```
+
+### Fitting the Regression Line
+
+```r
+# Calculate means
+x_bar <- mean(x)
+y_bar <- mean(y)
+
+# Calculate slope
+beta_1 <- sum((x - x_bar) * (y - y_bar)) / sum((x - x_bar)^2)
+
+# Calculate intercept
+beta_0 <- y_bar - beta_1 * x_bar
+```
+
+### Assessing Goodness of Fit
+
+```r
+# Calculate predicted y values
+y_pred <- beta_0 + beta_1 * x
+
+# Calculate SSE
+SSE <- sum((y - y_pred)^2)
+
+# Calculate SST
+SST <- sum((y - y_bar)^2)
+
+# Calculate R^2
+R_squared <- 1 - SSE / SST
+```
+
+### Making Predictions
+
+```r
+# Predict y for new value of x
+new_x <- 6
+predicted_y <- beta_0 + beta_1 * new_x
+```
+
+### Result
+
+```r
+# Using stargazer to display regression results
+library(stargazer)
+
+# Fit linear regression model
+lm_model <- lm(y ~ x)
+
+# Print regression results
+stargazer(lm_model, type = "text")
+```
+
+This concludes our discussion on simple linear regression. By understanding the principles outlined here, you'll be equipped to analyze and interpret the relationship between variables and make predictions using regression models.
