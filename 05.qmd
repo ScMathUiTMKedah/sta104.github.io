@@ -25,23 +25,42 @@ y <- c(3, 4, 2, 5, 6)
 plot(x, y, main = "Scatter Plot", xlab = "Independent Variable", ylab = "Dependent Variable")
 ```
 
+### Example:
+
+```{r}
+# Generate sample data
+set.seed(123)  # For reproducibility
+x2 <- rnorm(15, mean = 50, sd = 10)
+y2 <- 2 * x + rnorm(15, mean = 0, sd = 5)
+
+# Plot scatter diagram
+plot(x2, y2, 
+     main = "Scatter Plot of X vs Y",
+     xlab = "X",
+     ylab = "Y",
+     pch = 19,  # Use solid circles as data points
+     col = "blue"  # Use blue color for data points
+     )
+```
+
+
 ## 3. Pearson’s Correlation Coefficient
 
 Pearson's correlation coefficient, denoted by \( r \), is a statistical measure that quantifies the strength and direction of the linear relationship between two continuous variables. It ranges from -1 to +1, where:
 
-- $( r = 1 )$: Perfect positive correlation
-- $( r = -1 )$: Perfect negative correlation
-- $( r = 0 )$: No correlation
+- $r = 1$: Perfect positive correlation
+- $r = -1$: Perfect negative correlation
+- $r = 0$: No correlation
 
-The formula to calculate Pearson's correlation coefficient \( r \) between variables \( X \) and \( Y \) is given by:
+The formula to calculate Pearson's correlation coefficient $r$ between variables $X$ and $Y$ is given by:
 
-\[
+$$
 r = \frac{{\sum{(X_i - \bar{X})(Y_i - \bar{Y})}}}{{\sqrt{\sum{(X_i - \bar{X})^2} \sum{(Y_i - \bar{Y})^2}}}}
-\]
+$$
 
 Where:
-- \( X_i \) and \( Y_i \) are individual data points.
-- \( \bar{X} \) and \( \bar{Y} \) are the means of variables \( X \) and \( Y \), respectively.
+- $X_i$ and $Y_i$ are individual data points.
+- $\bar{X}$ and $\bar{Y}$ are the means of variables $X$ and $Y$, respectively.
 
 ### Example:
 
@@ -52,6 +71,20 @@ correlation_coefficient <- cor(x, y)
 # Print the correlation coefficient
 print(paste("Pearson's correlation coefficient (r):", correlation_coefficient))
 ```
+
+::: {.callout-note}
+When we obtain a result such as "Pearson's correlation coefficient (r): 0.7", it means that we have calculated the Pearson correlation coefficient between two variables, and the value of $r$ is 0.7. Let's break down what this value signifies:
+
+1. **Strength of Relationship**: The magnitude of the correlation coefficient, $r$, indicates the strength of the linear relationship between the two variables. In this case, $r = 0.7$, which suggests a moderately strong positive linear relationship between the variables.
+
+2. **Direction of Relationship**: The sign of the correlation coefficient indicates the direction of the relationship between the variables. A positive value of $r$ (e.g., $r > 0$) implies a positive linear relationship, meaning that as one variable increases, the other variable tends to increase as well. Conversely, a negative value of $r$ (e.g., $r < 0$) indicates a negative linear relationship, where one variable tends to decrease as the other variable increases.
+
+3. **Interpretation**: With $r = 0.7$, we have a positive correlation. This suggests that as the values of one variable increase, the values of the other variable also tend to increase, and vice versa. The magnitude of 0.7 indicates a moderately strong relationship; it's not perfect (which would be $r = 1$), but it's certainly not weak either.
+
+4. **Limitations**: It's important to note that correlation does not imply causation. Even though two variables may be correlated, it doesn't necessarily mean that one variable causes the other to change. Additionally, the Pearson correlation coefficient specifically measures linear relationships, so it may not capture non-linear relationships between variables.
+
+In summary, when we see the result "Pearson's correlation coefficient (r): 0.7", it indicates a moderately strong positive linear relationship between the variables being analyzed. This value provides valuable information about the association between the variables, helping us understand their behavior and potential interactions.
+:::
 
 This concludes our discussion on correlation, covering the definition of dependent and independent variables, the use of scatter plots for visualization, and the calculation of Pearson's correlation coefficient as a measure of correlation strength.
 
