@@ -219,10 +219,11 @@ window.Quarto = {
   <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"><span class="header-section-number">4.2</span> Scatter Plot</a>
   <ul class="collapse">
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">4.2.1</span> Example:</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">4.2.2</span> Example:</a></li>
   </ul></li>
   <li><a href="#pearsons-correlation-coefficient" id="toc-pearsons-correlation-coefficient" class="nav-link" data-scroll-target="#pearsons-correlation-coefficient"><span class="header-section-number">4.3</span> 3. Pearson’s Correlation Coefficient</a>
   <ul class="collapse">
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">4.3.1</span> Example:</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2"><span class="header-section-number">4.3.1</span> Example:</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -279,28 +280,75 @@ window.Quarto = {
 </div>
 </div>
 </section>
+<section id="example-1" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">4.2.2</span> Example:</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot scatter diagram</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x2, y2, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Scatter Plot of X vs Y"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Y"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>,  <span class="co"># Use solid circles as data points</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>  <span class="co"># Use blue color for data points</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="pearsons-correlation-coefficient" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="pearsons-correlation-coefficient"><span class="header-section-number">4.3</span> 3. Pearson’s Correlation Coefficient</h2>
 <p>Pearson’s correlation coefficient, denoted by ( r ), is a statistical measure that quantifies the strength and direction of the linear relationship between two continuous variables. It ranges from -1 to +1, where:</p>
 <ul>
-<li><span class="math inline">\(( r = 1 )\)</span>: Perfect positive correlation</li>
-<li><span class="math inline">\(( r = -1 )\)</span>: Perfect negative correlation</li>
-<li><span class="math inline">\(( r = 0 )\)</span>: No correlation</li>
+<li><span class="math inline">\(r = 1\)</span>: Perfect positive correlation</li>
+<li><span class="math inline">\(r = -1\)</span>: Perfect negative correlation</li>
+<li><span class="math inline">\(r = 0\)</span>: No correlation</li>
 </ul>
-<p>The formula to calculate Pearson’s correlation coefficient ( r ) between variables ( X ) and ( Y ) is given by:</p>
-<p>[ r = ]</p>
-<p>Where: - ( X_i ) and ( Y_i ) are individual data points. - ( {X} ) and ( {Y} ) are the means of variables ( X ) and ( Y ), respectively.</p>
-<section id="example-1" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="example-1"><span class="header-section-number">4.3.1</span> Example:</h3>
+<p>The formula to calculate Pearson’s correlation coefficient <span class="math inline">\(r\)</span> between variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is given by:</p>
+<p><span class="math display">\[
+r = \frac{{\sum{(X_i - \bar{X})(Y_i - \bar{Y})}}}{{\sqrt{\sum{(X_i - \bar{X})^2} \sum{(Y_i - \bar{Y})^2}}}}
+\]</span></p>
+<p>Where: - <span class="math inline">\(X_i\)</span> and <span class="math inline">\(Y_i\)</span> are individual data points. - <span class="math inline">\(\bar{X}\)</span> and <span class="math inline">\(\bar{Y}\)</span> are the means of variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively.</p>
+<section id="example-2" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="example-2"><span class="header-section-number">4.3.1</span> Example:</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Pearson's correlation coefficient</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>correlation_coefficient <span class="ot">&lt;-</span> <span class="fu">cor</span>(x, y)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the correlation coefficient</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Pearson's correlation coefficient (r):"</span>, correlation_coefficient))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Pearson's correlation coefficient</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>correlation_coefficient <span class="ot">&lt;-</span> <span class="fu">cor</span>(x, y)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the correlation coefficient</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Pearson's correlation coefficient (r):"</span>, correlation_coefficient))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Pearson's correlation coefficient (r): 0.7"</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When we obtain a result such as “Pearson’s correlation coefficient (r): 0.7”, it means that we have calculated the Pearson correlation coefficient between two variables, and the value of <span class="math inline">\(r\)</span> is 0.7. Let’s break down what this value signifies:</p>
+<ol type="1">
+<li><p><strong>Strength of Relationship</strong>: The magnitude of the correlation coefficient, <span class="math inline">\(r\)</span>, indicates the strength of the linear relationship between the two variables. In this case, <span class="math inline">\(r = 0.7\)</span>, which suggests a moderately strong positive linear relationship between the variables.</p></li>
+<li><p><strong>Direction of Relationship</strong>: The sign of the correlation coefficient indicates the direction of the relationship between the variables. A positive value of <span class="math inline">\(r\)</span> (e.g., <span class="math inline">\(r &gt; 0\)</span>) implies a positive linear relationship, meaning that as one variable increases, the other variable tends to increase as well. Conversely, a negative value of <span class="math inline">\(r\)</span> (e.g., <span class="math inline">\(r &lt; 0\)</span>) indicates a negative linear relationship, where one variable tends to decrease as the other variable increases.</p></li>
+<li><p><strong>Interpretation</strong>: With <span class="math inline">\(r = 0.7\)</span>, we have a positive correlation. This suggests that as the values of one variable increase, the values of the other variable also tend to increase, and vice versa. The magnitude of 0.7 indicates a moderately strong relationship; it’s not perfect (which would be <span class="math inline">\(r = 1\)</span>), but it’s certainly not weak either.</p></li>
+<li><p><strong>Limitations</strong>: It’s important to note that correlation does not imply causation. Even though two variables may be correlated, it doesn’t necessarily mean that one variable causes the other to change. Additionally, the Pearson correlation coefficient specifically measures linear relationships, so it may not capture non-linear relationships between variables.</p></li>
+</ol>
+<p>In summary, when we see the result “Pearson’s correlation coefficient (r): 0.7”, it indicates a moderately strong positive linear relationship between the variables being analyzed. This value provides valuable information about the association between the variables, helping us understand their behavior and potential interactions.</p>
 </div>
 </div>
 <p>This concludes our discussion on correlation, covering the definition of dependent and independent variables, the use of scatter plots for visualization, and the calculation of Pearson’s correlation coefficient as a measure of correlation strength.</p>
