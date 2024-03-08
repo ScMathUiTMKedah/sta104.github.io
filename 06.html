@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Statistics for UiTM - 4&nbsp; Correlation</title>
+<title>Introduction to Statistics for UiTM - 5&nbsp; Simple Linear Regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./06.html" rel="next">
-<link href="./04.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./05.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -103,35 +103,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -144,7 +115,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Correlation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Simple Linear Regression</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -195,13 +166,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05.html" class="sidebar-item-text sidebar-link active">
+  <a href="./05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06.html" class="sidebar-item-text sidebar-link">
+  <a href="./06.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Simple Linear Regression</span></span></a>
   </div>
 </li>
@@ -221,15 +192,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#definition-of-dependent-and-independent-variables" id="toc-definition-of-dependent-and-independent-variables" class="nav-link active" data-scroll-target="#definition-of-dependent-and-independent-variables"><span class="header-section-number">4.1</span> Definition of Dependent and Independent Variables</a></li>
-  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"><span class="header-section-number">4.2</span> Scatter Plot</a>
+  <li><a href="#introduction-to-simple-linear-regression" id="toc-introduction-to-simple-linear-regression" class="nav-link active" data-scroll-target="#introduction-to-simple-linear-regression"><span class="header-section-number">5.1</span> 1. Introduction to Simple Linear Regression</a></li>
+  <li><a href="#fitting-the-regression-line" id="toc-fitting-the-regression-line" class="nav-link" data-scroll-target="#fitting-the-regression-line"><span class="header-section-number">5.2</span> 2. Fitting the Regression Line</a></li>
+  <li><a href="#assessing-goodness-of-fit" id="toc-assessing-goodness-of-fit" class="nav-link" data-scroll-target="#assessing-goodness-of-fit"><span class="header-section-number">5.3</span> 3. Assessing Goodness of Fit</a></li>
+  <li><a href="#making-predictions" id="toc-making-predictions" class="nav-link" data-scroll-target="#making-predictions"><span class="header-section-number">5.4</span> 4. Making Predictions</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">5.5</span> Example</a>
   <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">4.2.1</span> Example:</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">4.2.2</span> Example:</a></li>
-  </ul></li>
-  <li><a href="#pearsons-correlation-coefficient" id="toc-pearsons-correlation-coefficient" class="nav-link" data-scroll-target="#pearsons-correlation-coefficient"><span class="header-section-number">4.3</span> 3. Pearson’s Correlation Coefficient</a>
-  <ul class="collapse">
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2"><span class="header-section-number">4.3.1</span> Example:</a></li>
+  <li><a href="#fitting-the-regression-line-1" id="toc-fitting-the-regression-line-1" class="nav-link" data-scroll-target="#fitting-the-regression-line-1"><span class="header-section-number">5.5.1</span> Fitting the Regression Line</a></li>
+  <li><a href="#assessing-goodness-of-fit-1" id="toc-assessing-goodness-of-fit-1" class="nav-link" data-scroll-target="#assessing-goodness-of-fit-1"><span class="header-section-number">5.5.2</span> Assessing Goodness of Fit</a></li>
+  <li><a href="#making-predictions-1" id="toc-making-predictions-1" class="nav-link" data-scroll-target="#making-predictions-1"><span class="header-section-number">5.5.3</span> Making Predictions</a></li>
+  <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result"><span class="header-section-number">5.5.4</span> Result</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -239,7 +211,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Correlation</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Simple Linear Regression</span></h1>
 </div>
 
 
@@ -256,111 +228,79 @@ window.Quarto = {
 </header>
 
 
-<p>In this chapter, we will delve into the concept of correlation, which is a statistical measure that describes the strength and direction of a relationship between two variables. We will cover the definition of dependent and independent variables, explore scatter plots as a visualization tool, and discuss Pearson’s correlation coefficient as a measure of correlation strength.</p>
-<section id="definition-of-dependent-and-independent-variables" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="definition-of-dependent-and-independent-variables"><span class="header-section-number">4.1</span> Definition of Dependent and Independent Variables</h2>
-<p>In statistical analysis, variables are classified as either dependent or independent based on their roles in a study:</p>
-<ul>
-<li><p><strong>Dependent Variable</strong>: Also known as the response variable or outcome variable, the dependent variable is the variable being studied and measured. It depends on other factors in the study and is influenced by changes in the independent variable(s).</p></li>
-<li><p><strong>Independent Variable</strong>: Also known as the predictor variable or explanatory variable, the independent variable is manipulated or controlled by the researcher. It is used to predict or explain changes in the dependent variable.</p></li>
-</ul>
+<p>In this chapter, we explore the concept of simple linear regression, a statistical method used to model the relationship between a single independent variable (predictor) and a dependent variable (response). We cover the theory behind simple linear regression, how to fit a regression line to data, assess the goodness of fit, and make predictions using the regression model.</p>
+<section id="introduction-to-simple-linear-regression" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction-to-simple-linear-regression"><span class="header-section-number">5.1</span> 1. Introduction to Simple Linear Regression</h2>
+<p>Simple linear regression seeks to find the best-fitting straight line through a set of data points, assuming a linear relationship between the independent variable $ x $ and the dependent variable $ y $. The regression line is represented by the equation:</p>
+<p>$ y = _0 + _1x + $</p>
+<p>Where: - $ y $ is the dependent variable, - $ x $ is the independent variable, - $ _0 $ is the intercept, - $ _1 $ is the slope, - $ $ is the error term.</p>
 </section>
-<section id="scatter-plot" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">4.2</span> Scatter Plot</h2>
-<p>A scatter plot is a graphical representation of the relationship between two continuous variables. Each point on the plot represents an observation, with one variable plotted on the x-axis (horizontal) and the other variable plotted on the y-axis (vertical). Scatter plots help visualize patterns, trends, and relationships between variables.</p>
-<section id="example" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="example"><span class="header-section-number">4.2.1</span> Example:</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<section id="fitting-the-regression-line" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="fitting-the-regression-line"><span class="header-section-number">5.2</span> 2. Fitting the Regression Line</h2>
+<p>The regression line is fitted using the method of least squares. The slope $ _1 $ and intercept $ _0 $ are calculated using the formulas:</p>
+<p>$ _1 = $</p>
+<p>$ _0 = {y} - _1{x} $</p>
+<p>Where: - $ (x_i, y_i) $ are the individual data points, - $ {x} $ and $ {y} $ are the means of $ x $ and $ y $, respectively.</p>
+</section>
+<section id="assessing-goodness-of-fit" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="assessing-goodness-of-fit"><span class="header-section-number">5.3</span> 3. Assessing Goodness of Fit</h2>
+<p>The coefficient of determination $ R^2 $ measures the proportion of variance in the dependent variable explained by the independent variable. It ranges from 0 to 1, with higher values indicating a better fit.</p>
+<p>$ R^2 = $</p>
+<p>Where: - SSR (Sum of Squares Regression) measures explained variation, - SST (Total Sum of Squares) measures total variation.</p>
+</section>
+<section id="making-predictions" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="making-predictions"><span class="header-section-number">5.4</span> 4. Making Predictions</h2>
+<p>The regression line can be used to make predictions for new values of $ x $. Simply plug the new value into the regression equation and calculate the corresponding predicted value of $ y $.</p>
+</section>
+<section id="example" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="example"><span class="header-section-number">5.5</span> Example</h2>
+<p>Suppose we have the following data:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">main =</span> <span class="st">"Scatter Plot"</span>, </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Independent Variable"</span>, </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Dependent Variable"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="fitting-the-regression-line-1" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="fitting-the-regression-line-1"><span class="header-section-number">5.5.1</span> Fitting the Regression Line</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate means</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x_bar <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y_bar <span class="ot">&lt;-</span> <span class="fu">mean</span>(y)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate slope</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>beta_1 <span class="ot">&lt;-</span> <span class="fu">sum</span>((x <span class="sc">-</span> x_bar) <span class="sc">*</span> (y <span class="sc">-</span> y_bar)) <span class="sc">/</span> <span class="fu">sum</span>((x <span class="sc">-</span> x_bar)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate intercept</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>beta_0 <span class="ot">&lt;-</span> y_bar <span class="sc">-</span> beta_1 <span class="sc">*</span> x_bar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="example-1" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">4.2.2</span> Example:</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample data</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot scatter diagram</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x2, y2, </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Scatter Plot of X vs Y"</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"X"</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Y"</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>,  <span class="co"># Use solid circles as data points</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>  <span class="co"># Use blue color for data points</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>     )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="pearsons-correlation-coefficient" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="pearsons-correlation-coefficient"><span class="header-section-number">4.3</span> 3. Pearson’s Correlation Coefficient</h2>
-<p>Pearson’s correlation coefficient, denoted by ( r ), is a statistical measure that quantifies the strength and direction of the linear relationship between two continuous variables. It ranges from -1 to +1, where:</p>
-<ul>
-<li><span class="math inline">\(r = 1\)</span>: Perfect positive correlation</li>
-<li><span class="math inline">\(r = -1\)</span>: Perfect negative correlation</li>
-<li><span class="math inline">\(r = 0\)</span>: No correlation</li>
-</ul>
-<p>The formula to calculate Pearson’s correlation coefficient <span class="math inline">\(r\)</span> between variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is given by:</p>
-<p><span class="math display">\[
-r = \frac{{\sum{(X_i - \bar{X})(Y_i - \bar{Y})}}}{{\sqrt{\sum{(X_i - \bar{X})^2} \sum{(Y_i - \bar{Y})^2}}}}
-\]</span></p>
-<p>Where: - <span class="math inline">\(X_i\)</span> and <span class="math inline">\(Y_i\)</span> are individual data points. - <span class="math inline">\(\bar{X}\)</span> and <span class="math inline">\(\bar{Y}\)</span> are the means of variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively.</p>
-<section id="example-2" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="example-2"><span class="header-section-number">4.3.1</span> Example:</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Pearson's correlation coefficient</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>correlation_coefficient <span class="ot">&lt;-</span> <span class="fu">cor</span>(x, y)</span>
+<section id="assessing-goodness-of-fit-1" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="assessing-goodness-of-fit-1"><span class="header-section-number">5.5.2</span> Assessing Goodness of Fit</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate predicted y values</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="ot">&lt;-</span> beta_0 <span class="sc">+</span> beta_1 <span class="sc">*</span> x</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the correlation coefficient</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Pearson's correlation coefficient (r):"</span>, correlation_coefficient))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Pearson's correlation coefficient (r): 0.7"</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When we obtain a result such as “Pearson’s correlation coefficient (r): 0.7”, it means that we have calculated the Pearson correlation coefficient between two variables, and the value of <span class="math inline">\(r\)</span> is 0.7. Let’s break down what this value signifies:</p>
-<ol type="1">
-<li><p><strong>Strength of Relationship</strong>: The magnitude of the correlation coefficient, <span class="math inline">\(r\)</span>, indicates the strength of the linear relationship between the two variables. In this case, <span class="math inline">\(r = 0.7\)</span>, which suggests a moderately strong positive linear relationship between the variables.</p></li>
-<li><p><strong>Direction of Relationship</strong>: The sign of the correlation coefficient indicates the direction of the relationship between the variables. A positive value of <span class="math inline">\(r\)</span> (e.g., <span class="math inline">\(r &gt; 0\)</span>) implies a positive linear relationship, meaning that as one variable increases, the other variable tends to increase as well. Conversely, a negative value of <span class="math inline">\(r\)</span> (e.g., <span class="math inline">\(r &lt; 0\)</span>) indicates a negative linear relationship, where one variable tends to decrease as the other variable increases.</p></li>
-<li><p><strong>Interpretation</strong>: With <span class="math inline">\(r = 0.7\)</span>, we have a positive correlation. This suggests that as the values of one variable increase, the values of the other variable also tend to increase, and vice versa. The magnitude of 0.7 indicates a moderately strong relationship; it’s not perfect (which would be <span class="math inline">\(r = 1\)</span>), but it’s certainly not weak either.</p></li>
-<li><p><strong>Limitations</strong>: It’s important to note that correlation does not imply causation. Even though two variables may be correlated, it doesn’t necessarily mean that one variable causes the other to change. Additionally, the Pearson correlation coefficient specifically measures linear relationships, so it may not capture non-linear relationships between variables.</p></li>
-</ol>
-<p>In summary, when we see the result “Pearson’s correlation coefficient (r): 0.7”, it indicates a moderately strong positive linear relationship between the variables being analyzed. This value provides valuable information about the association between the variables, helping us understand their behavior and potential interactions.</p>
-</div>
-</div>
-<p>This concludes our discussion on correlation, covering the definition of dependent and independent variables, the use of scatter plots for visualization, and the calculation of Pearson’s correlation coefficient as a measure of correlation strength.</p>
-<p>In the next chapter, we will explore simple linear regression, which builds upon the concepts discussed here to predict the value of a dependent variable based on the value of an independent variable.</p>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate SSE</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span>((y <span class="sc">-</span> y_pred)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate SST</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>SST <span class="ot">&lt;-</span> <span class="fu">sum</span>((y <span class="sc">-</span> y_bar)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate R^2</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>R_squared <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> SSE <span class="sc">/</span> SST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="making-predictions-1" class="level3" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="making-predictions-1"><span class="header-section-number">5.5.3</span> Making Predictions</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict y for new value of x</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>new_x <span class="ot">&lt;-</span> <span class="dv">6</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>predicted_y <span class="ot">&lt;-</span> beta_0 <span class="sc">+</span> beta_1 <span class="sc">*</span> new_x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="result" class="level3" data-number="5.5.4">
+<h3 data-number="5.5.4" class="anchored" data-anchor-id="result"><span class="header-section-number">5.5.4</span> Result</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using stargazer to display regression results</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit linear regression model</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>lm_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print regression results</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(lm_model, <span class="at">type =</span> <span class="st">"text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This concludes our discussion on simple linear regression. By understanding the principles outlined here, you’ll be equipped to analyze and interpret the relationship between variables and make predictions using regression models.</p>
 
 
 </section>
@@ -778,13 +718,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04.html" class="pagination-link" aria-label="Numerical Descriptive Measures">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Numerical Descriptive Measures</span></span>
+      <a href="./05.html" class="pagination-link" aria-label="Correlation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Correlation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06.html" class="pagination-link" aria-label="Simple Linear Regression">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Simple Linear Regression</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
