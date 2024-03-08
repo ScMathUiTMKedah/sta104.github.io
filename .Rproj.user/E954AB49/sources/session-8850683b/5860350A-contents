@@ -155,12 +155,17 @@ data <- data.frame(
   Value = c(25, 35, 20, 30)
 )
 
+# Calculate percentages
+data$Percentage <- round((data$Value / sum(data$Value)) * 100, 1)
+
 # Create pie chart
 pie_chart <- ggplot(data, aes(x = "", y = Value, fill = Category)) +
   geom_bar(stat = "identity", width = 1) +
   coord_polar("y") +   # Convert to polar coordinates (pie chart)
   labs(title = "Pie Chart Example") +
-  theme_void()         # Remove background and grid lines
+  theme_void() +         # Remove background and grid lines
+  geom_text(aes(label = paste0(Category, "\n", Percentage, "%")), 
+            position = position_stack(vjust = 0.5))
 
 # Display pie chart
 print(pie_chart)
