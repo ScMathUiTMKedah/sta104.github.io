@@ -3,7 +3,7 @@
     "path": "~/GitHub/sta104.github.io/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "3555079256",
+    "hash": "2311701966",
     "contents": "",
     "dirty": false,
     "created": 1709866093528.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "5,33",
+        "cursorPosition": "10,8",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1709869863,
+    "lastKnownWriteTime": 1709870869,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1709869863600,
+    "last_content_update": 1709870869287,
     "read_only": false,
     "read_only_alternatives": []
 }
