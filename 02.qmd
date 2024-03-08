@@ -186,22 +186,59 @@ Running this code will generate a simple pie chart using ggplot2. You can custom
 Bar charts are effective for comparing the frequencies or counts of different categories across a dataset. We'll create simple, cluster, and stacked bar charts for the exam scores dataset.
 
 ```{r}
+# Load the ggplot2 package
+library(ggplot2)
+
+# Sample data
+data <- data.frame(
+  Group = c("Group 1", "Group 2", "Group 3"),
+  Value1 = c(10, 15, 20),
+  Value2 = c(15, 20, 25),
+  Value3 = c(20, 25, 30)
+)
+
+# Reshape data for clustered and stacked bar charts
+data_long <- tidyr::gather(data, key = "Category", value = "Value", -Group)
+
 # Simple Bar Chart
-barplot(table(scores), main = "Exam Scores", xlab = "Score", ylab = "Frequency")
+simple_bar <- ggplot(data_long, aes(x = Group, y = Value, fill = Category)) +
+  geom_bar(stat = "identity", position = "identity") +
+  labs(title = "Simple Bar Chart", x = "Group", y = "Value") +
+  theme_minimal()
 
-# Clustered Bar Chart (with different conditions)
-condition <- c("Condition A", "Condition B", "Condition C")
-counts <- c(20, 30, 25)
-counts2 <- c(15, 25, 20)
-
-barplot(rbind(counts, counts2), beside = TRUE, legend = TRUE, names.arg = condition, main = "Clustered Bar Chart")
+# Clustered Bar Chart
+clustered_bar <- ggplot(data_long, aes(x = Group, y = Value, fill = Category)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Clustered Bar Chart", x = "Group", y = "Value") +
+  theme_minimal()
 
 # Stacked Bar Chart
-counts3 <- c(10, 15, 20)
-counts4 <- c(25, 20, 15)
+stacked_bar <- ggplot(data_long, aes(x = Group, y = Value, fill = Category)) +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(title = "Stacked Bar Chart", x = "Group", y = "Value") +
+  theme_minimal()
 
-barplot(rbind(counts3, counts4), legend = TRUE, beside = TRUE, names.arg = condition, main = "Stacked Bar Chart")
+# Display the plots
+print(simple_bar)
+print(clustered_bar)
+print(stacked_bar)
 ```
+
+::: {.column-margin}
+Explanation:
+
+- We start by loading the ggplot2 package.
+- We create a dataframe called `data` containing groups (Group 1, 2, 3) and their corresponding values (Value1, Value2, Value3).
+- We reshape the data into long format using the `gather()` function from the tidyr package to prepare it for plotting clustered and stacked bar charts.
+- For each type of bar chart:
+  - We use ggplot() to specify the data and aesthetics.
+  - We use geom_bar() with `stat = "identity"` to create the bars. We specify the position parameter as "identity" for the simple bar chart, "dodge" for the clustered bar chart, and "stack" for the stacked bar chart.
+  - We add labels and titles using labs() to provide context to the plot.
+  - We use theme_minimal() to set a minimal theme for the plot.
+- Finally, we print each plot to display them.
+
+Running this code will generate a simple, clustered, and stacked bar chart using ggplot2, each showing different ways of visualizing the same data. You can customize the appearance of the plots further by adjusting colors, labels, and other aesthetics as needed.
+:::
 
 ### Cross Tabulation
 
