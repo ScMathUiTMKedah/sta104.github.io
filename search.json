@@ -314,7 +314,7 @@
     "href": "06.html",
     "title": "5  Simple Linear Regression",
     "section": "",
-    "text": "5.1 1. Introduction to Simple Linear Regression\nSimple linear regression seeks to find the best-fitting straight line through a set of data points, assuming a linear relationship between the independent variable $ x $ and the dependent variable $ y $. The regression line is represented by the equation:\n$ y = _0 + _1x + $\nWhere: - $ y $ is the dependent variable, - $ x $ is the independent variable, - $ _0 $ is the intercept, - $ _1 $ is the slope, - $ $ is the error term.",
+    "text": "5.1 1. Introduction to Simple Linear Regression\nSimple linear regression seeks to find the best-fitting straight line through a set of data points, assuming a linear relationship between the independent variable \\(x\\) and the dependent variable \\(y\\). The regression line is represented by the equation:\n\\(y = \\beta_0 + \\beta_1x + \\varepsilon\\)\nWhere: - \\(y\\) is the dependent variable, - \\(x\\) is the independent variable, - \\(\\beta_0\\) is the intercept, - \\(\\beta_1\\) is the slope, - \\(\\varepsilon\\) is the error term.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Simple Linear Regression</span>"
     ]
@@ -324,7 +324,7 @@
     "href": "06.html#fitting-the-regression-line",
     "title": "5  Simple Linear Regression",
     "section": "5.2 2. Fitting the Regression Line",
-    "text": "5.2 2. Fitting the Regression Line\nThe regression line is fitted using the method of least squares. The slope $ _1 $ and intercept $ _0 $ are calculated using the formulas:\n$ _1 = $\n$ _0 = {y} - _1{x} $\nWhere: - $ (x_i, y_i) $ are the individual data points, - $ {x} $ and $ {y} $ are the means of $ x $ and $ y $, respectively.",
+    "text": "5.2 2. Fitting the Regression Line\nThe regression line is fitted using the method of least squares. The slope \\(\\beta_1\\) and intercept \\(\\beta_0\\) are calculated using the formulas:\n\\(\\beta_1 = \\frac{{\\sum(x_i - \\bar{x})(y_i - \\bar{y})}}{{\\sum(x_i - \\bar{x})^2}}\\)\n\\(\\beta_0 = \\bar{y} - \\beta_1\\bar{x}\\)\nWhere: - \\((x_i, y_i)\\) are the individual data points, - \\(\\bar{x}\\) and \\(\\bar{y}\\) are the means of \\(x\\) and \\(y\\), respectively.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Simple Linear Regression</span>"
     ]
@@ -334,7 +334,7 @@
     "href": "06.html#assessing-goodness-of-fit",
     "title": "5  Simple Linear Regression",
     "section": "5.3 3. Assessing Goodness of Fit",
-    "text": "5.3 3. Assessing Goodness of Fit\nThe coefficient of determination $ R^2 $ measures the proportion of variance in the dependent variable explained by the independent variable. It ranges from 0 to 1, with higher values indicating a better fit.\n$ R^2 = $\nWhere: - SSR (Sum of Squares Regression) measures explained variation, - SST (Total Sum of Squares) measures total variation.",
+    "text": "5.3 3. Assessing Goodness of Fit\nThe coefficient of determination \\(R^2\\) measures the proportion of variance in the dependent variable explained by the independent variable. It ranges from 0 to 1, with higher values indicating a better fit.\n\\(R^2 = \\frac{{\\text{SSR}}}{{\\text{SST}}}\\)\nWhere: - SSR (Sum of Squares Regression) measures explained variation, - SST (Total Sum of Squares) measures total variation.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Simple Linear Regression</span>"
     ]
@@ -344,7 +344,7 @@
     "href": "06.html#making-predictions",
     "title": "5  Simple Linear Regression",
     "section": "5.4 4. Making Predictions",
-    "text": "5.4 4. Making Predictions\nThe regression line can be used to make predictions for new values of $ x $. Simply plug the new value into the regression equation and calculate the corresponding predicted value of $ y $.",
+    "text": "5.4 4. Making Predictions\nThe regression line can be used to make predictions for new values of \\(x\\). Simply plug the new value into the regression equation and calculate the corresponding predicted value of \\(y\\).",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Simple Linear Regression</span>"
     ]
@@ -354,7 +354,7 @@
     "href": "06.html#example",
     "title": "5  Simple Linear Regression",
     "section": "5.5 Example",
-    "text": "5.5 Example\nSuppose we have the following data:\n# Sample data\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(2, 3, 4, 5, 6)\n\n5.5.1 Fitting the Regression Line\n# Calculate means\nx_bar &lt;- mean(x)\ny_bar &lt;- mean(y)\n\n# Calculate slope\nbeta_1 &lt;- sum((x - x_bar) * (y - y_bar)) / sum((x - x_bar)^2)\n\n# Calculate intercept\nbeta_0 &lt;- y_bar - beta_1 * x_bar\n\n\n5.5.2 Assessing Goodness of Fit\n# Calculate predicted y values\ny_pred &lt;- beta_0 + beta_1 * x\n\n# Calculate SSE\nSSE &lt;- sum((y - y_pred)^2)\n\n# Calculate SST\nSST &lt;- sum((y - y_bar)^2)\n\n# Calculate R^2\nR_squared &lt;- 1 - SSE / SST\n\n\n5.5.3 Making Predictions\n# Predict y for new value of x\nnew_x &lt;- 6\npredicted_y &lt;- beta_0 + beta_1 * new_x\n\n\n5.5.4 Result\n# Using stargazer to display regression results\nlibrary(stargazer)\n\n# Fit linear regression model\nlm_model &lt;- lm(y ~ x)\n\n# Print regression results\nstargazer(lm_model, type = \"text\")\nThis concludes our discussion on simple linear regression. By understanding the principles outlined here, you’ll be equipped to analyze and interpret the relationship between variables and make predictions using regression models.",
+    "text": "5.5 Example\nSuppose we have the following data:\n\n# Sample data\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(2, 3, 4, 5, 6)\n\n\n5.5.1 Fitting the Regression Line\n\n# Calculate means\nx_bar &lt;- mean(x)\ny_bar &lt;- mean(y)\n\n# Calculate slope\nbeta_1 &lt;- sum((x - x_bar) * (y - y_bar)) / sum((x - x_bar)^2)\n\n# Calculate intercept\nbeta_0 &lt;- y_bar - beta_1 * x_bar\n\n\n\n5.5.2 Assessing Goodness of Fit\n\n# Calculate predicted y values\ny_pred &lt;- beta_0 + beta_1 * x\n\n# Calculate SSE\nSSE &lt;- sum((y - y_pred)^2)\n\n# Calculate SST\nSST &lt;- sum((y - y_bar)^2)\n\n# Calculate R^2\nR_squared &lt;- 1 - SSE / SST\n\n\n\n5.5.3 Making Predictions\n\n# Predict y for new value of x\nnew_x &lt;- 6\npredicted_y &lt;- beta_0 + beta_1 * new_x\n\n\n\n5.5.4 Result\n\n# Using stargazer to display regression results\nlibrary(stargazer)\n\n# Fit linear regression model\nlm_model &lt;- lm(y ~ x)\n\n# Print regression results\nstargazer(lm_model, type = \"text\")\n\n\n=================================================================================\n                                         Dependent variable:                     \n                    -------------------------------------------------------------\n                                                  y                              \n---------------------------------------------------------------------------------\nx                                             1.000***                           \n                                               (0.000)                           \n                                                                                 \nConstant                                      1.000***                           \n                                               (0.000)                           \n                                                                                 \n---------------------------------------------------------------------------------\nObservations                                      5                              \nR2                                              1.000                            \nAdjusted R2                                     1.000                            \nResidual Std. Error                        0.000 (df = 3)                        \nF Statistic         20,981,803,038,260,350,112,097,040,859,136.000*** (df = 1; 3)\n=================================================================================\nNote:                                                 *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01\n\n\nThis concludes our discussion on simple linear regression. By understanding the principles outlined here, you’ll be equipped to analyze and interpret the relationship between variables and make predictions using regression models.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Simple Linear Regression</span>"
     ]

@@ -103,6 +103,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -231,36 +260,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this chapter, we explore the concept of simple linear regression, a statistical method used to model the relationship between a single independent variable (predictor) and a dependent variable (response). We cover the theory behind simple linear regression, how to fit a regression line to data, assess the goodness of fit, and make predictions using the regression model.</p>
 <section id="introduction-to-simple-linear-regression" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="introduction-to-simple-linear-regression"><span class="header-section-number">5.1</span> 1. Introduction to Simple Linear Regression</h2>
-<p>Simple linear regression seeks to find the best-fitting straight line through a set of data points, assuming a linear relationship between the independent variable $ x $ and the dependent variable $ y $. The regression line is represented by the equation:</p>
-<p>$ y = _0 + _1x + $</p>
-<p>Where: - $ y $ is the dependent variable, - $ x $ is the independent variable, - $ _0 $ is the intercept, - $ _1 $ is the slope, - $ $ is the error term.</p>
+<p>Simple linear regression seeks to find the best-fitting straight line through a set of data points, assuming a linear relationship between the independent variable <span class="math inline">\(x\)</span> and the dependent variable <span class="math inline">\(y\)</span>. The regression line is represented by the equation:</p>
+<p><span class="math inline">\(y = \beta_0 + \beta_1x + \varepsilon\)</span></p>
+<p>Where: - <span class="math inline">\(y\)</span> is the dependent variable, - <span class="math inline">\(x\)</span> is the independent variable, - <span class="math inline">\(\beta_0\)</span> is the intercept, - <span class="math inline">\(\beta_1\)</span> is the slope, - <span class="math inline">\(\varepsilon\)</span> is the error term.</p>
 </section>
 <section id="fitting-the-regression-line" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="fitting-the-regression-line"><span class="header-section-number">5.2</span> 2. Fitting the Regression Line</h2>
-<p>The regression line is fitted using the method of least squares. The slope $ _1 $ and intercept $ _0 $ are calculated using the formulas:</p>
-<p>$ _1 = $</p>
-<p>$ _0 = {y} - _1{x} $</p>
-<p>Where: - $ (x_i, y_i) $ are the individual data points, - $ {x} $ and $ {y} $ are the means of $ x $ and $ y $, respectively.</p>
+<p>The regression line is fitted using the method of least squares. The slope <span class="math inline">\(\beta_1\)</span> and intercept <span class="math inline">\(\beta_0\)</span> are calculated using the formulas:</p>
+<p><span class="math inline">\(\beta_1 = \frac{{\sum(x_i - \bar{x})(y_i - \bar{y})}}{{\sum(x_i - \bar{x})^2}}\)</span></p>
+<p><span class="math inline">\(\beta_0 = \bar{y} - \beta_1\bar{x}\)</span></p>
+<p>Where: - <span class="math inline">\((x_i, y_i)\)</span> are the individual data points, - <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> are the means of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, respectively.</p>
 </section>
 <section id="assessing-goodness-of-fit" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="assessing-goodness-of-fit"><span class="header-section-number">5.3</span> 3. Assessing Goodness of Fit</h2>
-<p>The coefficient of determination $ R^2 $ measures the proportion of variance in the dependent variable explained by the independent variable. It ranges from 0 to 1, with higher values indicating a better fit.</p>
-<p>$ R^2 = $</p>
+<p>The coefficient of determination <span class="math inline">\(R^2\)</span> measures the proportion of variance in the dependent variable explained by the independent variable. It ranges from 0 to 1, with higher values indicating a better fit.</p>
+<p><span class="math inline">\(R^2 = \frac{{\text{SSR}}}{{\text{SST}}}\)</span></p>
 <p>Where: - SSR (Sum of Squares Regression) measures explained variation, - SST (Total Sum of Squares) measures total variation.</p>
 </section>
 <section id="making-predictions" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="making-predictions"><span class="header-section-number">5.4</span> 4. Making Predictions</h2>
-<p>The regression line can be used to make predictions for new values of $ x $. Simply plug the new value into the regression equation and calculate the corresponding predicted value of $ y $.</p>
+<p>The regression line can be used to make predictions for new values of <span class="math inline">\(x\)</span>. Simply plug the new value into the regression equation and calculate the corresponding predicted value of <span class="math inline">\(y\)</span>.</p>
 </section>
 <section id="example" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="example"><span class="header-section-number">5.5</span> Example</h2>
 <p>Suppose we have the following data:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="fitting-the-regression-line-1" class="level3" data-number="5.5.1">
 <h3 data-number="5.5.1" class="anchored" data-anchor-id="fitting-the-regression-line-1"><span class="header-section-number">5.5.1</span> Fitting the Regression Line</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate means</span></span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate means</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x_bar <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y_bar <span class="ot">&lt;-</span> <span class="fu">mean</span>(y)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -269,10 +301,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate intercept</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>beta_0 <span class="ot">&lt;-</span> y_bar <span class="sc">-</span> beta_1 <span class="sc">*</span> x_bar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="assessing-goodness-of-fit-1" class="level3" data-number="5.5.2">
 <h3 data-number="5.5.2" class="anchored" data-anchor-id="assessing-goodness-of-fit-1"><span class="header-section-number">5.5.2</span> Assessing Goodness of Fit</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate predicted y values</span></span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate predicted y values</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="ot">&lt;-</span> beta_0 <span class="sc">+</span> beta_1 <span class="sc">*</span> x</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate SSE</span></span>
@@ -283,16 +317,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate R^2</span></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>R_squared <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> SSE <span class="sc">/</span> SST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="making-predictions-1" class="level3" data-number="5.5.3">
 <h3 data-number="5.5.3" class="anchored" data-anchor-id="making-predictions-1"><span class="header-section-number">5.5.3</span> Making Predictions</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict y for new value of x</span></span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict y for new value of x</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>new_x <span class="ot">&lt;-</span> <span class="dv">6</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>predicted_y <span class="ot">&lt;-</span> beta_0 <span class="sc">+</span> beta_1 <span class="sc">*</span> new_x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="result" class="level3" data-number="5.5.4">
 <h3 data-number="5.5.4" class="anchored" data-anchor-id="result"><span class="header-section-number">5.5.4</span> Result</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using stargazer to display regression results</span></span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using stargazer to display regression results</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit linear regression model</span></span>
@@ -300,6 +338,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print regression results</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(lm_model, <span class="at">type =</span> <span class="st">"text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+=================================================================================
+                                         Dependent variable:                     
+                    -------------------------------------------------------------
+                                                  y                              
+---------------------------------------------------------------------------------
+x                                             1.000***                           
+                                               (0.000)                           
+                                                                                 
+Constant                                      1.000***                           
+                                               (0.000)                           
+                                                                                 
+---------------------------------------------------------------------------------
+Observations                                      5                              
+R2                                              1.000                            
+Adjusted R2                                     1.000                            
+Residual Std. Error                        0.000 (df = 3)                        
+F Statistic         20,981,803,038,260,350,112,097,040,859,136.000*** (df = 1; 3)
+=================================================================================
+Note:                                                 *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+</div>
 <p>This concludes our discussion on simple linear regression. By understanding the principles outlined here, you’ll be equipped to analyze and interpret the relationship between variables and make predictions using regression models.</p>
 
 
