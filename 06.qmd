@@ -114,13 +114,15 @@ stargazer(lm_model, type = "text")
 
 This concludes our discussion on simple linear regression. By understanding the principles outlined here, you'll be equipped to analyze and interpret the relationship between variables and make predictions using regression models.
 
+## Solved Examples
+
 ::: {.callout}
-## Solved Example 1
+## Solved Example 1  
 
-The following data shows the time taken for special tutorial in hours and exam score (out of 100) for a random sample of 10 students.
+The following data shows the time taken for special tutorial in hours and exam score (out of 100) for a random sample of 10 students.  
 
-Time: 10, 15, 12, 20, 8, 16, 14, 18, 12, 22.
-Score: 76, 81, 79, 89, 70, 80, 78, 82, 81, 91
+Time: 10, 15, 12, 20, 8, 16, 14, 18, 12, 22.  
+Score: 76, 81, 79, 89, 70, 80, 78, 82, 81, 91  
 
 ```{r}
 # Given data
@@ -129,9 +131,9 @@ score <- c(76, 81, 79, 89, 70, 80, 78, 82, 81, 91)
 
 # Plot scatter plot
 plot(time, score, 
-     xlab = "Time (hours)", 
-     ylab = "Exam Score", 
-     main = "Scatter Plot",
+     xlab = "Time (in hours)", 
+     ylab = "Exam Score (out of 100", 
+     main = "Scatterplot of Exam Score against Time Taken (in hours) for Special Tutorial",
      pch = 16, 
      col = "blue")
 
@@ -151,6 +153,9 @@ f) Calculate the value of the coefficient of determination. Interpret the meanin
 (2 marks)
 g) Predict a person exam score if he has attended special tutorial for 15 hours and 45 minutes. (3 marks)
 :::
+
+::: {.callout}
+## Suggested Procedures on How to Solved?  
 
 a) Relationship between the two variables
 
@@ -207,31 +212,35 @@ Where:
 
 g) Predicting exam score
 To predict the exam score for a given time taken for special tutorial, we use the regression equation obtained in part (c).
+:::
 
-*Let's proceed with the calculations.*
+::: {.callout}
+## Solution  
 
 a) Relationship between the two variables
 
-Based on the scatter plot of the data points, we can observe the pattern and direction of the relationship between the time taken for special tutorial and the exam score. If the points tend to form a straight line sloping upwards from left to right, it indicates a positive linear relationship between the variables. Conversely, if the points tend to form a straight line sloping downwards from left to right, it indicates a negative linear relationship. Additionally, if the points are scattered without any apparent pattern, it suggests a weak or no relationship between the variables.
+Based on the scatter plot of the data points, we can observe the pattern and direction of the relationship between the time taken for special tutorial and the exam score. If the points tend to form a straight line sloping upwards from left to right, it indicates a positive linear relationship between the variables. Conversely, if the points tend to form a straight line sloping downwards from left to right, it indicates a negative linear relationship. Additionally, if the points are scattered without any apparent pattern, it suggests a weak or no relationship between the variables. Hence, for this example, the relationship is **strong positive linear relationship**.
 
 b) Pearson Product Moment Correlation Coefficient
-Given data:
-Time: 10, 15, 12, 20, 8, 16, 14, 18, 12, 22
-Score: 76, 81, 79, 89, 70, 80, 78, 82, 81, 91
+
+Given data:  
+Time: 10, 15, 12, 20, 8, 16, 14, 18, 12, 22  
+Score: 76, 81, 79, 89, 70, 80, 78, 82, 81, 91  
 
 Let's calculate the Pearson correlation coefficient ($r$):
 
 First, we need to calculate the sums:
 $$\sum x = 10 + 15 + 12 + 20 + 8 + 16 + 14 + 18 + 12 + 22 = 147$$
 $$\sum y = 76 + 81 + 79 + 89 + 70 + 80 + 78 + 82 + 81 + 91 = 807$$
-$$\sum xy = (10 \times 76) + (15 \times 81) + (12 \times 79) + \dots + (22 \times 91) = 15259$$
-$$\sum x^2 = 10^2 + 15^2 + 12^2 + \dots + 22^2 = 2365$$
-$$\sum y^2 = 76^2 + 81^2 + 79^2 + \dots + 91^2 = 64209$$
+$$\sum xy = (10 \times 76) + (15 \times 81) + (12 \times 79) + \dots + (22 \times 91) = 12085$$
+$$\sum x^2 = 10^2 + 15^2 + 12^2 + \dots + 22^2 = 2337$$
+$$\sum y^2 = 76^2 + 81^2 + 79^2 + \dots + 91^2 = 65449$$
 
 Now, we substitute these values into the formula for $r$:
-$$r = \frac{{10(15259) - (147)(807)}}{{\sqrt{(10 \times 2365 - 147^2)(10 \times 64209 - 807^2)}}}$$
+$$r = \frac{{10(12085) - (147)(807)}}{{\sqrt{(10 \times 2337 - 147^2)(10 \times 65449 - 807^2)}}} = 0.9297$$
 
-After calculating, we get the value of $r$.
+After calculating, we get the value of $r = 0.9297$.
+Explanation: *There exist a very strong positive linear relationship between exam score and time*.  
 
 c) Least Squares Regression Equation
 
@@ -241,22 +250,22 @@ $$b = \frac{{n(\sum xy) - (\sum x)(\sum y)}}{{n\sum x^2 - (\sum x)^2}}$$
 $$a = \frac{{\sum y - b(\sum x)}}{n}$$
 
 Using the sums calculated in part (b):
-$$\sum x = 147, \sum y = 807, \sum xy = 15259, \sum x^2 = 2365, \sum y^2 = 64209$$
+$$\sum x = 147, \sum y = 807, \sum xy = 12085, \sum x^2 = 2337, \sum y^2 = 65449$$
 and $n = 10$,
 
 Substitute the values into the formulas:
 
-$$b = \frac{{10(15259) - (147)(807)}}{{10(2365) - (147)^2}}$$
-$$b = \frac{{152590 - 118929}}{{23650 - 21609}}$$
+$$b = \frac{{10(12085) - (147)(807)}}{{10(2337) - (147)^2}}$$
+$$b = \frac{{120850 - 118929}}{{23370 - 21609}}$$
 $$b = \frac{{33661}}{{2041}}$$
-$$b \approx 16.47$$
+$$b \approx 1.26$$
 
-$$a = \frac{{807 - (16.47)(147)}}{{10}}$$
+$$a = \frac{{807 - (1.26)(147)}}{{10}}$$
 $$a = \frac{{807 - 2421.09}}{{10}}$$
-$$a \approx -161.91$$
+$$a \approx 62.18$$
 
 So, the least squares regression equation is:
-$$\hat{y} = -161.91 + 16.47x$$
+$$\hat{y} = 62.18 + 1.26x$$
 
 d) Interpreting the intercept value
 
@@ -271,7 +280,7 @@ f) Coefficient of Determination
 To calculate $R^2$, we need to first calculate the predicted values of exam scores ($\hat{y}$) using the regression equation.
 
 For each data point:
-$$\hat{y}_i = -161.91 + 16.47x_i$$
+$$\hat{y}_i = 62.18 + 1.26x_i$$
 
 Then, we calculate the sum of squares regression (SSR) and total sum of squares (SST) to find $R^2$.
 
@@ -282,22 +291,22 @@ Where $\bar{y}$ is the mean of the exam scores.
 
 After calculating SSR and SST, we can find $R^2$ using the formula:
 
-$$R^2 = \frac{{SSR}}{{SST}}$$
+$$R^2 = \frac{{SSR}}{{SST}}\ ,\ or\ = r^2\ = 0.9297^2 = 0.863$$
+Explanation: $86.4\%$ of the total variation in exam score can be explained by the variation in time spent (in hours) for special tutorial.
 
 g) Predicting exam score
 
 To predict the exam score for a given time taken for special tutorial, let's say $x = 15.75$ (15 hours and 45 minutes), we use the regression equation:
 
-$$\hat{y} = -161.91 + 16.47(15.75)$$
+$$\hat{y} = 62.18 + 1.26(15.75)$$
 
 Now, let's perform the calculations:
 
-$$\hat{y} = -161.91 + 16.47 \times 15.75$$
-$$\hat{y} = -161.91 + 258.8925$$
-$$\hat{y} \approx 96.9825$$
+$$\hat{y} = 62.18 + 1.26 \times 15.75$$
+$$\hat{y} = 82.025 \approx 82$$
 
-So, the predicted exam score for a time of 15 hours and 45 minutes is approximately $96.9825$.
-
+So, the predicted exam score for a time of 15 hours and 45 minutes is approximately $82$.
+:::
 
 
 
