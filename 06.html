@@ -232,6 +232,7 @@ window.Quarto = {
   <li><a href="#making-predictions-1" id="toc-making-predictions-1" class="nav-link" data-scroll-target="#making-predictions-1"><span class="header-section-number">5.5.3</span> Making Predictions</a></li>
   <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result"><span class="header-section-number">5.5.4</span> Result</a></li>
   </ul></li>
+  <li><a href="#solved-examples" id="toc-solved-examples" class="nav-link" data-scroll-target="#solved-examples"><span class="header-section-number">5.6</span> Solved Examples</a></li>
   </ul>
 </nav>
     </div>
@@ -366,6 +367,10 @@ Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 </div>
 </div>
 <p>This concludes our discussion on simple linear regression. By understanding the principles outlined here, you’ll be equipped to analyze and interpret the relationship between variables and make predictions using regression models.</p>
+</section>
+</section>
+<section id="solved-examples" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="solved-examples"><span class="header-section-number">5.6</span> Solved Examples</h2>
 <div class="callout callout-style-simple callout-none no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -377,7 +382,8 @@ Solved Example 1
 </div>
 <div class="callout-body-container callout-body">
 <p>The following data shows the time taken for special tutorial in hours and exam score (out of 100) for a random sample of 10 students.</p>
-<p>Time: 10, 15, 12, 20, 8, 16, 14, 18, 12, 22. Score: 76, 81, 79, 89, 70, 80, 78, 82, 81, 91</p>
+<p>Time: 10, 15, 12, 20, 8, 16, 14, 18, 12, 22.<br>
+Score: 76, 81, 79, 89, 70, 80, 78, 82, 81, 91</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Given data</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">20</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">18</span>, <span class="dv">12</span>, <span class="dv">22</span>)</span>
@@ -385,9 +391,9 @@ Solved Example 1
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot scatter plot</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(time, score, </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Time (hours)"</span>, </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Exam Score"</span>, </span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Scatter Plot"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Time (in hours)"</span>, </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Exam Score (out of 100"</span>, </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Scatterplot of Exam Score against Time Taken (in hours) for Special Tutorial"</span>,</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, </span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -409,6 +415,16 @@ Solved Example 1
 </ol>
 </div>
 </div>
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggested Procedures on How to Solved?
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>Relationship between the two variables</li>
 </ol>
@@ -440,28 +456,42 @@ r = \frac{{n(\sum xy) - (\sum x)(\sum y)}}{{\sqrt{[n\sum x^2 - (\sum x)^2][n\sum
 <ol start="7" type="a">
 <li>Predicting exam score To predict the exam score for a given time taken for special tutorial, we use the regression equation obtained in part (c).</li>
 </ol>
-<p><em>Let’s proceed with the calculations.</em></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>Relationship between the two variables</li>
 </ol>
-<p>Based on the scatter plot of the data points, we can observe the pattern and direction of the relationship between the time taken for special tutorial and the exam score. If the points tend to form a straight line sloping upwards from left to right, it indicates a positive linear relationship between the variables. Conversely, if the points tend to form a straight line sloping downwards from left to right, it indicates a negative linear relationship. Additionally, if the points are scattered without any apparent pattern, it suggests a weak or no relationship between the variables.</p>
+<p>Based on the scatter plot of the data points, we can observe the pattern and direction of the relationship between the time taken for special tutorial and the exam score. If the points tend to form a straight line sloping upwards from left to right, it indicates a positive linear relationship between the variables. Conversely, if the points tend to form a straight line sloping downwards from left to right, it indicates a negative linear relationship. Additionally, if the points are scattered without any apparent pattern, it suggests a weak or no relationship between the variables. Hence, for this example, the relationship is <strong>strong positive linear relationship</strong>.</p>
 <ol start="2" type="a">
-<li>Pearson Product Moment Correlation Coefficient Given data: Time: 10, 15, 12, 20, 8, 16, 14, 18, 12, 22 Score: 76, 81, 79, 89, 70, 80, 78, 82, 81, 91</li>
+<li>Pearson Product Moment Correlation Coefficient</li>
 </ol>
+<p>Given data:<br>
+Time: 10, 15, 12, 20, 8, 16, 14, 18, 12, 22<br>
+Score: 76, 81, 79, 89, 70, 80, 78, 82, 81, 91</p>
 <p>Let’s calculate the Pearson correlation coefficient (<span class="math inline">\(r\)</span>):</p>
-<p>First, we need to calculate the sums: <span class="math display">\[\sum x = 10 + 15 + 12 + 20 + 8 + 16 + 14 + 18 + 12 + 22 = 147\]</span> <span class="math display">\[\sum y = 76 + 81 + 79 + 89 + 70 + 80 + 78 + 82 + 81 + 91 = 807\]</span> <span class="math display">\[\sum xy = (10 \times 76) + (15 \times 81) + (12 \times 79) + \dots + (22 \times 91) = 15259\]</span> <span class="math display">\[\sum x^2 = 10^2 + 15^2 + 12^2 + \dots + 22^2 = 2365\]</span> <span class="math display">\[\sum y^2 = 76^2 + 81^2 + 79^2 + \dots + 91^2 = 64209\]</span></p>
-<p>Now, we substitute these values into the formula for <span class="math inline">\(r\)</span>: <span class="math display">\[r = \frac{{10(15259) - (147)(807)}}{{\sqrt{(10 \times 2365 - 147^2)(10 \times 64209 - 807^2)}}}\]</span></p>
-<p>After calculating, we get the value of <span class="math inline">\(r\)</span>.</p>
+<p>First, we need to calculate the sums: <span class="math display">\[\sum x = 10 + 15 + 12 + 20 + 8 + 16 + 14 + 18 + 12 + 22 = 147\]</span> <span class="math display">\[\sum y = 76 + 81 + 79 + 89 + 70 + 80 + 78 + 82 + 81 + 91 = 807\]</span> <span class="math display">\[\sum xy = (10 \times 76) + (15 \times 81) + (12 \times 79) + \dots + (22 \times 91) = 12085\]</span> <span class="math display">\[\sum x^2 = 10^2 + 15^2 + 12^2 + \dots + 22^2 = 2337\]</span> <span class="math display">\[\sum y^2 = 76^2 + 81^2 + 79^2 + \dots + 91^2 = 65449\]</span></p>
+<p>Now, we substitute these values into the formula for <span class="math inline">\(r\)</span>: <span class="math display">\[r = \frac{{10(12085) - (147)(807)}}{{\sqrt{(10 \times 2337 - 147^2)(10 \times 65449 - 807^2)}}} = 0.9297\]</span></p>
+<p>After calculating, we get the value of <span class="math inline">\(r = 0.9297\)</span>. Explanation: <em>There exist a very strong positive linear relationship between exam score and time</em>.</p>
 <ol start="3" type="a">
 <li>Least Squares Regression Equation</li>
 </ol>
 <p>To find the least squares regression equation, we need to calculate the slope (<span class="math inline">\(b\)</span>) and intercept (<span class="math inline">\(a\)</span>).</p>
 <p><span class="math display">\[b = \frac{{n(\sum xy) - (\sum x)(\sum y)}}{{n\sum x^2 - (\sum x)^2}}\]</span> <span class="math display">\[a = \frac{{\sum y - b(\sum x)}}{n}\]</span></p>
-<p>Using the sums calculated in part (b): <span class="math display">\[\sum x = 147, \sum y = 807, \sum xy = 15259, \sum x^2 = 2365, \sum y^2 = 64209\]</span> and <span class="math inline">\(n = 10\)</span>,</p>
+<p>Using the sums calculated in part (b): <span class="math display">\[\sum x = 147, \sum y = 807, \sum xy = 12085, \sum x^2 = 2337, \sum y^2 = 65449\]</span> and <span class="math inline">\(n = 10\)</span>,</p>
 <p>Substitute the values into the formulas:</p>
-<p><span class="math display">\[b = \frac{{10(15259) - (147)(807)}}{{10(2365) - (147)^2}}\]</span> <span class="math display">\[b = \frac{{152590 - 118929}}{{23650 - 21609}}\]</span> <span class="math display">\[b = \frac{{33661}}{{2041}}\]</span> <span class="math display">\[b \approx 16.47\]</span></p>
-<p><span class="math display">\[a = \frac{{807 - (16.47)(147)}}{{10}}\]</span> <span class="math display">\[a = \frac{{807 - 2421.09}}{{10}}\]</span> <span class="math display">\[a \approx -161.91\]</span></p>
-<p>So, the least squares regression equation is: <span class="math display">\[\hat{y} = -161.91 + 16.47x\]</span></p>
+<p><span class="math display">\[b = \frac{{10(12085) - (147)(807)}}{{10(2337) - (147)^2}}\]</span> <span class="math display">\[b = \frac{{120850 - 118929}}{{23370 - 21609}}\]</span> <span class="math display">\[b = \frac{{33661}}{{2041}}\]</span> <span class="math display">\[b \approx 1.26\]</span></p>
+<p><span class="math display">\[a = \frac{{807 - (1.26)(147)}}{{10}}\]</span> <span class="math display">\[a = \frac{{807 - 2421.09}}{{10}}\]</span> <span class="math display">\[a \approx 62.18\]</span></p>
+<p>So, the least squares regression equation is: <span class="math display">\[\hat{y} = 62.18 + 1.26x\]</span></p>
 <ol start="4" type="a">
 <li>Interpreting the intercept value</li>
 </ol>
@@ -474,23 +504,24 @@ r = \frac{{n(\sum xy) - (\sum x)(\sum y)}}{{\sqrt{[n\sum x^2 - (\sum x)^2][n\sum
 <li>Coefficient of Determination</li>
 </ol>
 <p>To calculate <span class="math inline">\(R^2\)</span>, we need to first calculate the predicted values of exam scores (<span class="math inline">\(\hat{y}\)</span>) using the regression equation.</p>
-<p>For each data point: <span class="math display">\[\hat{y}_i = -161.91 + 16.47x_i\]</span></p>
+<p>For each data point: <span class="math display">\[\hat{y}_i = 62.18 + 1.26x_i\]</span></p>
 <p>Then, we calculate the sum of squares regression (SSR) and total sum of squares (SST) to find <span class="math inline">\(R^2\)</span>.</p>
 <p><span class="math display">\[SSR = \sum (\hat{y}_i - \bar{y})^2\]</span> <span class="math display">\[SST = \sum (y_i - \bar{y})^2\]</span></p>
 <p>Where <span class="math inline">\(\bar{y}\)</span> is the mean of the exam scores.</p>
 <p>After calculating SSR and SST, we can find <span class="math inline">\(R^2\)</span> using the formula:</p>
-<p><span class="math display">\[R^2 = \frac{{SSR}}{{SST}}\]</span></p>
+<p><span class="math display">\[R^2 = \frac{{SSR}}{{SST}}\ ,\ or\ = r^2\ = 0.9297^2 = 0.863\]</span> Explanation: <span class="math inline">\(86.4\%\)</span> of the total variation in exam score can be explained by the variation in time spent (in hours) for special tutorial.</p>
 <ol start="7" type="a">
 <li>Predicting exam score</li>
 </ol>
 <p>To predict the exam score for a given time taken for special tutorial, let’s say <span class="math inline">\(x = 15.75\)</span> (15 hours and 45 minutes), we use the regression equation:</p>
-<p><span class="math display">\[\hat{y} = -161.91 + 16.47(15.75)\]</span></p>
+<p><span class="math display">\[\hat{y} = 62.18 + 1.26(15.75)\]</span></p>
 <p>Now, let’s perform the calculations:</p>
-<p><span class="math display">\[\hat{y} = -161.91 + 16.47 \times 15.75\]</span> <span class="math display">\[\hat{y} = -161.91 + 258.8925\]</span> <span class="math display">\[\hat{y} \approx 96.9825\]</span></p>
-<p>So, the predicted exam score for a time of 15 hours and 45 minutes is approximately <span class="math inline">\(96.9825\)</span>.</p>
+<p><span class="math display">\[\hat{y} = 62.18 + 1.26 \times 15.75\]</span> <span class="math display">\[\hat{y} = 82.025 \approx 82\]</span></p>
+<p>So, the predicted exam score for a time of 15 hours and 45 minutes is approximately <span class="math inline">\(82\)</span>.</p>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
