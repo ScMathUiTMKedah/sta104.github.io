@@ -117,7 +117,7 @@ This concludes our discussion on simple linear regression. By understanding the 
 ## Solved Examples
 
 ::: {.callout}
-## Solved Example 1  
+# Solved Example 1  
 
 The following data shows the time taken for special tutorial in hours and exam score (out of 100) for a random sample of 10 students.  
 
@@ -155,7 +155,7 @@ g) Predict a person exam score if he has attended special tutorial for 15 hours 
 :::
 
 ::: {.callout}
-## Suggested Procedures on How to Solved?  
+# Suggested Procedures on How to Solved?  
 
 a) Relationship between the two variables
 
@@ -202,20 +202,26 @@ The slope ($b$) represents the change in the dependent variable ($y$) for a one-
 f) Coefficient of Determination
 The coefficient of determination ($R^2$) measures the proportion of the variance in the dependent variable that is predictable from the independent variable. It ranges from 0 to 1, where higher values indicate a better fit of the regression line to the data.
 
+$$R^2 = r^2$$  
+**_Note:_** The $R^2$ value is reported in decimals, but the explanation is in $/%$.
+
+::: {.column-margin}
+Alternative formula for $R^2$.
+
 $$R^2 = \frac{{SSR}}{{SST}}$$
 
 Where:
-- SSR (Sum of Squares Regression) measures explained variation,
-- SST (Total Sum of Squares) measures total variation.
 
-**_Note:_** It is much easier to calculate the value by squaring the value of $r$ if available.
+- SSR (Sum of Squares Regression) measures explained variation,  
+- SST (Total Sum of Squares) measures total variation.
+:::
 
 g) Predicting exam score
 To predict the exam score for a given time taken for special tutorial, we use the regression equation obtained in part (c).
 :::
 
 ::: {.callout}
-## Solution  
+# Solution  
 
 a) Relationship between the two variables
 
@@ -269,29 +275,21 @@ $$\hat{y} = 62.18 + 1.26x$$
 
 d) Interpreting the intercept value
 
-The intercept ($a$) represents the predicted exam score when the time taken for special tutorial is zero. It indicates the initial level of performance on the exam without any time spent on special tutorial.
+Intercept = 62.18.
+
+This indicate that if a student does not attend any special tutorial
+(i.e., x = 0), then he or she will obtain an exam score of 62.18.
 
 e) Interpreting the slope value
 
-The slope ($b$) represents the change in the exam score for a one-unit change in the time taken for special tutorial. It indicates the rate of change in the exam score with respect to the time spent on special tutorial.
+Slope, b = 1.26.
+
+For each additional hours spent for special tutorial, the exam
+score will increase by 1.26 mark.
 
 f) Coefficient of Determination
 
-To calculate $R^2$, we need to first calculate the predicted values of exam scores ($\hat{y}$) using the regression equation.
-
-For each data point:
-$$\hat{y}_i = 62.18 + 1.26x_i$$
-
-Then, we calculate the sum of squares regression (SSR) and total sum of squares (SST) to find $R^2$.
-
-$$SSR = \sum (\hat{y}_i - \bar{y})^2$$
-$$SST = \sum (y_i - \bar{y})^2$$
-
-Where $\bar{y}$ is the mean of the exam scores.
-
-After calculating SSR and SST, we can find $R^2$ using the formula:
-
-$$R^2 = \frac{{SSR}}{{SST}}\ ,\ or\ = r^2\ = 0.9297^2 = 0.863$$
+$$R^2 = r^2\ = 0.9297^2 = 0.864$$
 Explanation: $86.4\%$ of the total variation in exam score can be explained by the variation in time spent (in hours) for special tutorial.
 
 g) Predicting exam score
@@ -299,16 +297,109 @@ g) Predicting exam score
 To predict the exam score for a given time taken for special tutorial, let's say $x = 15.75$ (15 hours and 45 minutes), we use the regression equation:
 
 $$\hat{y} = 62.18 + 1.26(15.75)$$
-
-Now, let's perform the calculations:
-
-$$\hat{y} = 62.18 + 1.26 \times 15.75$$
 $$\hat{y} = 82.025 \approx 82$$
 
 So, the predicted exam score for a time of 15 hours and 45 minutes is approximately $82$.
 :::
 
+::: {.callout}
+# Solved Example 2
 
+A manager desires to know whether the typing speed of a secretary (in words per minute) is related to the time (in hours) that it takes the secretary to learn to use a new word processing program. The data are recorded as follows:\
+
+| Speed (words per minute) | Time (in hours) |
+|:------------------------:|:---------------:|
+|            48            |        7        |
+|            74            |        4        |
+|            52            |        8        |
+|            79            |       3.5       |
+|            83            |        2        |
+|            56            |        6        |
+|            85            |       2.3       |
+|            63            |        5        |
+|            88            |       2.1       |
+|            74            |       4.5       |
+|            90            |       1.9       |
+|            92            |       1.5       |
+
+a) State the independent and dependent variables. (2 marks)\
+b) Draw a scatter diagram of the recorded data. (3 marks)\
+c) Calculate the Pearson Product Moment Correlation coefficient and explain the result obtained. (5 marks)\
+d) Calculate the regression equation line and draw it on your scatter diagram. (6 marks)\
+e) Explain the meaning of the slope coefficient value obtained in (d). (1 mark)\
+f) Predict the time it will take the average secretary who has a typing speed of 70 words per minute to learn the word processing program. (3 marks)\
+
+**Solution**\
+
+a)\
+Independent variable: Speed (words per minute)\                             Dependent variable: Time (hours)\
+
+b)\
+```{r}
+# Given data 
+speed <- c(48,74,52,79,83,56,85,63,88,74,90,92) 
+time <- c(7,4,8,3.5,2,6,2.3,5,2.1,4.5,1.9,1.5)                              
+
+# Plot scatter plot
+plot(speed,time, 
+     xlab = "Speed (words per minute)", 
+     ylab = "Time (in hours)", 
+     main = "The scatter diagram between the typing speed of a secretary and the time that it takes the secretary to learn to use a new word processing program", 
+     pch = 16, 
+     col = "blue")
+```
+
+c)\
+$\sum{x} = 48+74+52+...+74+90+92 = 884$                                    $\sum{y} = 7+4+8+...+4.5+1.9+1.5=47.8$                                     $\sum{x^2} = 48^2+74^2+52^2+...+74^2+90^2+92^2 = 67,728$                   $\sum{y^2} = 7^2+4^2+8^2+...+4.5^2+1.9^2+1.5^2=242.06$                     $\sum{xy} = (48 \times 7) + (74 \times 4) + ... + (90 \times 1.9) + (92 \times 1.5) = 3,163.8$                                                     $n=12$                                                                                                                                                $$r = \frac{{12(3,163.8) - (884)(47.8)}}{{\sqrt{(12 \times 67,728 - 884^2)(12 \times 242.06 - 47.8^2)}}} = 0.9742$$                             
+
+There is a **very** **strong negative** linear relationship between the typing speed of a secretary and the time that it takes the secretary to learn to use a new word processing program.\
+
+d)\
+$$
+\begin{aligned}
+y &= a + bx\\
+\\
+b &= \frac{{n(\sum xy) - (\sum x)(\sum y)}}{{n\sum x^2 - (\sum x)^2}}\\
+&= \frac{12(3,163.8) - (884)(47.8)}{12(67,728) - 884^2}\\
+&= −0.1371 \\
+\\
+a &= \frac{\sum{y}}{n} - b\frac{\sum{x}}{n}\\
+&= \frac{47.8}{12} - (-0.1371)\frac{884}{12}\\
+&= 14.0857\\
+\\
+∴𝑦 &= 14.0857 − 0.1371x
+\end{aligned}
+$$
+
+```{r}
+# Given data 
+speed <- c(48,74,52,79,83,56,85,63,88,74,90,92) 
+time <- c(7,4,8,3.5,2,6,2.3,5,2.1,4.5,1.9,1.5)
+
+# Plot scatter plot
+plot(speed, time, 
+     xlab = "Speed (words per minute)", 
+     ylab = "Time (in hours)", 
+     main = "The scatter diagram between the typing speed of a secretary and the time that it takes the secretary to learn to use a new word processing program", 
+     pch = 16, 
+     col = "blue")
+
+# Calculate regression line
+regression <- lm(time ~ speed)
+
+# Add regression line to the plot
+abline(regression, col = "red")
+
+# Label regression equation
+text(15, 85, paste("Regression equation: y =", round(regression$coef[1], 2), "+", round(regression$coef[2], 2), "x"), col = "red")
+```
+
+e)\
+For every 10 words increase in typing speed per minute, the time it takes a secretary to learn to use a new word processing program decreased by 1.371 hours.\
+
+f)\
+$y = 14.0857 − 0.1371(70) = 4.4887$ 
+:::
 
 
 
