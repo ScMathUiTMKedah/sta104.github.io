@@ -135,7 +135,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -237,7 +237,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -369,7 +369,7 @@ Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 <p>This concludes our discussion on simple linear regression. By understanding the principles outlined here, you’ll be equipped to analyze and interpret the relationship between variables and make predictions using regression models.</p>
 </section>
 </section>
-<section id="solved-examples" class="level2" data-number="5.6">
+<section id="solved-examples" class="level2 page-columns page-full" data-number="5.6">
 <h2 data-number="5.6" class="anchored" data-anchor-id="solved-examples"><span class="header-section-number">5.6</span> Solved Examples</h2>
 <div class="callout callout-style-simple callout-none no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -450,15 +450,24 @@ r = \frac{{n(\sum xy) - (\sum x)(\sum y)}}{{\sqrt{[n\sum x^2 - (\sum x)^2][n\sum
 <li><p>Interpreting the slope value The slope (<span class="math inline">\(b\)</span>) represents the change in the dependent variable (<span class="math inline">\(y\)</span>) for a one-unit change in the independent variable (<span class="math inline">\(x\)</span>). Interpreting the slope depends on the units of the variables and the context of the problem.</p></li>
 <li><p>Coefficient of Determination The coefficient of determination (<span class="math inline">\(R^2\)</span>) measures the proportion of the variance in the dependent variable that is predictable from the independent variable. It ranges from 0 to 1, where higher values indicate a better fit of the regression line to the data.</p></li>
 </ol>
-<p><span class="math display">\[R^2 = \frac{{SSR}}{{SST}}\]</span></p>
-<p>Where: - SSR (Sum of Squares Regression) measures explained variation, - SST (Total Sum of Squares) measures total variation.</p>
-<p><strong><em>Note:</em></strong> It is much easier to calculate the value by squaring the value of <span class="math inline">\(r\)</span> if available.</p>
+<p><span class="math display">\[R^2 = r^2\]</span><br>
+<strong><em>Note:</em></strong> The <span class="math inline">\(R^2\)</span> value is reported in decimals, but the explanation is in <span class="math inline">\(/%\)</span>.</p>
+
 <ol start="7" type="a">
 <li>Predicting exam score To predict the exam score for a given time taken for special tutorial, we use the regression equation obtained in part (c).</li>
 </ol>
 </div>
 </div>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="no-row-height column-margin column-container"><div class="callout-margin-content callout-margin-content-simple">
+<p>Alternative formula for <span class="math inline">\(R^2\)</span>.</p>
+<p><span class="math display">\[R^2 = \frac{{SSR}}{{SST}}\]</span></p>
+<p>Where:</p>
+<ul>
+<li>SSR (Sum of Squares Regression) measures explained variation,<br>
+</li>
+<li>SST (Total Sum of Squares) measures total variation.</li>
+</ul>
+</div></div><div class="callout callout-style-simple callout-none no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -495,29 +504,190 @@ Score: 76, 81, 79, 89, 70, 80, 78, 82, 81, 91</p>
 <ol start="4" type="a">
 <li>Interpreting the intercept value</li>
 </ol>
-<p>The intercept (<span class="math inline">\(a\)</span>) represents the predicted exam score when the time taken for special tutorial is zero. It indicates the initial level of performance on the exam without any time spent on special tutorial.</p>
+<p>Intercept = 62.18.</p>
+<p>This indicate that if a student does not attend any special tutorial (i.e., x = 0), then he or she will obtain an exam score of 62.18.</p>
 <ol start="5" type="a">
 <li>Interpreting the slope value</li>
 </ol>
-<p>The slope (<span class="math inline">\(b\)</span>) represents the change in the exam score for a one-unit change in the time taken for special tutorial. It indicates the rate of change in the exam score with respect to the time spent on special tutorial.</p>
+<p>Slope, b = 1.26.</p>
+<p>For each additional hours spent for special tutorial, the exam score will increase by 1.26 mark.</p>
 <ol start="6" type="a">
 <li>Coefficient of Determination</li>
 </ol>
-<p>To calculate <span class="math inline">\(R^2\)</span>, we need to first calculate the predicted values of exam scores (<span class="math inline">\(\hat{y}\)</span>) using the regression equation.</p>
-<p>For each data point: <span class="math display">\[\hat{y}_i = 62.18 + 1.26x_i\]</span></p>
-<p>Then, we calculate the sum of squares regression (SSR) and total sum of squares (SST) to find <span class="math inline">\(R^2\)</span>.</p>
-<p><span class="math display">\[SSR = \sum (\hat{y}_i - \bar{y})^2\]</span> <span class="math display">\[SST = \sum (y_i - \bar{y})^2\]</span></p>
-<p>Where <span class="math inline">\(\bar{y}\)</span> is the mean of the exam scores.</p>
-<p>After calculating SSR and SST, we can find <span class="math inline">\(R^2\)</span> using the formula:</p>
-<p><span class="math display">\[R^2 = \frac{{SSR}}{{SST}}\ ,\ or\ = r^2\ = 0.9297^2 = 0.863\]</span> Explanation: <span class="math inline">\(86.4\%\)</span> of the total variation in exam score can be explained by the variation in time spent (in hours) for special tutorial.</p>
+<p><span class="math display">\[R^2 = r^2\ = 0.9297^2 = 0.864\]</span> Explanation: <span class="math inline">\(86.4\%\)</span> of the total variation in exam score can be explained by the variation in time spent (in hours) for special tutorial.</p>
 <ol start="7" type="a">
 <li>Predicting exam score</li>
 </ol>
 <p>To predict the exam score for a given time taken for special tutorial, let’s say <span class="math inline">\(x = 15.75\)</span> (15 hours and 45 minutes), we use the regression equation:</p>
-<p><span class="math display">\[\hat{y} = 62.18 + 1.26(15.75)\]</span></p>
-<p>Now, let’s perform the calculations:</p>
-<p><span class="math display">\[\hat{y} = 62.18 + 1.26 \times 15.75\]</span> <span class="math display">\[\hat{y} = 82.025 \approx 82\]</span></p>
+<p><span class="math display">\[\hat{y} = 62.18 + 1.26(15.75)\]</span> <span class="math display">\[\hat{y} = 82.025 \approx 82\]</span></p>
 <p>So, the predicted exam score for a time of 15 hours and 45 minutes is approximately <span class="math inline">\(82\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solved Example 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A manager desires to know whether the typing speed of a secretary (in words per minute) is related to the time (in hours) that it takes the secretary to learn to use a new word processing program. The data are recorded as follows:<br>
+</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Speed (words per minute)</th>
+<th style="text-align: center;">Time (in hours)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">48</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">74</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">79</td>
+<td style="text-align: center;">3.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">83</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">56</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">85</td>
+<td style="text-align: center;">2.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">63</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">88</td>
+<td style="text-align: center;">2.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">74</td>
+<td style="text-align: center;">4.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">1.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">92</td>
+<td style="text-align: center;">1.5</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>State the independent and dependent variables. (2 marks)<br>
+</li>
+<li>Draw a scatter diagram of the recorded data. (3 marks)<br>
+</li>
+<li>Calculate the Pearson Product Moment Correlation coefficient and explain the result obtained. (5 marks)<br>
+</li>
+<li>Calculate the regression equation line and draw it on your scatter diagram. (6 marks)<br>
+</li>
+<li>Explain the meaning of the slope coefficient value obtained in (d). (1 mark)<br>
+</li>
+<li>Predict the time it will take the average secretary who has a typing speed of 70 words per minute to learn the word processing program. (3 marks)<br>
+</li>
+</ol>
+<p><strong>Solution</strong><br>
+</p>
+<p>a)<br>
+Independent variable: Speed (words per minute)&nbsp; Dependent variable: Time (hours)<br>
+</p>
+<p>b)<br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Given data </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>speed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">48</span>,<span class="dv">74</span>,<span class="dv">52</span>,<span class="dv">79</span>,<span class="dv">83</span>,<span class="dv">56</span>,<span class="dv">85</span>,<span class="dv">63</span>,<span class="dv">88</span>,<span class="dv">74</span>,<span class="dv">90</span>,<span class="dv">92</span>) </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="fl">3.5</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="fl">2.3</span>,<span class="dv">5</span>,<span class="fl">2.1</span>,<span class="fl">4.5</span>,<span class="fl">1.9</span>,<span class="fl">1.5</span>)                              </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot scatter plot</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(speed,time, </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Speed (words per minute)"</span>, </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Time (in hours)"</span>, </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"The scatter diagram between the typing speed of a secretary and the time that it takes the secretary to learn to use a new word processing program"</span>, </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="06_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>c)<br>
+<span class="math inline">\(\sum{x} = 48+74+52+...+74+90+92 = 884\)</span> <span class="math inline">\(\sum{y} = 7+4+8+...+4.5+1.9+1.5=47.8\)</span> <span class="math inline">\(\sum{x^2} = 48^2+74^2+52^2+...+74^2+90^2+92^2 = 67,728\)</span> <span class="math inline">\(\sum{y^2} = 7^2+4^2+8^2+...+4.5^2+1.9^2+1.5^2=242.06\)</span> <span class="math inline">\(\sum{xy} = (48 \times 7) + (74 \times 4) + ... + (90 \times 1.9) + (92 \times 1.5) = 3,163.8\)</span> <span class="math inline">\(n=12\)</span> <span class="math display">\[r = \frac{{12(3,163.8) - (884)(47.8)}}{{\sqrt{(12 \times 67,728 - 884^2)(12 \times 242.06 - 47.8^2)}}} = 0.9742\]</span></p>
+<p>There is a <strong>very</strong> <strong>strong negative</strong> linear relationship between the typing speed of a secretary and the time that it takes the secretary to learn to use a new word processing program.<br>
+</p>
+<p>d)<br>
+<span class="math display">\[
+\begin{aligned}
+y &amp;= a + bx\\
+\\
+b &amp;= \frac{{n(\sum xy) - (\sum x)(\sum y)}}{{n\sum x^2 - (\sum x)^2}}\\
+&amp;= \frac{12(3,163.8) - (884)(47.8)}{12(67,728) - 884^2}\\
+&amp;= −0.1371 \\
+\\
+a &amp;= \frac{\sum{y}}{n} - b\frac{\sum{x}}{n}\\
+&amp;= \frac{47.8}{12} - (-0.1371)\frac{884}{12}\\
+&amp;= 14.0857\\
+\\
+∴𝑦 &amp;= 14.0857 − 0.1371x
+\end{aligned}
+\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Given data </span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>speed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">48</span>,<span class="dv">74</span>,<span class="dv">52</span>,<span class="dv">79</span>,<span class="dv">83</span>,<span class="dv">56</span>,<span class="dv">85</span>,<span class="dv">63</span>,<span class="dv">88</span>,<span class="dv">74</span>,<span class="dv">90</span>,<span class="dv">92</span>) </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="fl">3.5</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="fl">2.3</span>,<span class="dv">5</span>,<span class="fl">2.1</span>,<span class="fl">4.5</span>,<span class="fl">1.9</span>,<span class="fl">1.5</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot scatter plot</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(speed, time, </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Speed (words per minute)"</span>, </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Time (in hours)"</span>, </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"The scatter diagram between the typing speed of a secretary and the time that it takes the secretary to learn to use a new word processing program"</span>, </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate regression line</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>regression <span class="ot">&lt;-</span> <span class="fu">lm</span>(time <span class="sc">~</span> speed)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Add regression line to the plot</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(regression, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Label regression equation</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">15</span>, <span class="dv">85</span>, <span class="fu">paste</span>(<span class="st">"Regression equation: y ="</span>, <span class="fu">round</span>(regression<span class="sc">$</span>coef[<span class="dv">1</span>], <span class="dv">2</span>), <span class="st">"+"</span>, <span class="fu">round</span>(regression<span class="sc">$</span>coef[<span class="dv">2</span>], <span class="dv">2</span>), <span class="st">"x"</span>), <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="06_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>e)<br>
+For every 10 words increase in typing speed per minute, the time it takes a secretary to learn to use a new word processing program decreased by 1.371 hours.<br>
+</p>
+<p>f)<br>
+<span class="math inline">\(y = 14.0857 − 0.1371(70) = 4.4887\)</span></p>
 </div>
 </div>
 
