@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -167,15 +167,18 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#what-is-sampling-and-why-we-do-sampling" id="toc-what-is-sampling-and-why-we-do-sampling" class="nav-link" data-scroll-target="#what-is-sampling-and-why-we-do-sampling"><span class="header-section-number">1.7</span> What is sampling and Why we do sampling?</a></li>
   <li><a href="#sampling-versus-census" id="toc-sampling-versus-census" class="nav-link" data-scroll-target="#sampling-versus-census"><span class="header-section-number">1.8</span> Sampling versus Census</a></li>
   <li><a href="#random-versus-non-random-sampling" id="toc-random-versus-non-random-sampling" class="nav-link" data-scroll-target="#random-versus-non-random-sampling"><span class="header-section-number">1.9</span> Random versus Non-Random Sampling</a></li>
-  <li><a href="#random-sampling-techniques" id="toc-random-sampling-techniques" class="nav-link" data-scroll-target="#random-sampling-techniques"><span class="header-section-number">1.10</span> Random Sampling Techniques</a></li>
+  <li><a href="#random-sampling-techniques" id="toc-random-sampling-techniques" class="nav-link" data-scroll-target="#random-sampling-techniques"><span class="header-section-number">1.10</span> Random Sampling Techniques<br>
+  </a></li>
   <li><a href="#non-random-sampling-techniques" id="toc-non-random-sampling-techniques" class="nav-link" data-scroll-target="#non-random-sampling-techniques"><span class="header-section-number">1.11</span> Non-Random Sampling Techniques</a></li>
-  <li><a href="#data-collection-methods" id="toc-data-collection-methods" class="nav-link" data-scroll-target="#data-collection-methods"><span class="header-section-number">1.12</span> Data Collection Methods</a></li>
+  <li><a href="#data-collection-methods" id="toc-data-collection-methods" class="nav-link" data-scroll-target="#data-collection-methods"><span class="header-section-number">1.12</span> Data Collection Methods<br>
+  </a></li>
   <li><a href="#questionnaire-design" id="toc-questionnaire-design" class="nav-link" data-scroll-target="#questionnaire-design"><span class="header-section-number">1.13</span> Questionnaire Design</a></li>
+  <li><a href="#solved-examples" id="toc-solved-examples" class="nav-link" data-scroll-target="#solved-examples"><span class="header-section-number">1.14</span> Solved Examples</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -312,18 +315,19 @@ ul.task-list li input[type="checkbox"] {
 </p>
 <ol type="1">
 <li><strong>Categorical Variable:</strong><br>
-
+</li>
+</ol>
 <ul>
 <li><p><strong>Definition:</strong> A categorical variable is a type of variable that represents categories or groups. It doesn’t have numerical values but rather describes qualities or characteristics that can be placed into distinct groups.<br>
 </p></li>
 <li><p><strong>Examples:</strong><br>
 </p>
 <ul>
-<li>Gender: Male, Female, Non-binary<br>
+<li>Gender: Male, Female<br>
 </li>
-<li>Ethnicity: Caucasian, African American, Hispanic, Asian, etc.<br>
+<li>Race: Malay, Chinese, Indian, etc.<br>
 </li>
-<li>Educational Level: High School, Bachelor’s Degree, Master’s Degree, PhD<br>
+<li>Educational Level: SPM, STPM, Diploma, Bachelor’s Degree, Master’s Degree, PhD<br>
 </li>
 <li>Marital Status: Single, Married, Divorced, Widowed<br>
 </li>
@@ -339,28 +343,30 @@ ul.task-list li input[type="checkbox"] {
 <li>The order of categories is not inherently meaningful (ordinal), although sometimes they might have a natural order.<br>
 </li>
 </ul></li>
-</ul></li>
+</ul>
+<ol start="2" type="1">
 <li><strong>Numerical Variable:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> A numerical variable is a type of variable that represents measurable quantities or numerical values. It is expressed in terms of numbers and can be subjected to mathematical operations such as addition, subtraction, multiplication, and division.<br>
 </li>
-<li><strong>Examples:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> A numerical variable is a type of variable that represents measurable quantities or numerical values. It is expressed in terms of numbers and can be subjected to mathematical operations such as addition, subtraction, multiplication, and division.<br>
+</p></li>
+<li><p><strong>Examples:</strong><br>
+</p>
 <ul>
 <li>Age: 25 years, 35 years, 50 years, etc.<br>
 </li>
 <li>Height: 160 cm, 175 cm, 185 cm, etc.<br>
 </li>
-<li>Income: $40,000, $60,000, $80,000, etc.<br>
+<li>Income: RM1,500, RM2,000, RM2,500, etc.<br>
 </li>
 <li>Weight: 60 kg, 70 kg, 80 kg, etc.<br>
 </li>
 <li>Temperature: 20°C, 25°C, 30°C, etc.<br>
 </li>
 </ul></li>
-<li><strong>Properties:</strong><br>
-
+<li><p><strong>Properties:</strong><br>
+</p>
 <ul>
 <li>Numerical variables can be measured on a numerical scale, often with meaningful intervals between values.<br>
 </li>
@@ -375,8 +381,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
 </ul></li>
 </ul></li>
-</ul></li>
-</ol>
+</ul>
 <p>Understanding the distinction between categorical and numerical variables is essential in statistical analysis, as it influences the choice of appropriate statistical methods and techniques for analyzing and interpreting data.<br>
 </p>
 </section>
@@ -386,12 +391,13 @@ ul.task-list li input[type="checkbox"] {
 </p>
 <ol type="1">
 <li><strong>Nominal Scale:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> The nominal scale is the simplest level of measurement, where data is categorized into mutually exclusive categories with no inherent order or ranking. In other words, nominal data represent different categories or groups, but there is no quantitative significance to the values.<br>
 </li>
-<li><strong>Examples:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> The nominal scale is the simplest level of measurement, where data is categorized into mutually exclusive categories with no inherent order or ranking. In other words, nominal data represent different categories or groups, but there is no quantitative significance to the values.<br>
+</p></li>
+<li><p><strong>Examples:</strong><br>
+</p>
 <ul>
 <li>Gender: Male, Female<br>
 </li>
@@ -402,8 +408,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Blood Type: A, B, AB, O<br>
 </li>
 </ul></li>
-<li><strong>Properties:</strong><br>
-
+<li><p><strong>Properties:</strong><br>
+</p>
 <ul>
 <li>Categories are mutually exclusive, meaning each observation falls into only one category.<br>
 </li>
@@ -412,14 +418,16 @@ ul.task-list li input[type="checkbox"] {
 <li>Operations such as counting and mode are applicable, but arithmetic operations (e.g., addition, subtraction) are not meaningful.<br>
 </li>
 </ul></li>
-</ul></li>
+</ul>
+<ol start="2" type="1">
 <li><strong>Ordinal Scale:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> The ordinal scale categorizes data into ordered categories or ranks, where the categories have a meaningful order, but the intervals between them are not equal. In other words, ordinal data represent a hierarchy or sequence, but the magnitude of differences between categories is not uniform.<br>
 </li>
-<li><strong>Examples:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> The ordinal scale categorizes data into ordered categories or ranks, where the categories have a meaningful order, but the intervals between them are not equal. In other words, ordinal data represent a hierarchy or sequence, but the magnitude of differences between categories is not uniform.<br>
+</p></li>
+<li><p><strong>Examples:</strong><br>
+</p>
 <ul>
 <li>Educational Level: Elementary School &lt; High School &lt; Bachelor’s Degree &lt; Master’s Degree &lt; PhD<br>
 </li>
@@ -428,8 +436,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Socioeconomic Status: Low Income &lt; Middle Income &lt; High Income<br>
 </li>
 </ul></li>
-<li><strong>Properties:</strong><br>
-
+<li><p><strong>Properties:</strong><br>
+</p>
 <ul>
 <li>Categories have a meaningful order or ranking.<br>
 </li>
@@ -438,14 +446,16 @@ ul.task-list li input[type="checkbox"] {
 <li>Operations such as ranking, median, and mode are applicable, but arithmetic operations are not meaningful.<br>
 </li>
 </ul></li>
-</ul></li>
+</ul>
+<ol start="3" type="1">
 <li><strong>Interval Scale:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> The interval scale categorizes data into ordered categories with equal intervals between consecutive values, but there is no true zero point. In other words, interval data represent quantities with no meaningful zero point, and ratios between values are not meaningful.<br>
 </li>
-<li><strong>Examples:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> The interval scale categorizes data into ordered categories with equal intervals between consecutive values, but there is no true zero point. In other words, interval data represent quantities with no meaningful zero point, and ratios between values are not meaningful.<br>
+</p></li>
+<li><p><strong>Examples:</strong><br>
+</p>
 <ul>
 <li>Temperature (in Celsius or Fahrenheit): 0°C, 10°C, 20°C, etc.<br>
 </li>
@@ -454,8 +464,8 @@ ul.task-list li input[type="checkbox"] {
 <li>IQ Scores: 100, 110, 120, etc. (measured on some standardized scales)<br>
 </li>
 </ul></li>
-<li><strong>Properties:</strong><br>
-
+<li><p><strong>Properties:</strong><br>
+</p>
 <ul>
 <li>Categories have equal intervals between consecutive values.<br>
 </li>
@@ -464,14 +474,16 @@ ul.task-list li input[type="checkbox"] {
 <li>Operations such as addition, subtraction, mean, and standard deviation are applicable, but ratios are not meaningful.<br>
 </li>
 </ul></li>
-</ul></li>
+</ul>
+<ol start="4" type="1">
 <li><strong>Ratio Scale:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> The ratio scale categorizes data into ordered categories with equal intervals between consecutive values and a true zero point. In other words, ratio data represent quantities with a meaningful zero point, and ratios between values are meaningful.<br>
 </li>
-<li><strong>Examples:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> The ratio scale categorizes data into ordered categories with equal intervals between consecutive values and a true zero point. In other words, ratio data represent quantities with a meaningful zero point, and ratios between values are meaningful.<br>
+</p></li>
+<li><p><strong>Examples:</strong><br>
+</p>
 <ul>
 <li>Height: 0 cm represents absence of height, and ratios such as double or half are meaningful.<br>
 </li>
@@ -480,8 +492,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Income: 0 dollars represents absence of income, and ratios such as double or half are meaningful.<br>
 </li>
 </ul></li>
-<li><strong>Properties:</strong><br>
-
+<li><p><strong>Properties:</strong><br>
+</p>
 <ul>
 <li>Categories have equal intervals between consecutive values.<br>
 </li>
@@ -490,8 +502,7 @@ ul.task-list li input[type="checkbox"] {
 <li>All arithmetic operations (addition, subtraction, multiplication, division), as well as mean, median, mode, and standard deviation, are applicable.<br>
 </li>
 </ul></li>
-</ul></li>
-</ol>
+</ul>
 <p>Understanding the scale of measurement is crucial in selecting appropriate statistical methods and techniques for analyzing data and interpreting results accurately. Each scale has its own properties and implications for statistical analysis and interpretation.<br>
 </p>
 </section>
@@ -526,39 +537,41 @@ ul.task-list li input[type="checkbox"] {
 </p>
 <ol type="1">
 <li><strong>Sampling:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Sampling is the process of selecting a subset of individuals, items, or elements from a larger population to represent that population. The subset, known as the sample, is chosen in such a way that it is expected to provide accurate and reliable information about the population from which it is drawn.<br>
 </li>
-<li><strong>Purpose:</strong> The primary objective of sampling is to make inferences or draw conclusions about a population based on observations or measurements collected from the sample. Instead of studying the entire population, which may be impractical or costly, researchers select a representative sample that can provide insights into the characteristics, behaviors, or attributes of the entire population.<br>
-</li>
-<li><strong>Method:</strong> Sampling involves the systematic selection of individuals or items from the population using various sampling techniques, such as simple random sampling, stratified sampling, cluster sampling, or convenience sampling. These techniques ensure that the sample is representative of the population and that the results are generalizable.<br>
-</li>
-<li><strong>Advantages:</strong> Sampling is efficient, cost-effective, and practical, especially when studying large populations or when resources are limited. It allows researchers to obtain valuable information about a population without the need to study every individual or item within it.<br>
-</li>
-<li><strong>Limitations:</strong> Sampling may introduce sampling error, which occurs when the characteristics of the sample differ from those of the population. Additionally, sampling may not capture certain population characteristics or variations, leading to potential biases in the results.<br>
-</li>
-</ul></li>
-<li><strong>Census:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> A census is a complete enumeration or survey of every individual or item in a population. Unlike sampling, which involves selecting a subset of the population, a census aims to collect data from every member of the population, leaving no individual or item unsampled.<br>
-</li>
-<li><strong>Purpose:</strong> The primary objective of a census is to obtain comprehensive and accurate information about all members of a population. It provides a complete picture of the population’s characteristics, behaviors, or attributes, without the need for inference or estimation.<br>
-</li>
-<li><strong>Method:</strong> Conducting a census involves reaching out to every individual or item in the population and collecting data directly from them. This may involve various data collection methods, such as face-to-face interviews, surveys, administrative records, or online forms.<br>
-</li>
-<li><strong>Advantages:</strong> A census provides complete and accurate information about the entire population, leaving no room for sampling error or bias. It allows for detailed analysis and exploration of population characteristics, trends, and variations.<br>
-</li>
-<li><strong>Limitations:</strong> Conducting a census can be time-consuming, resource-intensive, and costly, especially for large populations. It may also pose logistical challenges, such as reaching remote or inaccessible populations. Additionally, a census may be impractical or unnecessary for populations with millions or billions of individuals.<br>
-</li>
-</ul></li>
 </ol>
+<ul>
+<li><p><strong>Definition:</strong> Sampling is the process of selecting a subset of individuals, items, or elements from a larger population to represent that population. The subset, known as the sample, is chosen in such a way that it is expected to provide accurate and reliable information about the population from which it is drawn.<br>
+</p></li>
+<li><p><strong>Purpose:</strong> The primary objective of sampling is to make inferences or draw conclusions about a population based on observations or measurements collected from the sample. Instead of studying the entire population, which may be impractical or costly, researchers select a representative sample that can provide insights into the characteristics, behaviors, or attributes of the entire population.<br>
+</p></li>
+<li><p><strong>Method:</strong> Sampling involves the systematic selection of individuals or items from the population using various sampling techniques, such as simple random sampling, stratified sampling, cluster sampling, or convenience sampling. These techniques ensure that the sample is representative of the population and that the results are generalizable.<br>
+</p></li>
+<li><p><strong>Advantages:</strong> Sampling is efficient, cost-effective, and practical, especially when studying large populations or when resources are limited. It allows researchers to obtain valuable information about a population without the need to study every individual or item within it.<br>
+</p></li>
+<li><p><strong>Limitations:</strong> Sampling may introduce sampling error, which occurs when the characteristics of the sample differ from those of the population. Additionally, sampling may not capture certain population characteristics or variations, leading to potential biases in the results.<br>
+</p></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Census:</strong><br>
+</li>
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> A census is a complete enumeration or survey of every individual or item in a population. Unlike sampling, which involves selecting a subset of the population, a census aims to collect data from every member of the population, leaving no individual or item unsampled.<br>
+</p></li>
+<li><p><strong>Purpose:</strong> The primary objective of a census is to obtain comprehensive and accurate information about all members of a population. It provides a complete picture of the population’s characteristics, behaviors, or attributes, without the need for inference or estimation.<br>
+</p></li>
+<li><p><strong>Method:</strong> Conducting a census involves reaching out to every individual or item in the population and collecting data directly from them. This may involve various data collection methods, such as face-to-face interviews, surveys, administrative records, or online forms.<br>
+</p></li>
+<li><p><strong>Advantages:</strong> A census provides complete and accurate information about the entire population, leaving no room for sampling error or bias. It allows for detailed analysis and exploration of population characteristics, trends, and variations.<br>
+</p></li>
+<li><p><strong>Limitations:</strong> Conducting a census can be time-consuming, resource-intensive, and costly, especially for large populations. It may also pose logistical challenges, such as reaching remote or inaccessible populations. Additionally, a census may be impractical or unnecessary for populations with millions or billions of individuals.<br>
+</p></li>
+</ul>
 <p>In summary, sampling involves selecting a subset of individuals or items from a population to represent that population, while a census involves collecting data from every member of the population. Each method has its own advantages and limitations, and the choice between sampling and census depends on factors such as the research objectives, population size, resources available, and practical considerations.</p>
 </section>
 <section id="random-versus-non-random-sampling" class="level2" data-number="1.9">
 <h2 data-number="1.9" class="anchored" data-anchor-id="random-versus-non-random-sampling"><span class="header-section-number">1.9</span> Random versus Non-Random Sampling</h2>
-<p>Here’s a comparison between random and non-random sampling:<br>
+<p>There are two main ways sampling method can be applied, either using random sampling or non-random sampling. Sometimes these methods is also know as probability and non-probability sampling.<br>
 </p>
 <p><strong>Random Sampling:</strong><br>
 </p>
@@ -570,7 +583,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Method:</strong> Random sampling methods include simple random sampling, systematic sampling, stratified sampling, and cluster sampling.<br>
 </p></li>
 <li><p><strong>Advantages:</strong><br>
-</p>
+</p></li>
+</ol>
 <ul>
 <li>Reduces selection bias and ensures the sample is representative of the population.<br>
 </li>
@@ -578,16 +592,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>Facilitates statistical analysis and estimation of population parameters.<br>
 </li>
-</ul></li>
-<li><p><strong>Disadvantages:</strong><br>
-</p>
+</ul>
+<ol start="5" type="1">
+<li><strong>Disadvantages:</strong><br>
+</li>
+</ol>
 <ul>
 <li>May be impractical or costly for large or inaccessible populations.<br>
 </li>
 <li>Requires a complete list of population members or sampling frame, which may not always be available.<br>
 </li>
-</ul></li>
-</ol>
+</ul>
 <p><strong>Non-Random Sampling:</strong><br>
 </p>
 <ol type="1">
@@ -598,7 +613,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Methods:</strong> Non-random sampling methods include convenience sampling, purposive sampling, quota sampling, and snowball sampling.<br>
 </p></li>
 <li><p><strong>Advantages:</strong><br>
-</p>
+</p></li>
+</ol>
 <ul>
 <li>Convenient and practical for small or homogeneous populations.<br>
 </li>
@@ -606,9 +622,11 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>Allows for targeted sampling of specific groups or individuals of interest.<br>
 </li>
-</ul></li>
-<li><p><strong>Disadvantages:</strong><br>
-</p>
+</ul>
+<ol start="5" type="1">
+<li><strong>Disadvantages:</strong><br>
+</li>
+</ol>
 <ul>
 <li>Results may not be generalizable to the entire population.<br>
 </li>
@@ -616,16 +634,18 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>Requires careful consideration and justification of sampling method to ensure validity and reliability of results.<br>
 </li>
-</ul></li>
-</ol>
+</ul>
 <p>In summary, random sampling aims to select a sample that is representative of the population by ensuring every individual or item has an equal chance of being chosen, while non-random sampling methods may introduce bias and may not be representative of the population. Each method has its own advantages and limitations, and the choice of sampling method depends on various factors such as research objectives, population characteristics, and available resources.<br>
 </p>
 </section>
 <section id="random-sampling-techniques" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="random-sampling-techniques"><span class="header-section-number">1.10</span> Random Sampling Techniques</h2>
+<h2 data-number="1.10" class="anchored" data-anchor-id="random-sampling-techniques"><span class="header-section-number">1.10</span> Random Sampling Techniques<br>
+</h2>
+<p>There are several random sampling techniques that we can choose based on the nature of our population under study. However, within this course, we are only going to cover only 5 of them.</p>
 <ol type="1">
 <li><strong>Simple Random Sampling:</strong><br>
-
+</li>
+</ol>
 <ul>
 <li><p><strong>Definition:</strong> Simple random sampling is a sampling technique where each member of the population has an equal chance of being selected for the sample. It involves selecting individuals from the population in such a way that every possible sample of a given size has an equal chance of being selected.<br>
 </p></li>
@@ -633,53 +653,58 @@ ul.task-list li input[type="checkbox"] {
 </p></li>
 <li><p><strong>Example:</strong> Suppose we want to conduct a simple random sample of 100 students from a university population of 1000 students. Each student in the university has an equal chance of being selected for the sample, ensuring that the sample is representative of the entire population.<br>
 </p></li>
-</ul></li>
-</ol>
+</ul>
 <center>
 <img src="https://www.questionpro.com/blog/wp-content/uploads/2018/03/Simple-random-sampling-wt-logo.jpg" class="img-fluid" width="500">
 </center>
-<ol start="2" type="1">
-<li><strong>Stratified Sampling:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Stratified sampling is a sampling technique where the population is divided into homogeneous groups or strata based on certain characteristics (e.g., age, gender, income level), and random samples are taken from each stratum. This ensures that each stratum is represented in the sample proportionally to its size in the population.<br>
-</li>
-<li><strong>Process:</strong> Researchers first identify relevant stratification variables and divide the population into mutually exclusive and exhaustive strata. Then, they randomly select samples from each stratum based on predetermined proportions or sample sizes.<br>
-</li>
-<li><strong>Example:</strong> Suppose we want to conduct a survey on student satisfaction at a university. We may divide the student population into strata based on their academic year (e.g., freshman, sophomore, junior, senior) and then randomly select samples from each stratum to ensure representation from each year group.<br>
-</li>
-</ul></li>
-<li><strong>Cluster Sampling:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Cluster sampling is a sampling technique where the population is divided into clusters or groups, and a random sample of clusters is selected for analysis. Each cluster should ideally be heterogeneous internally but homogeneous externally.<br>
-</li>
-<li><strong>Process:</strong> Researchers first identify clusters within the population (e.g., geographical regions, classrooms, households) and randomly select a sample of clusters. Then, they collect data from all individuals within the selected clusters.<br>
-</li>
-<li><strong>Example:</strong> Suppose we want to study the performance of schools in a city. We may divide the city into school districts and randomly select a sample of districts. Then, we collect data from all schools within the selected districts.<br>
-</li>
-</ul></li>
+<ol start="4" type="1">
 <li><strong>Systematic Sampling:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Systematic sampling is a sampling technique where a sample is drawn by selecting every kth member from a list or sequence of the population. It is a simple and efficient method that provides a representative sample when the population is large and organized in a sequential manner.<br>
 </li>
-<li><strong>Process:</strong> Researchers first determine the sampling interval (k) by dividing the population size by the desired sample size. Then, they randomly select a starting point within the population and select every kth member thereafter until the desired sample size is reached.<br>
-</li>
-<li><strong>Example:</strong> Suppose we want to conduct a systematic sample of 200 students from a university population of 2000 students. We would calculate the sampling interval (k = 2000/200 = 10) and randomly select a starting point. Then, we would select every 10th student from the list until we reach a sample size of 200.<br>
-</li>
-</ul></li>
-<li><strong>Multi-stage Sampling:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Multi-stage sampling is a sampling technique that combines two or more sampling methods, such as stratified sampling, cluster sampling, and systematic sampling, in multiple stages. It is often used when the population is large and complex, and it allows researchers to efficiently obtain a representative sample.<br>
-</li>
-<li><strong>Process:</strong> Researchers first divide the population into clusters or strata and then select samples from each cluster or stratum using various sampling methods. This process may involve multiple stages of sampling, with each stage refining the sample selection process.<br>
-</li>
-<li><strong>Example:</strong> Suppose we want to conduct a national survey on healthcare access. We may first divide the country into regions (clusters) and then randomly select a sample of regions. Within each selected region, we may further stratify the population by demographic characteristics (e.g., age, income) and select samples from each stratum using systematic or random sampling methods.<br>
-</li>
-</ul></li>
 </ol>
+<ul>
+<li><p><strong>Definition:</strong> Systematic sampling is a sampling technique where a sample is drawn by selecting every kth member from a list or sequence of the population. It is a simple and efficient method that provides a representative sample when the population is large and organized in a sequential manner.<br>
+</p></li>
+<li><p><strong>Process:</strong> Researchers first determine the sampling interval (k) by dividing the population size by the desired sample size. Then, they randomly select a starting point within the population and select every kth member thereafter until the desired sample size is reached.<br>
+</p></li>
+<li><p><strong>Example:</strong> Suppose we want to conduct a systematic sample of 200 students from a university population of 2000 students. We would calculate the sampling interval (k = 2000/200 = 10) and randomly select a starting point. Then, we would select every 10th student from the list until we reach a sample size of 200.<br>
+</p></li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Stratified Sampling:</strong><br>
+</li>
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> Stratified sampling is a sampling technique where the population is divided into homogeneous groups or strata based on certain characteristics (e.g., age, gender, income level), and random samples are taken from each stratum. This ensures that each stratum is represented in the sample proportionally to its size in the population.<br>
+</p></li>
+<li><p><strong>Process:</strong> Researchers first identify relevant stratification variables and divide the population into mutually exclusive and exhaustive strata. Then, they randomly select samples from each stratum based on predetermined proportions or sample sizes.<br>
+</p></li>
+<li><p><strong>Example:</strong> Suppose we want to conduct a survey on student satisfaction at a university. We may divide the student population into strata based on their academic year (e.g., freshman, sophomore, junior, senior) and then randomly select samples from each stratum to ensure representation from each year group.<br>
+</p></li>
+</ul>
+<ol start="4" type="1">
+<li><strong>Cluster Sampling:</strong><br>
+</li>
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> Cluster sampling is a sampling technique where the population is divided into clusters or groups, and a random sample of clusters is selected for analysis. Each cluster should ideally be heterogeneous internally but homogeneous externally.<br>
+</p></li>
+<li><p><strong>Process:</strong> Researchers first identify clusters within the population (e.g., geographical regions, classrooms, households) and randomly select a sample of clusters. Then, they collect data from all individuals within the selected clusters.<br>
+</p></li>
+<li><p><strong>Example:</strong> Suppose we want to study the performance of schools in a city. We may divide the city into school districts and randomly select a sample of districts. Then, we collect data from all schools within the selected districts.<br>
+</p></li>
+</ul>
+<ol start="5" type="1">
+<li><strong>Multi-stage Sampling:</strong><br>
+</li>
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> Multi-stage sampling is a sampling technique that combines two or more sampling methods, such as stratified sampling, cluster sampling, and systematic sampling, in multiple stages. It is often used when the population is large and complex, and it allows researchers to efficiently obtain a representative sample.<br>
+</p></li>
+<li><p><strong>Process:</strong> Researchers first divide the population into clusters or strata and then select samples from each cluster or stratum using various sampling methods. This process may involve multiple stages of sampling, with each stage refining the sample selection process.<br>
+</p></li>
+<li><p><strong>Example:</strong> Suppose we want to conduct a national survey on healthcare access. We may first divide the country into regions (clusters) and then randomly select a sample of regions. Within each selected region, we may further stratify the population by demographic characteristics (e.g., age, income) and select samples from each stratum using systematic or random sampling methods.<br>
+</p></li>
+</ul>
 <p>Understanding different sampling techniques is crucial in research and data collection, as it helps researchers obtain representative samples and draw valid conclusions about the population of interest. Each sampling method has its own advantages, limitations, and applicability depending on the characteristics of the population and the research objectives.<br>
 </p>
 </section>
@@ -687,12 +712,13 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="1.11" class="anchored" data-anchor-id="non-random-sampling-techniques"><span class="header-section-number">1.11</span> Non-Random Sampling Techniques</h2>
 <ol type="1">
 <li><strong>Quota Sampling:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Quota sampling is a non-random sampling technique where researchers divide the population into mutually exclusive groups based on predetermined characteristics or quotas. Within each quota group, individuals are selected non-randomly until the quota for that group is filled. Quota sampling ensures that the final sample reflects the demographic or characteristic composition of the population.<br>
 </li>
-<li><strong>Process:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> Quota sampling is a non-random sampling technique where researchers divide the population into mutually exclusive groups based on predetermined characteristics or quotas. Within each quota group, individuals are selected non-randomly until the quota for that group is filled. Quota sampling ensures that the final sample reflects the demographic or characteristic composition of the population.<br>
+</p></li>
+<li><p><strong>Process:</strong><br>
+</p>
 <ol type="1">
 <li><strong>Define Quotas:</strong> Researchers establish quotas based on key demographic variables, such as age, gender, ethnicity, or socioeconomic status, to ensure representation of different groups in the sample.<br>
 </li>
@@ -703,16 +729,18 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Filling Quotas:</strong> Continuously select individuals within each quota group until the predetermined quota for that group is filled. Once the quotas for all groups are met, the sampling process is complete.<br>
 </li>
 </ol></li>
-<li><strong>Example:</strong> In a study on consumer preferences for a new product, researchers may set quotas based on age, gender, and income level to ensure diversity in the sample. They then recruit participants from different demographic groups until the quotas for each group are filled.<br>
-</li>
-</ul></li>
+<li><p><strong>Example:</strong> In a study on consumer preferences for a new product, researchers may set quotas based on age, gender, and income level to ensure diversity in the sample. They then recruit participants from different demographic groups until the quotas for each group are filled.<br>
+</p></li>
+</ul>
+<ol start="2" type="1">
 <li><strong>Convenience Sampling:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Convenience sampling is a non-random sampling technique where researchers select individuals who are easily accessible or convenient to recruit. Participants are often chosen based on their availability, proximity to the researcher, or willingness to participate. Convenience sampling is quick and cost-effective but may introduce bias and limit generalizability.<br>
 </li>
-<li><strong>Process:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> Convenience sampling is a non-random sampling technique where researchers select individuals who are easily accessible or convenient to recruit. Participants are often chosen based on their availability, proximity to the researcher, or willingness to participate. Convenience sampling is quick and cost-effective but may introduce bias and limit generalizability.<br>
+</p></li>
+<li><p><strong>Process:</strong><br>
+</p>
 <ol type="1">
 <li><strong>Identify Participants:</strong> Researchers select individuals who are readily available and accessible for participation in the study. This may include individuals in close proximity to the researcher or those who voluntarily respond to recruitment efforts.<br>
 </li>
@@ -721,16 +749,18 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Sampling:</strong> Participants who agree to participate are included in the sample without regard to their representativeness or characteristics relative to the population of interest.<br>
 </li>
 </ol></li>
-<li><strong>Example:</strong> A researcher conducting a survey on smartphone usage may recruit participants by approaching people in a public area, such as a shopping mall, and inviting them to complete the survey on the spot.<br>
-</li>
-</ul></li>
+<li><p><strong>Example:</strong> A researcher conducting a survey on smartphone usage may recruit participants by approaching people in a public area, such as a shopping mall, and inviting them to complete the survey on the spot.<br>
+</p></li>
+</ul>
+<ol start="3" type="1">
 <li><strong>Judgemental Sampling:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Judgemental sampling, also known as purposive sampling, is a non-random sampling technique where researchers select participants based on their expertise, knowledge, or judgment of the population. Researchers use their judgment to identify individuals who possess the relevant characteristics or insights needed for the study. Judgemental sampling is often used in qualitative research or when specific expertise is required.<br>
 </li>
-<li><strong>Process:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> Judgemental sampling, also known as purposive sampling, is a non-random sampling technique where researchers select participants based on their expertise, knowledge, or judgment of the population. Researchers use their judgment to identify individuals who possess the relevant characteristics or insights needed for the study. Judgemental sampling is often used in qualitative research or when specific expertise is required.<br>
+</p></li>
+<li><p><strong>Process:</strong><br>
+</p>
 <ol type="1">
 <li><strong>Define Criteria:</strong> Researchers establish criteria for selecting participants based on their expertise, knowledge, or relevance to the research topic.<br>
 </li>
@@ -739,16 +769,18 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Recruitment:</strong> Approach selected individuals and invite them to participate in the study based on their expertise or relevance to the research topic.<br>
 </li>
 </ol></li>
-<li><strong>Example:</strong> In a study on effective teaching methods, researchers may purposively select experienced teachers known for their innovative instructional techniques and invite them to participate in interviews or focus groups.<br>
-</li>
-</ul></li>
+<li><p><strong>Example:</strong> In a study on effective teaching methods, researchers may purposively select experienced teachers known for their innovative instructional techniques and invite them to participate in interviews or focus groups.<br>
+</p></li>
+</ul>
+<ol start="4" type="1">
 <li><strong>Snowball Sampling:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Snowball sampling is a non-random sampling technique used to recruit participants through referrals or chain sampling. Initially, researchers identify a few individuals who meet the study criteria and ask them to refer other potential participants. The process continues iteratively, with each participant referring additional participants, creating a “snowball” effect. Snowball sampling is commonly used when the population of interest is difficult to access or identify.<br>
 </li>
-<li><strong>Process:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> Snowball sampling is a non-random sampling technique used to recruit participants through referrals or chain sampling. Initially, researchers identify a few individuals who meet the study criteria and ask them to refer other potential participants. The process continues iteratively, with each participant referring additional participants, creating a “snowball” effect. Snowball sampling is commonly used when the population of interest is difficult to access or identify.<br>
+</p></li>
+<li><p><strong>Process:</strong><br>
+</p>
 <ol type="1">
 <li><strong>Identify Initial Participants:</strong> Start by identifying a small number of initial participants who meet the study criteria or possess relevant characteristics.<br>
 </li>
@@ -759,23 +791,25 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Continued Sampling:</strong> Continue the process of recruitment and referral until the desired sample size is reached or until data saturation is achieved.<br>
 </li>
 </ol></li>
-<li><strong>Example:</strong> In a study on the experiences of individuals living with a rare medical condition, researchers may identify a few initial participants through patient support groups or online forums and ask them to refer others in their social network who share similar experiences.<br>
-</li>
-</ul></li>
-</ol>
+<li><p><strong>Example:</strong> In a study on the experiences of individuals living with a rare medical condition, researchers may identify a few initial participants through patient support groups or online forums and ask them to refer others in their social network who share similar experiences.<br>
+</p></li>
+</ul>
 <p>Each of these non-random sampling techniques has its own advantages and limitations. Researchers must carefully consider the appropriateness of each method based on the research objectives, characteristics of the population, and available resources. While non-random sampling techniques may offer practical advantages in terms of feasibility and efficiency, they may also introduce biases and limitations that need to be addressed in data analysis and interpretation.<br>
 </p>
 </section>
 <section id="data-collection-methods" class="level2" data-number="1.12">
-<h2 data-number="1.12" class="anchored" data-anchor-id="data-collection-methods"><span class="header-section-number">1.12</span> Data Collection Methods</h2>
+<h2 data-number="1.12" class="anchored" data-anchor-id="data-collection-methods"><span class="header-section-number">1.12</span> Data Collection Methods<br>
+</h2>
+<p>Data collection is the process of gathering the required information from our population whether we are measuring it through specific intruements or through a questionnaire (for human responses).</p>
 <ol type="1">
 <li><strong>Personal Interview or Face-to-Face Interview Method:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Personal interviews involve direct interaction between the interviewer and the respondent. They are conducted in-person, typically at a predetermined location such as the respondent’s home, workplace, or a neutral venue. Face-to-face interviews allow for detailed questioning, clarification, and rapport building.<br>
 </li>
-<li><strong>Process:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> Personal interviews involve direct interaction between the interviewer and the respondent. They are conducted in-person, typically at a predetermined location such as the respondent’s home, workplace, or a neutral venue. Face-to-face interviews allow for detailed questioning, clarification, and rapport building.<br>
+</p></li>
+<li><p><strong>Process:</strong><br>
+</p>
 <ol type="1">
 <li><strong>Preparation:</strong> The interviewer prepares a structured, semi-structured, or unstructured interview guide with a series of questions or topics to cover during the interview.<br>
 </li>
@@ -788,18 +822,20 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Follow-up:</strong> After the interview, the interviewer may clarify responses, ask follow-up questions, or thank the respondent for their participation.<br>
 </li>
 </ol></li>
-<li><strong>Advantages:</strong> Allows for in-depth exploration of topics, clarification of responses, and rapport building. High response rates and flexibility in probing for detailed information.<br>
-</li>
-<li><strong>Limitations:</strong> Time-consuming and resource-intensive. May be subject to interviewer bias or social desirability bias.<br>
-</li>
-</ul></li>
+<li><p><strong>Advantages:</strong> Allows for in-depth exploration of topics, clarification of responses, and rapport building. High response rates and flexibility in probing for detailed information.<br>
+</p></li>
+<li><p><strong>Limitations:</strong> Time-consuming and resource-intensive. May be subject to interviewer bias or social desirability bias.<br>
+</p></li>
+</ul>
+<ol start="2" type="1">
 <li><strong>Telephone Interview:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Telephone interviews involve conducting interviews over the phone. They offer a convenient and cost-effective method of data collection, especially for geographically dispersed populations or time-sensitive studies.<br>
 </li>
-<li><strong>Process:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> Telephone interviews involve conducting interviews over the phone. They offer a convenient and cost-effective method of data collection, especially for geographically dispersed populations or time-sensitive studies.<br>
+</p></li>
+<li><p><strong>Process:</strong><br>
+</p>
 <ol type="1">
 <li><strong>Preparation:</strong> Similar to face-to-face interviews, the interviewer prepares a structured or semi-structured interview guide.<br>
 </li>
@@ -812,18 +848,20 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Follow-up:</strong> After the interview, the interviewer may send a follow-up email or letter to thank the respondent for their participation.<br>
 </li>
 </ol></li>
-<li><strong>Advantages:</strong> Cost-effective and efficient for reaching geographically dispersed populations. Allows for anonymity and may reduce social desirability bias.<br>
-</li>
-<li><strong>Limitations:</strong> Limited rapport building and non-verbal cues. May have lower response rates compared to face-to-face interviews.<br>
-</li>
-</ul></li>
+<li><p><strong>Advantages:</strong> Cost-effective and efficient for reaching geographically dispersed populations. Allows for anonymity and may reduce social desirability bias.<br>
+</p></li>
+<li><p><strong>Limitations:</strong> Limited rapport building and non-verbal cues. May have lower response rates compared to face-to-face interviews.<br>
+</p></li>
+</ul>
+<ol start="3" type="1">
 <li><strong>Postal or Mail Questionnaires:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Postal or mail questionnaires involve sending questionnaires to respondents via postal mail. Respondents complete the questionnaires at their convenience and return them by mail.<br>
 </li>
-<li><strong>Process:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> Postal or mail questionnaires involve sending questionnaires to respondents via postal mail. Respondents complete the questionnaires at their convenience and return them by mail.<br>
+</p></li>
+<li><p><strong>Process:</strong><br>
+</p>
 <ol type="1">
 <li><strong>Questionnaire Design:</strong> Design a clear and concise questionnaire with instructions for completion.<br>
 </li>
@@ -834,18 +872,20 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Data Entry:</strong> Upon receiving the completed questionnaires, researchers manually enter the data into a database or spreadsheet for analysis.<br>
 </li>
 </ol></li>
-<li><strong>Advantages:</strong> Cost-effective for large-scale surveys. Allows for anonymity and flexibility in completion.<br>
-</li>
-<li><strong>Limitations:</strong> Low response rates. Limited ability to clarify responses or probe for detailed information. Risk of non-response bias.<br>
-</li>
-</ul></li>
+<li><p><strong>Advantages:</strong> Cost-effective for large-scale surveys. Allows for anonymity and flexibility in completion.<br>
+</p></li>
+<li><p><strong>Limitations:</strong> Low response rates. Limited ability to clarify responses or probe for detailed information. Risk of non-response bias.<br>
+</p></li>
+</ul>
+<ol start="4" type="1">
 <li><strong>Self-Administered Questionnaires:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Self-administered questionnaires are completed by respondents without the presence of an interviewer. They can be administered in-person, online, or through postal mail.<br>
 </li>
-<li><strong>Process:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> Self-administered questionnaires are completed by respondents without the presence of an interviewer. They can be administered in-person, online, or through postal mail.<br>
+</p></li>
+<li><p><strong>Process:</strong><br>
+</p>
 <ol type="1">
 <li><strong>Questionnaire Design:</strong> Design a clear and concise questionnaire with instructions for self-administration.<br>
 </li>
@@ -858,18 +898,20 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Data Entry:</strong> Researchers collect the completed questionnaires and enter the data into a database or spreadsheet for analysis.<br>
 </li>
 </ol></li>
-<li><strong>Advantages:</strong> Cost-effective and efficient for large-scale surveys. Allows for anonymity and flexibility in completion.<br>
-</li>
-<li><strong>Limitations:</strong> Limited ability to clarify responses or probe for detailed information. Risk of non-response bias and incomplete responses.<br>
-</li>
-</ul></li>
+<li><p><strong>Advantages:</strong> Cost-effective and efficient for large-scale surveys. Allows for anonymity and flexibility in completion.<br>
+</p></li>
+<li><p><strong>Limitations:</strong> Limited ability to clarify responses or probe for detailed information. Risk of non-response bias and incomplete responses.<br>
+</p></li>
+</ul>
+<ol start="5" type="1">
 <li><strong>Direct Observation:</strong><br>
-
-<ul>
-<li><strong>Definition:</strong> Direct observation involves systematically watching and recording behavior, events, or activities as they occur in real-time. It is commonly used in observational studies, ethnographic research, and behavioral research.<br>
 </li>
-<li><strong>Process:</strong><br>
-
+</ol>
+<ul>
+<li><p><strong>Definition:</strong> Direct observation involves systematically watching and recording behavior, events, or activities as they occur in real-time. It is commonly used in observational studies, ethnographic research, and behavioral research.<br>
+</p></li>
+<li><p><strong>Process:</strong><br>
+</p>
 <ol type="1">
 <li><strong>Preparation:</strong> Define the objectives of the observation and develop a structured observation protocol.<br>
 </li>
@@ -882,12 +924,11 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Data Analysis:</strong> Analyze the collected data to identify patterns, trends, or relationships.<br>
 </li>
 </ol></li>
-<li><strong>Advantages:</strong> Provides rich, detailed data on behavior and context. Allows for direct observation of natural behavior without relying on self-report.<br>
-</li>
-<li><strong>Limitations:</strong> Observer bias may affect the interpretation of observations. Limited to observable behaviors or events and may not capture underlying motivations or intentions.<br>
-</li>
-</ul></li>
-</ol>
+<li><p><strong>Advantages:</strong> Provides rich, detailed data on behavior and context. Allows for direct observation of natural behavior without relying on self-report.<br>
+</p></li>
+<li><p><strong>Limitations:</strong> Observer bias may affect the interpretation of observations. Limited to observable behaviors or events and may not capture underlying motivations or intentions.<br>
+</p></li>
+</ul>
 <p>Each data collection method has its own advantages, limitations, and applicability depending on the research objectives, characteristics of the study population, and available resources. Researchers must carefully select and implement the most appropriate method(s) based on their specific research needs.<br>
 </p>
 </section>
@@ -954,10 +995,70 @@ ul.task-list li input[type="checkbox"] {
 <li>Continuously refine and improve the questionnaire based on feedback and data collected from previous surveys.</li>
 </ul></li>
 </ol>
-<p>By following these comprehensive guidelines, you can develop a survey questionnaire that effectively gathers relevant and reliable data to inform your research objectives and decision-making processes.</p>
-
-
+<p>By following these comprehensive guidelines, you can develop a survey questionnaire that effectively gathers relevant and reliable data to inform your research objectives and decision-making processes.<br>
+</p>
 </section>
+<section id="solved-examples" class="level2 page-columns page-full" data-number="1.14">
+<h2 data-number="1.14" class="anchored" data-anchor-id="solved-examples"><span class="header-section-number">1.14</span> Solved Examples</h2>
+<p><strong>Question 1</strong><br>
+State whether the following statements are <strong>TRUE</strong> or <strong>FALSE</strong>.<br>
+</p>
+<ol type="i">
+<li><p>Selecting sample every jth element of the population is a method of systematic sampling technique.<br>
+</p></li>
+<li><p>Nominal data is categorical data that can be ranked.<br>
+</p></li>
+<li><p>Using information of sample to make inference about population is a descriptive statistics approach.<br>
+</p></li>
+<li><p>One of the advantages of telephone survey is that respondents have more time to think of proper responses.<br>
+</p></li>
+<li><p>A list of all units in a population is called sampling frame.<br>
+</p></li>
+</ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>QUESTION 1<br>
+</p>
+</div></div><p><strong>Question 2</strong><br>
+Research was conducted to examine the negative implication of online education to higher education institution undergraduate students from the educator’s perspective. The research was carried out to all universities located in the Klang Valley. There are a total of 12 universities (both public and private) listed under the Ministry of Education database. An online questionnaire was distributed through email to randomly selected respondents from all the 12 universities. Among the information recorded were the respondents age, number of years with the current university, job position (Lecturer, Senior Lecturer, Associate Professor and Professor) and highest education level (Bachelors, Masters and PhD). In addition, the respondents were asked a YES/NO response on 15 items statement related to their perceptions towards the negative implication of online education.&nbsp;Answer the following statements <strong>TRUE</strong> or <strong>FALSE</strong> based on the above research.<br>
+</p>
+<ol type="i">
+<li><p>The population is all the undergraduate students at higher education institutions in Klang Valley.<br>
+</p></li>
+<li><p>The sampling frame is the list of all public and private university in Klang Valley.<br>
+</p></li>
+<li><p>The most appropriate sampling technique for the above research is stratified sampling.<br>
+</p></li>
+<li><p>Job position takes the nominal level of measurement.<br>
+</p></li>
+<li><p>All the variables mentioned above are quantitative.<br>
+</p></li>
+</ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>QUESTION 2<br>
+</p>
+</div></div><p><strong>Question 3</strong><br>
+A Dean in University X doing a study to determine the opinion of students regarding Online Distance Learning. From 1200 new students register in October 2020 session, only 450 students are selected randomly as a sample. Students are listed according to their student ID. The opinion of students is scale from 1 (strongly disagree) to 5 (strongly agree).<br>
+Using this situation, answer the following questions.&nbsp;</p>
+<p>Answer <strong>TRUE (T)</strong> or <strong>FALSE (F)</strong> based on the above study.&nbsp;</p>
+<ol type="a">
+<li><p>The population is all new students register for October 2020 session in University X.&nbsp;</p></li>
+<li><p>The sampling frame for this study is 450 students in University X.&nbsp;</p></li>
+<li><p>The level of measurement for the interest variable in the study is ratio.&nbsp;</p></li>
+<li><p>The type of variable for the above study is qualitative.&nbsp;</p></li>
+<li><p>The most appropriate sampling technique for the above study is systematic random sampling.<br>
+</p></li>
+</ol>
+
+
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>QUESTION 3<br>
+a) T&nbsp; b) F&nbsp; c) F<br>
+d) T&nbsp; e) T<br>
+</p>
+</div></div></section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

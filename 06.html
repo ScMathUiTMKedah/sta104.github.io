@@ -451,7 +451,7 @@ r = \frac{{n(\sum xy) - (\sum x)(\sum y)}}{{\sqrt{[n\sum x^2 - (\sum x)^2][n\sum
 <li><p>Coefficient of Determination The coefficient of determination (<span class="math inline">\(R^2\)</span>) measures the proportion of the variance in the dependent variable that is predictable from the independent variable. It ranges from 0 to 1, where higher values indicate a better fit of the regression line to the data.</p></li>
 </ol>
 <p><span class="math display">\[R^2 = r^2\]</span><br>
-<strong><em>Note:</em></strong> The <span class="math inline">\(R^2\)</span> value is reported in decimals, but the explanation is in <span class="math inline">\(/%\)</span>.</p>
+<strong><em>Note:</em></strong> The <span class="math inline">\(R^2\)</span> value is reported in decimals, but the explanation is in <span class="math inline">\(\%\)</span>.</p>
 
 <ol start="7" type="a">
 <li>Predicting exam score To predict the exam score for a given time taken for special tutorial, we use the regression equation obtained in part (c).</li>
@@ -610,7 +610,8 @@ Solved Example 2
 <p><strong>Solution</strong><br>
 </p>
 <p>a)<br>
-Independent variable: Speed (words per minute)&nbsp; Dependent variable: Time (hours)<br>
+Independent variable: Speed (words per minute)<br>
+Dependent variable: Time (hours)<br>
 </p>
 <p>b)<br>
 </p>
@@ -623,9 +624,11 @@ Independent variable: Speed (words per minute)&nbsp; Dependent variable: Time (h
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(speed,time, </span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Speed (words per minute)"</span>, </span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Time (in hours)"</span>, </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"The scatter diagram between the typing speed of a secretary and the time that it takes the secretary to learn to use a new word processing program"</span>, </span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, </span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"The scatter diagram between the typing speed of a </span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="st">     secretary and the time that it takes the secretary to learn </span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="st">     to use a new word processing program"</span>, </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -635,8 +638,17 @@ Independent variable: Speed (words per minute)&nbsp; Dependent variable: Time (h
 </div>
 </div>
 <p>c)<br>
-<span class="math inline">\(\sum{x} = 48+74+52+...+74+90+92 = 884\)</span> <span class="math inline">\(\sum{y} = 7+4+8+...+4.5+1.9+1.5=47.8\)</span> <span class="math inline">\(\sum{x^2} = 48^2+74^2+52^2+...+74^2+90^2+92^2 = 67,728\)</span> <span class="math inline">\(\sum{y^2} = 7^2+4^2+8^2+...+4.5^2+1.9^2+1.5^2=242.06\)</span> <span class="math inline">\(\sum{xy} = (48 \times 7) + (74 \times 4) + ... + (90 \times 1.9) + (92 \times 1.5) = 3,163.8\)</span> <span class="math inline">\(n=12\)</span> <span class="math display">\[r = \frac{{12(3,163.8) - (884)(47.8)}}{{\sqrt{(12 \times 67,728 - 884^2)(12 \times 242.06 - 47.8^2)}}} = 0.9742\]</span></p>
-<p>There is a <strong>very</strong> <strong>strong negative</strong> linear relationship between the typing speed of a secretary and the time that it takes the secretary to learn to use a new word processing program.<br>
+<span class="math inline">\(\sum{x} = 48+74+52+...+74+90+92 = 884\)</span>&nbsp; <span class="math inline">\(\sum{y} = 7+4+8+...+4.5+1.9+1.5=47.8\)</span><br>
+<span class="math inline">\(\sum{x^2} = 48^2+74^2+52^2+...+74^2+90^2+92^2 = 67,728\)</span><br>
+<span class="math inline">\(\sum{y^2} = 7^2+4^2+8^2+...+4.5^2+1.9^2+1.5^2=242.06\)</span><br>
+<span class="math inline">\(\sum{xy} = (48 \times 7) + (74 \times 4) + ... + (90 \times 1.9) + (92 \times 1.5) = 3,163.8\)</span><br>
+<span class="math inline">\(n=12\)</span><br>
+<br>
+<span class="math display">\[
+r = \frac{{12(3,163.8) - (884)(47.8)}}{{\sqrt{(12 \times 67,728 - 884^2)(12 \times 242.06 - 47.8^2)}}} = 0.9742
+\]</span><br>
+<br>
+There is a <strong>very</strong> <strong>strong negative</strong> linear relationship between the typing speed of a secretary and the time that it takes the secretary to learn to use a new word processing program.<br>
 </p>
 <p>d)<br>
 <span class="math display">\[
@@ -663,18 +675,21 @@ a &amp;= \frac{\sum{y}}{n} - b\frac{\sum{x}}{n}\\
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(speed, time, </span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Speed (words per minute)"</span>, </span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Time (in hours)"</span>, </span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"The scatter diagram between the typing speed of a secretary and the time that it takes the secretary to learn to use a new word processing program"</span>, </span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, </span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>)</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate regression line</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>regression <span class="ot">&lt;-</span> <span class="fu">lm</span>(time <span class="sc">~</span> speed)</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Add regression line to the plot</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(regression, <span class="at">col =</span> <span class="st">"red"</span>)</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Label regression equation</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">15</span>, <span class="dv">85</span>, <span class="fu">paste</span>(<span class="st">"Regression equation: y ="</span>, <span class="fu">round</span>(regression<span class="sc">$</span>coef[<span class="dv">1</span>], <span class="dv">2</span>), <span class="st">"+"</span>, <span class="fu">round</span>(regression<span class="sc">$</span>coef[<span class="dv">2</span>], <span class="dv">2</span>), <span class="st">"x"</span>), <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"The scatter diagram between the typing speed of a </span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="st">     secretary and the time that it takes the secretary to learn </span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="st">     to use a new word processing program"</span>, </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>, </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate regression line</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>regression <span class="ot">&lt;-</span> <span class="fu">lm</span>(time <span class="sc">~</span> speed)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Add regression line to the plot</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(regression, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Label regression equation</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">15</span>, <span class="dv">85</span>, <span class="fu">paste</span>(<span class="st">"Regression equation: y ="</span>, </span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">round</span>(regression<span class="sc">$</span>coef[<span class="dv">1</span>], <span class="dv">2</span>), <span class="st">"+"</span>, <span class="fu">round</span>(regression<span class="sc">$</span>coef[<span class="dv">2</span>], <span class="dv">2</span>), <span class="st">"x"</span>), <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -684,7 +699,7 @@ a &amp;= \frac{\sum{y}}{n} - b\frac{\sum{x}}{n}\\
 </div>
 </div>
 <p>e)<br>
-For every 10 words increase in typing speed per minute, the time it takes a secretary to learn to use a new word processing program decreased by 1.371 hours.<br>
+For every 10 words <strong>increase</strong> in typing speed per minute, the time it takes a secretary to learn to use a new word processing program <strong>decreased</strong> by 1.371 hours.<br>
 </p>
 <p>f)<br>
 <span class="math inline">\(y = 14.0857 − 0.1371(70) = 4.4887\)</span></p>
