@@ -1,26 +1,27 @@
 {
-    "id": "6C19A03F",
-    "path": "~/GitHub/sta104.github.io/04.qmd",
-    "project_path": "04.qmd",
+    "id": "F5BBC8EF",
+    "path": "~/GitHub/sta104.github.io/06.qmd",
+    "project_path": "06.qmd",
     "type": "quarto_markdown",
     "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1709887275505.0,
+    "created": 1709908223884.0,
     "source_on_save": false,
-    "relative_order": 5,
+    "relative_order": 7,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "17,2",
-        "scrollLine": "14"
+        "cursorPosition": "206,0",
+        "scrollLine": "197",
+        "docOutlineVisible": "1"
     },
     "folds": "",
-    "lastKnownWriteTime": 1709907441,
+    "lastKnownWriteTime": 1709986071,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1709907441885,
+    "last_content_update": 1709986071347,
     "read_only": false,
     "read_only_alternatives": []
 }
