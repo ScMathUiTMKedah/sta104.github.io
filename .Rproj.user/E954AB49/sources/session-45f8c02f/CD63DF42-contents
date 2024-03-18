@@ -19,6 +19,31 @@ These learning outcomes provide a comprehensive overview of the fundamental conc
 
 Statistics is a branch of mathematics that involves the collection, analysis, interpretation, presentation, and organization of data. It provides methods and techniques for summarizing and making inferences from data, helping us understand patterns, relationships, and variability in the world around us. At its core, statistics is about extracting meaningful insights from data to inform decision-making, solve problems, and answer questions.\
 
+Statistics in the dictionary:\
+
+a. Webster’s New World Dictionary:\
+
+    1.	facts or data of a numerical kind, assembled, classified, and tabulated so as to present significant information about a given subject.\
+    2.	the science of assembling, classifying, and tabulating such facts or data.\
+
+b. Meriam’s Webster Collegiate Dictionary\
+
+    1. a branch of mathematics dealing with the collection, analysis, interpretation, and presentation of masses of numerical data\
+    2. a collection of quantitative data\
+
+The word statistics in our everyday life means different things to different people.  As a field of study, statistics is the science of\
+
+i. 	collecting,\ 
+ii. 	organizing,\ 
+iii. 	presenting,\ 
+iv. 	analyzing, and\ 
+v. 	interpreting numerical data,\
+
+for the purpose of assisting in making a more effective decision. The decision making process must not be based on personal opinion or on belief.\
+
+Statistics will enable you to be proficient data producers and efficient data users. It extends to almost every realm of human endeavor. Statistics is a powerful method for getting answers from data, and it is sometimes the best way to persuade others that your conclusions are correct.\
+
+
 ## Application in the Real World in Various Fields 
 
 Statistics finds applications across a wide range of fields and disciplines, playing a crucial role in understanding phenomena, making predictions, and informing policy decisions. Here are some examples of how statistics is applied in various domains:\
@@ -54,63 +79,222 @@ In each of these fields, a solid understanding of statistical concepts is essent
 
 Learning statistics is essential for several reasons:\
 
-1.  **Data Analysis:** In today's data-rich world, being able to analyze and interpret data is crucial. Statistics provides the tools and techniques needed to make sense of large datasets, identify patterns, and draw meaningful conclusions. Whether you're analyzing market trends, conducting scientific research, or evaluating public policy, a solid understanding of statistics enables you to extract valuable insights from data.\
+1.  **Data Analysis:**\
 
-2.  **Informed Decision-Making:** Statistics helps us make informed decisions based on evidence rather than intuition or anecdotal evidence. By analyzing data statistically, we can assess the effectiveness of different strategies, evaluate the impact of interventions, and identify trends and patterns that may inform future actions. Whether you're a business leader, policymaker, or researcher, statistics empowers you to make decisions that are grounded in empirical evidence.\
+In today's data-rich world, being able to analyze and interpret data is crucial. Statistics provides the tools and techniques needed to make sense of large datasets, identify patterns, and draw meaningful conclusions. Whether you're analyzing market trends, conducting scientific research, or evaluating public policy, a solid understanding of statistics enables you to extract valuable insights from data.\
 
-3.  **Critical Thinking:** Studying statistics cultivates critical thinking skills by teaching students how to evaluate evidence, identify biases, and assess the validity of arguments. Statistical reasoning involves formulating hypotheses, designing experiments, and drawing conclusions based on evidence. This process fosters analytical thinking, problem-solving skills, and the ability to approach complex issues with a systematic mindset.\
+2.  **Informed Decision-Making:**\
 
-4.  **Communication Skills:** Statistics plays a crucial role in communicating information effectively to others. Whether you're presenting research findings, interpreting survey results, or explaining trends to stakeholders, the ability to communicate statistical concepts clearly and accurately is essential. Learning statistics equips students with the skills needed to convey complex information in a concise and understandable manner.\
+Statistics helps us make informed decisions based on evidence rather than intuition or anecdotal evidence. By analyzing data statistically, we can assess the effectiveness of different strategies, evaluate the impact of interventions, and identify trends and patterns that may inform future actions. Whether you're a business leader, policymaker, or researcher, statistics empowers you to make decisions that are grounded in empirical evidence.\
 
-5.  **Career Opportunities:** Proficiency in statistics opens up a wide range of career opportunities across various fields, including business, healthcare, government, academia, and technology. Employers value candidates who can analyze data, make data-driven decisions, and communicate findings effectively. Whether you're pursuing a career in data analysis, research, finance, or marketing, a strong foundation in statistics can enhance your employability and advance your career prospects.\
+3.  **Critical Thinking:**\
+
+Studying statistics cultivates critical thinking skills by teaching students how to evaluate evidence, identify biases, and assess the validity of arguments. Statistical reasoning involves formulating hypotheses, designing experiments, and drawing conclusions based on evidence. This process fosters analytical thinking, problem-solving skills, and the ability to approach complex issues with a systematic mindset.\
+
+4.  **Communication Skills:**\
+
+Statistics plays a crucial role in communicating information effectively to others. Whether you're presenting research findings, interpreting survey results, or explaining trends to stakeholders, the ability to communicate statistical concepts clearly and accurately is essential. Learning statistics equips students with the skills needed to convey complex information in a concise and understandable manner.\
+
+5.  **Career Opportunities:**\
+
+Proficiency in statistics opens up a wide range of career opportunities across various fields, including business, healthcare, government, academia, and technology. Employers value candidates who can analyze data, make data-driven decisions, and communicate findings effectively. Whether you're pursuing a career in data analysis, research, finance, or marketing, a strong foundation in statistics can enhance your employability and advance your career prospects.\
 
 Overall, learning statistics is essential for navigating the complexities of the modern world, making informed decisions, and contributing to the advancement of knowledge and society. Whether you're pursuing a career in a data-intensive field or simply seeking to become a more informed citizen, statistics provides the tools and concepts needed to analyze data critically, draw meaningful conclusions, and communicate findings effectively.\
 
-## Type of Variables 
+## Types of Statistics
+
+Statistics can be divided into two categories: Descriptive Statistics and Inferential Statistics.\
+
+1. **Descriptive Statistics** - The process of collecting, compiling, summarizing and presenting data into graphical forms such us charts, graphs, tables or numerical forms such as averages and percentages derived from them so that one can evaluate the data set easily.\ 
+
+Descriptive statistics include a large variety of methods for summarizing or describing a set of numbers. These methods may involve computational or graphical analysis. For example, price index numbers are one example of a descriptive statistic. The measures of central tendency and dispersion presented in this chapter are also descriptive statistics, because they describe the nature of the data collected.\
+
+Example of descriptive statistics:\
+
+(i)	The percentage growth of Malaysia’s population from one decade to the next.\
+(ii)	Uses of pictorial display e.g. bar charts & pie charts.\
+(iii)	The average income of the 104 families in our company is RM28,673 per annum\          
+
+In descriptive statistics, our objective is to describe the properties of a group of scores or data that we have "in hand," i.e., data that are accessible to us in that we can write them down on paper or type them into a spreadsheet.\
+
+In descriptive statistics we are not interested in other data that were not gathered but might have been; that is the subject of inferential statistics.\ 
+ 
+2. **Inferential Statistics** - A decision, estimate, prediction, or generalization about a population based on a sample. It consists of methods that use sample results to help make decisions or predictions about a population.\
+
+Example of inferential statistics;\
+
+(i)	Based on a sample survey by a lecturer at a higher learning institution, only 45% of diploma graduates further their studies in the Bachelor’s program in local IPTA.\
+(ii)	Department of Labor (Jabatan Buruh) uses the average income of a sample of several hundreds workers to estimate the average income of all 3 million workers, it is using a simple form of inferential statistics\
+(iii)	This sample of 512 families from a district indicates with 95% confidence we can conclude that the average family income in the county is between RM2518 and RM2932.\ 
+
+Comparison between descriptive statistics and inferential statistics\
+
++--------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Descriptive statistics                                 | Inferential statistics                                                                                                    |
++========================================================+===========================================================================================================================+
+| 1\. describe the data set                              | 1\. use the data to draw conclusions about the population                                                                 |
+|                                                        |                                                                                                                           |
+| 2\. concerned with describing and summarizing a sample | 2\. concerned with going beyond the sample to make predictions about the population from which the sample is being drawn. |
++--------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+
+## Population versus sample
+
+In statistics, a population is the entire collection of all observations of interest to the researcher. It consists of all elements, individual, items or objects whose characteristics are being studied. Population can be finite or infinite.\
+  
+A sample is a portion, or part or subset of the population of interest.\
+
+As an illustration, suppose we want to estimate the characteristics of a population such as the average weight of all 30-year-old men in Perlis. If from each district 100 men are selected at random, then the selected men are a sample.\
+
+Statistical terms related to population and sample.\
+
+1.	**Parameter** is a numerical characteristic or measure of a population, a fixed and usually unknown quantity. For example, percentage (%) of voters, p, in Kedah who think the Government is doing a good job to control unemployment among fresh university graduates.\
+
+2.	**Census** is a study of the entire population. Data is gathered on every member of the population.\
+
+3.	**Sample survey** is a study on some selected portion of the population.\
+
+4.	**Statistic** is a numerical characteristic of the sample data such as the mean, proportion or variance that provide estimates of the corresponding population parameters.\ 
+
+5.	**Element (Experimental Units)** is objects (people or things) on which measurements is taken.\
+
+6.	**Pilot study** is a pretest or trial run on a small number of elements (respondent) before conducting the actual survey. The objectives is to:\
+
+  i.	To improve the questionnaires\
+  ii.	To identify the problems that occur during the survey\
+  iii.	To predict the cost, time and workforce needed.\
+
+## TYPES (OR SOURCES) OF DATA
+
+The definition of data is the value of the characteristic of an element. We collect data due to the following reasons:\
+ 
+1.	Obtain Input to a Research Study\
+2.	Measure Performance\
+3.	Assist in Formulating Decision Alternatives\
+4.	Satisfy Curiosity\
+5.	Knowledge for the Sake of Knowledge\
+
+There are two classifications of data that is primary data and secondary data.\
+
+1. *Primary data (or raw data)*\
+
+Data gathered and collected by the researcher direct from his respondents is primary data. It is exhaustive and exclusive. Data not arranged or organized in any manner called as a set of raw data.  Normally, researchers collect primary data through survey, experiment or observation.\
+
+Advantages and disadvantages of primary data\
+
++---------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+| Advantages                                                                                                                      | Disadvantages                                  |
++=================================================================================================================================+================================================+
+| 1\. More accurate, reliable and up-to-date                                                                                      | 1\. Very costly                                |
+|                                                                                                                                 |                                                |
+| 2\. If the data needed by decision makers aren’t available from other sources (secondary data), primary data has to be gathered | 2\. Time consuming                             |
+|                                                                                                                                 |                                                |
+| 3\. Primary sources usually explain how the data were gathered and what limitation exists to their use.                         | 3\. Requires a lot of manpower.                |
+|                                                                                                                                 |                                                |
+| 4. Usually satisfies the objectives of a research                                                                               |                                                |
++---------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+
+2. *Secondary data*\
+
+Secondary data is a primary data that has been collected, processed and published for the use of other people. There are various ways to obtain secondary data, which is through:\
+
+  i. Newspapers, magazines and books\
+  ii.	economic reports (e.g. Laporan Bank Negara)\
+  iii. statistical abstract\
+  iv.	annual report of companies\
+  v. the Statistics department\
+  vi.	online sources\
+  vii. and other sources\
+
+Advantages and disadvantages of secondary data
+
++-----------------------------+------------------------------------------------------------------------------------+
+| Advantages                  | Disadvantages                                                                      |
++=============================+====================================================================================+
+| 1.  Require less time       | 1.  may contain errors in printing and transcription from the primary sources.     |
+| 2.  Require less effort     | 2.  do not know the conditions under which the data were collected and summarized. |
+| 3.  Inexpensive data source |                                                                                    |
++-----------------------------+------------------------------------------------------------------------------------+
+
+## Type of Variables\
+
+> Definition of a variable\
+Measurement, the assigning of numbers or codes according to prior-set rules, is central to science, the scientific method, and statistical analyses.\
+
+Performing statistical operations will depends on the nature of collected data and what type of measurements used.  This is crucial to make sure that there are no violations of certain assumptions in statistical analysis and avoid drawing misleading conclusion.\ 
+
+Variables are measurements that can vary or expressed as more than one value during a study. Variable is also defined as the characteristic (distinguishing feature) of the elements in a population or a sample under study. Thus, variables represent the general “thing” being measured and not any specific value or code.\
+
+Examples are,\
+ 
+i.	If the DIB Course Tutor is interested in the percentage spent by his student after receiving PTPTN, the variable is amount money.\
+ii.	In a study concerning the income of wage earners of all Northern Region UiTM Branch Campus graduate, the variable is income.\
+iii.	If a researcher measures the weight of 30 subjects, then weight would be a variable.
+iv.	Examples of variables for humans are height, weight, number of siblings, sex, marital status and eye color.\
+
 
 There two types of variables: categorical and numerical.\
 
-1.  **Categorical Variable:**\
+1. **Categorical (Qualitative) Variable:**\
 
-  -   **Definition:** A categorical variable is a type of variable that represents categories or groups. It doesn't have numerical values but rather describes qualities or characteristics that can be placed into distinct groups.\
+  - **Definition:** A categorical variable is a type of variable that represents categories or groups. It doesn't have numerical values but rather describes qualities or characteristics that can be placed into distinct groups.\
 
-  -   **Examples:**\
+  - **Examples:**\
 
-      -   Gender: Male, Female\
-      -   Race: Malay, Chinese, Indian, etc.\
-      -   Educational Level: SPM, STPM, Diploma, Bachelor's Degree, Master's Degree, PhD\
-      -   Marital Status: Single, Married, Divorced, Widowed\
-      -   Type of Vehicle: Car, Truck, SUV, Motorcycle
+    - Gender: Male, Female\
+    - Race: Malay, Chinese, Indian, etc.\
+    - Educational Level: SPM, STPM, Diploma, Bachelor's Degree, Master's Degree, PhD\
+    - Marital Status: Single, Married, Divorced, Widowed\
+    - Type of Vehicle: Car, Truck, SUV, Motorcycle
 
-  -   **Properties:**\
+  - **Properties:**\
 
-      -   Categorical variables cannot be measured on a numerical scale.\
-      -   The categories are often mutually exclusive and exhaustive, meaning each observation falls into only one category, and all possible categories cover all observations.\
-      -   The order of categories is not inherently meaningful (ordinal), although sometimes they might have a natural order.\
+    - Categorical variables cannot be measured on a numerical scale.\
+    - The categories are often mutually exclusive and exhaustive, meaning each observation falls into only one category, and all possible categories cover all observations.\
+    - The order of categories is not inherently meaningful (ordinal), although sometimes they might have a natural order.\
         
-2.  **Numerical Variable:**\
+2. **Numerical (Quantitative) Variable:**\
 
-  -   **Definition:** A numerical variable is a type of variable that represents measurable quantities or numerical values. It is expressed in terms of numbers and can be subjected to mathematical operations such as addition, subtraction, multiplication, and division.\
+  - **Definition:** A numerical variable is a type of variable that represents measurable quantities or numerical values. It is expressed in terms of numbers and can be subjected to mathematical operations such as addition, subtraction, multiplication, and division.\
     
-  -   **Examples:**\
-      -   Age: 25 years, 35 years, 50 years, etc.\
-      -   Height: 160 cm, 175 cm, 185 cm, etc.\
-      -   Income: RM1,500, RM2,000, RM2,500, etc.\
-      -   Weight: 60 kg, 70 kg, 80 kg, etc.\
-      -   Temperature: 20°C, 25°C, 30°C, etc.\
+  - **Examples:**\
+    - Age: 25 years, 35 years, 50 years, etc.\
+    - Height: 160 cm, 175 cm, 185 cm, etc.\
+    - Income: RM1,500, RM2,000, RM2,500, etc.\
+    - Weight: 60 kg, 70 kg, 80 kg, etc.\
+    - Temperature: 20°C, 25°C, 30°C, etc.\
         
-  -   **Properties:**\
-      -   Numerical variables can be measured on a numerical scale, often with meaningful intervals between values.\
-      -   They can take on a wide range of values, including decimal values.\
-      -   Numerical variables can be further classified as discrete or continuous.\
-          -   **Discrete Variables:** Have distinct, separate values and typically represent counts of items. Examples include the number of children in a family or the number of cars in a parking lot.\
-          -   **Continuous Variables:** Can take on any value within a certain range and can be measured with precision. Examples include height, weight, temperature, and income.\
+  - **Properties:**\
+    - Numerical variables can be measured on a numerical scale, often with meaningful intervals between values.\
+    - They can take on a wide range of values, including decimal values.\
+    - Numerical variables can be further classified as discrete or continuous.\
+        - **Discrete Variables:**\
+          Have distinct, separate values and typically represent counts of items. Examples include the number of children in a family or the number of cars in a parking lot.\
+          Examples are:\
+            i. the number of students in the library\
+            ii.	number of cars sold by Proton weekly\
+            iii. 	The Statistics Department collects data on household size and publishes the information in Current Population Reports.\   
+
+        - **Continuous Variables:**\
+          Can take on any value within a certain range and can be measured with precision. Examples include height, weight, temperature, and income.\
+          Examples are:\
+            i. distance,weights\
+            ii. heights of individuals\
+            iii. temperature in a room\
+            iv. liters of gasoline pumped\
 
 Understanding the distinction between categorical and numerical variables is essential in statistical analysis, as it influences the choice of appropriate statistical methods and techniques for analyzing and interpreting data.\
 
+::: {.callout}
+### Remark
+
+Because qualitative data always have a limited number of alternative values, such variables are also described as discrete. All qualitative data are discrete, while some numeric data are discrete and some are continuous
+:::
+
 ## Scale of Measurements 
 
-There are four scales of measurement: nominal, ordinal, interval, and ratio.\
+Statistics deals with measurements either quantitative or qualitative. The measurements are the actual numerical values of a variable. Variables differ in "how well" they can be measured, i.e., in how much measurable information their measurement scale can provide. Variable can be classified on the basis of their level of measurement. The way we classify variables greatly affects how we can use them in our analysis.\
+
+There are four generally used scales of measurement, listed here from weakest to strongest: nominal, ordinal, interval, and ratio.\
 
 1.  **Nominal Scale:**\
 
