@@ -30,8 +30,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02.html" rel="next">
+<link href="./references.html" rel="next">
 <link href="./index.html" rel="prev">
+<link href="./book_cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,10 +70,39 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating slimcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -120,30 +150,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data organization and presentation</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Numerical Descriptive Measures</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Simple Linear Regression</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -164,25 +170,99 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#why-we-need-to-learn-statistics" id="toc-why-we-need-to-learn-statistics" class="nav-link" data-scroll-target="#why-we-need-to-learn-statistics"><span class="header-section-number">1.4</span> Why we need to learn statistics?</a></li>
   <li><a href="#types-of-statistics" id="toc-types-of-statistics" class="nav-link" data-scroll-target="#types-of-statistics"><span class="header-section-number">1.5</span> Types of Statistics</a></li>
   <li><a href="#population-versus-sample" id="toc-population-versus-sample" class="nav-link" data-scroll-target="#population-versus-sample"><span class="header-section-number">1.6</span> Population versus sample</a></li>
-  <li><a href="#types-or-sources-of-data" id="toc-types-or-sources-of-data" class="nav-link" data-scroll-target="#types-or-sources-of-data"><span class="header-section-number">1.7</span> Types (or Sources) of Data</a></li>
-  <li><a href="#type-of-variables" id="toc-type-of-variables" class="nav-link" data-scroll-target="#type-of-variables"><span class="header-section-number">1.8</span> Type of Variables<br>
+  <li><a href="#types-or-sources-of-data" id="toc-types-or-sources-of-data" class="nav-link" data-scroll-target="#types-or-sources-of-data"><span class="header-section-number">1.7</span> Types (or Sources) of Data</a>
+  <ul>
+  <li><a href="#primary-data-or-raw-data" id="toc-primary-data-or-raw-data" class="nav-link" data-scroll-target="#primary-data-or-raw-data"><span class="header-section-number">1.7.1</span> Primary data (or raw data)<br>
   </a></li>
-  <li><a href="#scale-of-measurements" id="toc-scale-of-measurements" class="nav-link" data-scroll-target="#scale-of-measurements"><span class="header-section-number">1.9</span> Scale of Measurements</a></li>
+  <li><a href="#secondary-data" id="toc-secondary-data" class="nav-link" data-scroll-target="#secondary-data"><span class="header-section-number">1.7.2</span> Secondary data<br>
+  </a></li>
+  </ul></li>
+  <li><a href="#type-of-variables" id="toc-type-of-variables" class="nav-link" data-scroll-target="#type-of-variables"><span class="header-section-number">1.8</span> Type of Variables</a>
+  <ul>
+  <li><a href="#categorical-qualitative-variable" id="toc-categorical-qualitative-variable" class="nav-link" data-scroll-target="#categorical-qualitative-variable"><span class="header-section-number">1.8.1</span> Categorical (Qualitative) Variable:<br>
+  </a></li>
+  <li><a href="#numerical-quantitative-variable" id="toc-numerical-quantitative-variable" class="nav-link" data-scroll-target="#numerical-quantitative-variable"><span class="header-section-number">1.8.2</span> Numerical (Quantitative) Variable:<br>
+  </a></li>
+  </ul></li>
+  <li><a href="#scale-of-measurements" id="toc-scale-of-measurements" class="nav-link" data-scroll-target="#scale-of-measurements"><span class="header-section-number">1.9</span> Scale of Measurements</a>
+  <ul>
+  <li><a href="#nominal-scale" id="toc-nominal-scale" class="nav-link" data-scroll-target="#nominal-scale"><span class="header-section-number">1.9.1</span> Nominal Scale:<br>
+  </a></li>
+  <li><a href="#ordinal-scale" id="toc-ordinal-scale" class="nav-link" data-scroll-target="#ordinal-scale"><span class="header-section-number">1.9.2</span> Ordinal Scale:<br>
+  </a></li>
+  <li><a href="#interval-scale" id="toc-interval-scale" class="nav-link" data-scroll-target="#interval-scale"><span class="header-section-number">1.9.3</span> Interval Scale:<br>
+  </a></li>
+  <li><a href="#ratio-scale" id="toc-ratio-scale" class="nav-link" data-scroll-target="#ratio-scale"><span class="header-section-number">1.9.4</span> Ratio Scale:<br>
+  </a></li>
+  </ul></li>
   <li><a href="#what-is-sampling-and-why-we-do-sampling" id="toc-what-is-sampling-and-why-we-do-sampling" class="nav-link" data-scroll-target="#what-is-sampling-and-why-we-do-sampling"><span class="header-section-number">1.10</span> What is sampling and Why we do sampling?</a></li>
   <li><a href="#sampling-versus-census" id="toc-sampling-versus-census" class="nav-link" data-scroll-target="#sampling-versus-census"><span class="header-section-number">1.11</span> Sampling versus Census</a></li>
   <li><a href="#random-versus-non-random-sampling" id="toc-random-versus-non-random-sampling" class="nav-link" data-scroll-target="#random-versus-non-random-sampling"><span class="header-section-number">1.12</span> Random versus Non-Random Sampling</a></li>
-  <li><a href="#random-sampling-techniques" id="toc-random-sampling-techniques" class="nav-link" data-scroll-target="#random-sampling-techniques"><span class="header-section-number">1.13</span> Random Sampling Techniques<br>
+  <li><a href="#random-sampling-techniques" id="toc-random-sampling-techniques" class="nav-link" data-scroll-target="#random-sampling-techniques"><span class="header-section-number">1.13</span> Random Sampling Techniques</a>
+  <ul>
+  <li><a href="#simple-random-sampling" id="toc-simple-random-sampling" class="nav-link" data-scroll-target="#simple-random-sampling"><span class="header-section-number">1.13.1</span> Simple Random Sampling:<br>
+  </a>
+  <ul>
+  <li><a href="#illustrative-example" id="toc-illustrative-example" class="nav-link" data-scroll-target="#illustrative-example"><span class="header-section-number">1.13.1.1</span> Illustrative Example<br>
   </a></li>
-  <li><a href="#non-random-sampling-techniques" id="toc-non-random-sampling-techniques" class="nav-link" data-scroll-target="#non-random-sampling-techniques"><span class="header-section-number">1.14</span> Non-Random Sampling Techniques</a></li>
-  <li><a href="#data-collection-methods" id="toc-data-collection-methods" class="nav-link" data-scroll-target="#data-collection-methods"><span class="header-section-number">1.15</span> Data Collection Methods<br>
+  </ul></li>
+  <li><a href="#systematic-sampling" id="toc-systematic-sampling" class="nav-link" data-scroll-target="#systematic-sampling"><span class="header-section-number">1.13.2</span> Systematic Sampling:<br>
+  </a>
+  <ul>
+  <li><a href="#illustrative-example-1" id="toc-illustrative-example-1" class="nav-link" data-scroll-target="#illustrative-example-1"><span class="header-section-number">1.13.2.1</span> Illustrative Example<br>
   </a></li>
+  </ul></li>
+  <li><a href="#stratified-sampling" id="toc-stratified-sampling" class="nav-link" data-scroll-target="#stratified-sampling"><span class="header-section-number">1.13.3</span> Stratified Sampling:<br>
+  </a>
+  <ul>
+  <li><a href="#illustrative-example-2" id="toc-illustrative-example-2" class="nav-link" data-scroll-target="#illustrative-example-2"><span class="header-section-number">1.13.3.1</span> Illustrative Example<br>
+  </a></li>
+  </ul></li>
+  <li><a href="#cluster-sampling" id="toc-cluster-sampling" class="nav-link" data-scroll-target="#cluster-sampling"><span class="header-section-number">1.13.4</span> Cluster Sampling:<br>
+  </a>
+  <ul>
+  <li><a href="#illustrative-example-3" id="toc-illustrative-example-3" class="nav-link" data-scroll-target="#illustrative-example-3"><span class="header-section-number">1.13.4.1</span> Illustrative Example<br>
+  </a></li>
+  </ul></li>
+  <li><a href="#multi-stage-sampling" id="toc-multi-stage-sampling" class="nav-link" data-scroll-target="#multi-stage-sampling"><span class="header-section-number">1.13.5</span> Multi-stage Sampling:<br>
+  </a></li>
+  </ul></li>
+  <li><a href="#non-random-sampling-techniques" id="toc-non-random-sampling-techniques" class="nav-link" data-scroll-target="#non-random-sampling-techniques"><span class="header-section-number">1.14</span> Non-Random Sampling Techniques</a>
+  <ul>
+  <li><a href="#quota-sampling" id="toc-quota-sampling" class="nav-link" data-scroll-target="#quota-sampling"><span class="header-section-number">1.14.1</span> Quota Sampling:<br>
+  </a></li>
+  <li><a href="#convenience-sampling" id="toc-convenience-sampling" class="nav-link" data-scroll-target="#convenience-sampling"><span class="header-section-number">1.14.2</span> Convenience Sampling:<br>
+  </a></li>
+  <li><a href="#judgemental-sampling" id="toc-judgemental-sampling" class="nav-link" data-scroll-target="#judgemental-sampling"><span class="header-section-number">1.14.3</span> Judgemental Sampling:<br>
+  </a></li>
+  <li><a href="#snowball-sampling" id="toc-snowball-sampling" class="nav-link" data-scroll-target="#snowball-sampling"><span class="header-section-number">1.14.4</span> Snowball Sampling:<br>
+  </a></li>
+  </ul></li>
+  <li><a href="#data-collection-methods" id="toc-data-collection-methods" class="nav-link" data-scroll-target="#data-collection-methods"><span class="header-section-number">1.15</span> Data Collection Methods</a>
+  <ul>
+  <li><a href="#personal-interview-or-face-to-face-interview-method" id="toc-personal-interview-or-face-to-face-interview-method" class="nav-link" data-scroll-target="#personal-interview-or-face-to-face-interview-method"><span class="header-section-number">1.15.1</span> Personal Interview or Face-to-Face Interview Method:<br>
+  </a></li>
+  <li><a href="#telephone-interview" id="toc-telephone-interview" class="nav-link" data-scroll-target="#telephone-interview"><span class="header-section-number">1.15.2</span> Telephone Interview:<br>
+  </a></li>
+  <li><a href="#postal-or-mail-questionnaires" id="toc-postal-or-mail-questionnaires" class="nav-link" data-scroll-target="#postal-or-mail-questionnaires"><span class="header-section-number">1.15.3</span> Postal or Mail Questionnaires:<br>
+  </a></li>
+  <li><a href="#self-administered-questionnaires" id="toc-self-administered-questionnaires" class="nav-link" data-scroll-target="#self-administered-questionnaires"><span class="header-section-number">1.15.4</span> Self-Administered Questionnaires:<br>
+  </a></li>
+  <li><a href="#direct-observation" id="toc-direct-observation" class="nav-link" data-scroll-target="#direct-observation"><span class="header-section-number">1.15.5</span> Direct Observation:<br>
+  </a></li>
+  </ul></li>
   <li><a href="#questionnaire-design" id="toc-questionnaire-design" class="nav-link" data-scroll-target="#questionnaire-design"><span class="header-section-number">1.16</span> Questionnaire Design</a></li>
-  <li><a href="#solved-examples" id="toc-solved-examples" class="nav-link" data-scroll-target="#solved-examples"><span class="header-section-number">1.17</span> Solved Examples</a></li>
+  <li><a href="#solved-examples" id="toc-solved-examples" class="nav-link" data-scroll-target="#solved-examples"><span class="header-section-number">1.17</span> Solved Examples</a>
+  <ul>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1"><span class="header-section-number">1.17.1</span> Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2"><span class="header-section-number">1.17.2</span> Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3"><span class="header-section-number">1.17.3</span> Question 3</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -203,6 +283,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>In today’s data-driven world, statistics plays a crucial role in understanding and interpreting the vast amounts of information that surround us. At its core, statistics is the science of collecting, analyzing, interpreting, and presenting data. By employing statistical techniques, we gain insights into patterns, trends, and relationships within data, enabling informed decision-making in various fields ranging from business and finance to healthcare and social sciences.<br>
+</p>
+<p>To embark on our journey into the realm of statistics, it’s essential to familiarize ourselves with some fundamental concepts. Firstly, statistics encompasses a diverse range of terms and methodologies, each serving a unique purpose in data analysis. Understanding these terms, from descriptive statistics that summarize and describe data to inferential statistics that draw conclusions and make predictions, lays the groundwork for proficient statistical analysis. Moreover, recognizing the types of statistics, including descriptive, inferential, and applied statistics, provides a framework for approaching different analytical tasks.<br>
+</p>
+<p>Furthermore, our exploration of statistics begins by delving into the various sources of data and types of variables encountered in statistical analysis. Whether data is collected through experiments, surveys, observations, or existing records, it’s crucial to understand its origins and potential biases. Additionally, grasping the distinctions between different types of variables, such as categorical, numerical, discrete, and continuous variables, guides the selection of appropriate analytical techniques. As we embark on this journey through the realm of statistics, let us equip ourselves with the foundational knowledge and tools needed to navigate the complexities of data analysis effectively.<br>
+</p>
 <section id="learning-outcomes" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="learning-outcomes"><span class="header-section-number">1.1</span> Learning Outcomes</h2>
 <ol type="1">
@@ -238,16 +324,22 @@ ul.task-list li input[type="checkbox"] {
 </p>
 <ol type="a">
 <li>Webster’s New World Dictionary:<br>
+
+<ol type="1">
+<li>facts or data of a numerical kind, assembled, classified, and tabulated so as to present significant information about a given subject.<br>
 </li>
-</ol>
-<pre><code>1. facts or data of a numerical kind, assembled, classified, and tabulated so as to present significant information about a given subject.\
-2. the science of assembling, classifying, and tabulating such facts or data.\</code></pre>
-<ol start="2" type="a">
-<li>Meriam’s Webster Collegiate Dictionary<br>
+<li>the science of assembling, classifying, and tabulating such facts or data.<br>
+<br>
 </li>
+</ol></li>
+<li>Meriam’s Webster Collegiate Dictionary
+<ol type="1">
+<li>a branch of mathematics dealing with the collection, analysis, interpretation, and presentation of masses of numerical data<br>
+</li>
+<li>a collection of quantitative data<br>
+</li>
+</ol></li>
 </ol>
-<pre><code>1. a branch of mathematics dealing with the collection, analysis, interpretation, and presentation of masses of numerical data\
-2. a collection of quantitative data\</code></pre>
 <p>The word statistics in our everyday life means different things to different people. As a field of study, statistics is the science of<br>
 </p>
 <ol type="i">
@@ -273,57 +365,59 @@ ul.task-list li input[type="checkbox"] {
 </p>
 <ol type="1">
 <li><strong>Business and Economics:</strong><br>
-</li>
-</ol>
+
 <ul>
 <li>Businesses use statistics to analyze market trends, forecast demand, and make strategic decisions.<br>
 </li>
 <li>Economists use statistical methods to study factors influencing economic growth, inflation, and unemployment rates.<br>
 </li>
 <li>Financial analysts use statistical models to assess risks, manage portfolios, and predict stock market movements.<br>
+<br>
 </li>
-</ul>
-<ol start="2" type="1">
+</ul></li>
 <li><strong>Healthcare and Medicine:</strong><br>
-</li>
-</ol>
+
 <ul>
 <li>Medical researchers use statistics to design clinical trials, analyze patient data, and evaluate the effectiveness of treatments.<br>
 </li>
-<li>Epidemiologists use statistical methods to track the spread of diseases, identify risk factors, and formulate public health policies.<br>
-</li>
+<li>Epidemiologists use statistical methods to track the spread of diseases, identify risk factors, and formulate public health policies.</li>
 <li>Healthcare providers use statistics to assess patient outcomes, monitor disease trends, and improve healthcare delivery.<br>
+&nbsp;<br>
 </li>
-</ul>
-<ol start="3" type="1">
+</ul></li>
 <li><strong>Social Sciences:</strong><br>
-</li>
-</ol>
+
 <ul>
 <li>Sociologists use statistical techniques to study social phenomena, such as income inequality, crime rates, and voting behavior.<br>
 </li>
 <li>Psychologists use statistics to analyze experimental data, test hypotheses, and measure psychological variables.<br>
 </li>
 <li>Demographers use statistical methods to analyze population trends, such as birth rates, death rates, and migration patterns.<br>
+<br>
 </li>
-</ul>
-<ol start="4" type="1">
+</ul></li>
 <li><strong>Engineering and Technology:</strong><br>
-</li>
-</ol>
+
 <ul>
 <li>Engineers use statistics to design experiments, analyze data from quality control processes, and optimize manufacturing processes.<br>
 </li>
 <li>Data scientists use statistical techniques to extract insights from large datasets, build predictive models, and develop machine learning algorithms.<br>
 </li>
 <li>Environmental scientists use statistics to analyze environmental data, assess pollution levels, and monitor climate change.<br>
+<br>
 </li>
-</ul>
-<p>5.<strong>Government and Policy:</strong><br>
-- Governments use statistics to collect census data, estimate unemployment rates, and measure economic indicators.<br>
-- Policy analysts use statistical models to evaluate the impact of policy interventions, such as tax reforms or healthcare programs.<br>
-- Urban planners use statistics to analyze transportation patterns, housing trends, and population demographics.<br>
-</p>
+</ul></li>
+<li><strong>Government and Policy:</strong><br>
+
+<ul>
+<li>Governments use statistics to collect census data, estimate unemployment rates, and measure economic indicators.<br>
+</li>
+<li>Policy analysts use statistical models to evaluate the impact of policy interventions, such as tax reforms or healthcare programs.<br>
+</li>
+<li>Urban planners use statistics to analyze transportation patterns, housing trends, and population demographics.<br>
+</li>
+</ul></li>
+</ol>
 <p>In each of these fields, a solid understanding of statistical concepts is essential for interpreting data accurately, making informed decisions, and addressing complex challenges. By providing clear definitions and explanations of statistical terms in our textbook, we aim to lay the foundation for students to apply statistical methods effectively in their chosen fields and contribute meaningfully to the advancement of knowledge and society.<br>
 </p>
 </section>
@@ -361,8 +455,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Statistics can be divided into two categories: Descriptive Statistics and Inferential Statistics.<br>
 </p>
 <ol type="1">
-<li><strong>Descriptive Statistics</strong> - The process of collecting, compiling, summarizing and presenting data into graphical forms such us charts, graphs, tables or numerical forms such as averages and percentages derived from them so that one can evaluate the data set easily.&nbsp;</li>
-</ol>
+<li><p><strong>Descriptive Statistics</strong> - The process of collecting, compiling, summarizing and presenting data into graphical forms such us charts, graphs, tables or numerical forms such as averages and percentages derived from them so that one can evaluate the data set easily.&nbsp;</p>
 <p>Descriptive statistics include a large variety of methods for summarizing or describing a set of numbers. These methods may involve computational or graphical analysis. For example, price index numbers are one example of a descriptive statistic. The measures of central tendency and dispersion presented in this chapter are also descriptive statistics, because they describe the nature of the data collected.<br>
 </p>
 <p>Example of descriptive statistics:<br>
@@ -372,15 +465,15 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>Uses of pictorial display e.g.&nbsp;bar charts &amp; pie charts.<br>
 </li>
-<li>The average income of the 104 families in our company is RM28,673 per annum&nbsp;</li>
+<li>The average income of the 104 families in our company is RM28,673 per annum<br>
+</li>
 </ol>
 <p>In descriptive statistics, our objective is to describe the properties of a group of scores or data that we have “in hand,” i.e., data that are accessible to us in that we can write them down on paper or type them into a spreadsheet.<br>
 </p>
-<p>In descriptive statistics we are not interested in other data that were not gathered but might have been; that is the subject of inferential statistics.&nbsp;</p>
-<ol start="2" type="1">
-<li><strong>Inferential Statistics</strong> - A decision, estimate, prediction, or generalization about a population based on a sample. It consists of methods that use sample results to help make decisions or predictions about a population.<br>
-</li>
-</ol>
+<p>In descriptive statistics we are not interested in other data that were not gathered but might have been; that is the subject of inferential statistics.<br>
+</p></li>
+<li><p><strong>Inferential Statistics</strong> - A decision, estimate, prediction, or generalization about a population based on a sample. It consists of methods that use sample results to help make decisions or predictions about a population.<br>
+</p>
 <p>Example of inferential statistics;<br>
 </p>
 <ol type="i">
@@ -388,14 +481,16 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>Department of Labor (Jabatan Buruh) uses the average income of a sample of several hundreds workers to estimate the average income of all 3 million workers, it is using a simple form of inferential statistics<br>
 </li>
-<li>This sample of 512 families from a district indicates with 95% confidence we can conclude that the average family income in the county is between RM2518 and RM2932.&nbsp;</li>
+<li>This sample of 512 families from a district indicates with 95% confidence we can conclude that the average family income in the county is between RM2518 and RM2932.<br>
+</li>
+</ol></li>
 </ol>
 <p>Comparison between descriptive statistics and inferential statistics<br>
 </p>
 <table class="table">
 <colgroup>
-<col style="width: 31%">
-<col style="width: 68%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -405,9 +500,13 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td colspan="2"><ol type="1">
-<li>describe the data set | 1. use the data to draw conclusions about the population | |</li>
-<li>concerned with describing and summarizing a sample | 2. concerned with going beyond the sample to make predictions about the population from which the sample is being drawn. |</li>
+<td><ol type="1">
+<li>describe the data set</li>
+<li>concerned with describing and summarizing a sample</li>
+</ol></td>
+<td><ol type="1">
+<li>use the data to draw conclusions about the population</li>
+<li>concerned with going beyond the sample to make predictions about the population from which the sample is being drawn.</li>
 </ol></td>
 </tr>
 </tbody>
@@ -434,8 +533,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Element (Experimental Units)</strong> is objects (people or things) on which measurements is taken.<br>
 </p></li>
 <li><p><strong>Pilot study</strong> is a pretest or trial run on a small number of elements (respondent) before conducting the actual survey. The objectives is to:<br>
-</p></li>
-</ol>
+</p>
 <ol type="i">
 <li>To improve the questionnaires<br>
 </li>
@@ -443,6 +541,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>To predict the cost, time and workforce needed.<br>
 </li>
+</ol></li>
 </ol>
 </section>
 <section id="types-or-sources-of-data" class="level2" data-number="1.7">
@@ -463,40 +562,43 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>There are two classifications of data that is primary data and secondary data.<br>
 </p>
-<ol type="1">
-<li><em>Primary data (or raw data)</em><br>
-</li>
-</ol>
+<section id="primary-data-or-raw-data" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="primary-data-or-raw-data"><span class="header-section-number">1.7.1</span> Primary data (or raw data)<br>
+</h3>
 <p>Data gathered and collected by the researcher direct from his respondents is primary data. It is exhaustive and exclusive. Data not arranged or organized in any manner called as a set of raw data. Normally, researchers collect primary data through survey, experiment or observation.<br>
 </p>
-<p>Advantages and disadvantages of primary data<br>
+<p>Advantages and disadvantages of primary data</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><strong>Advantages</strong><br>
 </p>
-<table class="table">
-<colgroup>
-<col style="width: 72%">
-<col style="width: 27%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Advantages</th>
-<th>Disadvantages</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td colspan="2"><ol type="1">
-<li>More accurate, reliable and up-to-date | 1. Very costly | |</li>
-<li>If the data needed by decision makers aren’t available from other sources (secondary data), primary data has to be gathered | 2. Time consuming&nbsp; | |</li>
-<li>Primary sources usually explain how the data were gathered and what limitation exists to their use. | 3. Requires a lot of manpower. | |</li>
-<li>Usually satisfies the objectives of a research |</li>
-</ol></td>
-</tr>
-</tbody>
-</table>
-<ol start="2" type="1">
-<li><em>Secondary data</em><br>
+<ol type="1">
+<li>More accurate, reliable and up-to-date<br>
 </li>
+<li>If the data needed by decision makers aren’t available from other sources (secondary data), primary data has to be gathered<br>
+</li>
+<li>Primary sources usually explain how the data were gathered and what limitation exists to their use<br>
+</li>
+<li>Usually satisfies the objectives of a research</li>
 </ol>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<p><strong>Disadvantages</strong><br>
+</p>
+<ol type="1">
+<li>Very costly<br>
+</li>
+<li>Time consuming<br>
+</li>
+<li>Requires a lot of manpower.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="secondary-data" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="secondary-data"><span class="header-section-number">1.7.2</span> Secondary data<br>
+</h3>
 <p>Secondary data is a primary data that has been collected, processed and published for the use of other people. There are various ways to obtain secondary data, which is through:<br>
 </p>
 <ol type="i">
@@ -516,40 +618,48 @@ ul.task-list li input[type="checkbox"] {
 </li>
 </ol>
 <p>Advantages and disadvantages of secondary data</p>
-<table class="table">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Advantages</th>
-<th>Disadvantages</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><ol type="1">
-<li>Require less time</li>
-<li>Require less effort</li>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><strong>Advantages</strong><br>
+</p>
+<ol type="1">
+<li>Require less time<br>
+</li>
+<li>Require less effort<br>
+</li>
 <li>Inexpensive data source</li>
-</ol></td>
-<td><ol type="1">
-<li>may contain errors in printing and transcription from the primary sources.</li>
+</ol>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<p><strong>Disadvantages</strong><br>
+</p>
+<ol type="1">
+<li>may contain errors in printing and transcription from the primary sources.<br>
+</li>
 <li>do not know the conditions under which the data were collected and summarized.</li>
-</ol></td>
-</tr>
-</tbody>
-</table>
+</ol>
+</div>
+</div>
+</section>
 </section>
 <section id="type-of-variables" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="type-of-variables"><span class="header-section-number">1.8</span> Type of Variables<br>
-</h2>
-<blockquote class="blockquote">
-<p>Definition of a variable<br>
-In statistics, a variable is a characteristic of interest that you measure, record, and analyze. Statisticians understand them by defining the type of information they record and their role in an experiment or study.<br>
-</p>
-</blockquote>
+<h2 data-number="1.8" class="anchored" data-anchor-id="type-of-variables"><span class="header-section-number">1.8</span> Type of Variables</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color: green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="color: blue;">
+<p>In statistics, a <strong>variable</strong> is a characteristic of interest that you measure, record, and analyze. Statisticians understand them by defining the type of information they record and their role in an experiment or study.</p>
+</div>
+</div>
+</div>
 <p>Performing statistical operations will depends on the nature of collected data and what type of measurements used. This is crucial to make sure that there are no violations of certain assumptions in statistical analysis and avoid drawing misleading conclusion.&nbsp;</p>
 <p>Variables are measurements that can vary or expressed as more than one value during a study. Variable is also defined as the characteristic (distinguishing feature) of the elements in a population or a sample under study. Thus, variables represent the general “thing” being measured and not any specific value or code.<br>
 </p>
@@ -566,111 +676,154 @@ In statistics, a variable is a characteristic of interest that you measure, reco
 </ol>
 <p>There two types of variables: categorical and numerical.<br>
 </p>
-<ol type="1">
-<li><strong>Categorical (Qualitative) Variable:</strong><br>
-</li>
-</ol>
+<section id="categorical-qualitative-variable" class="level3" data-number="1.8.1">
+<h3 data-number="1.8.1" class="anchored" data-anchor-id="categorical-qualitative-variable"><span class="header-section-number">1.8.1</span> Categorical (Qualitative) Variable:<br>
+</h3>
+<div class="illustration callout callout-style-default callout-note no-icon callout-titled" style="color: green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A categorical variable is a type of variable that represents categories or groups. It doesn’t have numerical values but rather describes qualities or characteristics that can be placed into distinct groups.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color: gray">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Examples:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li><p><strong>Definition:</strong> A categorical variable is a type of variable that represents categories or groups. It doesn’t have numerical values but rather describes qualities or characteristics that can be placed into distinct groups.<br>
-</p></li>
-<li><p><strong>Examples:</strong><br>
-</p>
-<ul>
-<li>Gender: Male, Female<br>
-</li>
-<li>Race: Malay, Chinese, Indian, etc.<br>
-</li>
-<li>Educational Level: SPM, STPM, Diploma, Bachelor’s Degree, Master’s Degree, PhD<br>
-</li>
-<li>Marital Status: Single, Married, Divorced, Widowed<br>
-</li>
+<li>Gender: Male, Female</li>
+<li>Race: Malay, Chinese, Indian, etc.</li>
+<li>Educational Level: SPM, STPM, Diploma, Bachelor’s Degree, Master’s Degree, PhD</li>
+<li>Marital Status: Single, Married, Divorced, Widowed</li>
 <li>Type of Vehicle: Car, Truck, SUV, Motorcycle</li>
-</ul></li>
-<li><p><strong>Properties:</strong><br>
-</p>
-<ul>
-<li>Categorical variables cannot be measured on a numerical scale.<br>
-</li>
-<li>The categories are often mutually exclusive and exhaustive, meaning each observation falls into only one category, and all possible categories cover all observations.<br>
-</li>
-<li>The order of categories is not inherently meaningful (ordinal), although sometimes they might have a natural order.<br>
-</li>
-</ul></li>
 </ul>
-<ol start="2" type="1">
-<li><strong>Numerical (Quantitative) Variable:</strong><br>
-</li>
-</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color: brown">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Properties:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li><p><strong>Definition:</strong> A numerical variable is a type of variable that represents measurable quantities or numerical values. It is expressed in terms of numbers and can be subjected to mathematical operations such as addition, subtraction, multiplication, and division.<br>
-</p></li>
-<li><p><strong>Examples:</strong><br>
-</p>
+<li>Categorical variables cannot be measured on a numerical scale.</li>
+<li>The categories are often mutually exclusive and exhaustive, meaning each observation falls into only one category, and all possible categories cover all observations.</li>
+<li>The order of categories is not inherently meaningful (ordinal), although sometimes they might have a natural order.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="numerical-quantitative-variable" class="level3" data-number="1.8.2">
+<h3 data-number="1.8.2" class="anchored" data-anchor-id="numerical-quantitative-variable"><span class="header-section-number">1.8.2</span> Numerical (Quantitative) Variable:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color: green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A numerical variable is a type of variable that represents measurable quantities or numerical values. It is expressed in terms of numbers and can be subjected to mathematical operations such as addition, subtraction, multiplication, and division.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color: gray">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Examples:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>Age: 25 years, 35 years, 50 years, etc.<br>
-</li>
-<li>Height: 160 cm, 175 cm, 185 cm, etc.<br>
-</li>
-<li>Income: RM1,500, RM2,000, RM2,500, etc.<br>
-</li>
-<li>Weight: 60 kg, 70 kg, 80 kg, etc.<br>
-</li>
-<li>Temperature: 20°C, 25°C, 30°C, etc.<br>
-</li>
-</ul></li>
-<li><p><strong>Properties:</strong><br>
-</p>
+<li>Age: 25 years, 35 years, 50 years, etc.</li>
+<li>Height: 160 cm, 175 cm, 185 cm, etc.</li>
+<li>Income: RM1,500, RM2,000, RM2,500, etc.</li>
+<li>Weight: 60 kg, 70 kg, 80 kg, etc.</li>
+<li>Temperature: 20°C, 25°C, 30°C, etc.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color: brown">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Properties:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>Numerical variables can be measured on a numerical scale, often with meaningful intervals between values.<br>
-</li>
-<li>They can take on a wide range of values, including decimal values.<br>
-</li>
-<li>Numerical variables can be further classified as discrete or continuous.<br>
-
+<li>Numerical variables can be measured on a numerical scale, often with meaningful intervals between values.</li>
+<li>They can take on a wide range of values, including decimal values.</li>
+<li>Numerical variables can be further classified as discrete or continuous.
 <ul>
 <li><strong>Discrete Variables:</strong><br>
 Have distinct, separate values and typically represent counts of items. Examples include the number of children in a family or the number of cars in a parking lot.<br>
-Examples are:<br>
-
+Examples are:
 <ol type="i">
-<li>the number of students in the library<br>
-</li>
-<li>number of cars sold by Proton weekly<br>
-</li>
+<li>the number of students in the library</li>
+<li>number of cars sold by Proton weekly</li>
 <li>The Statistics Department collects data on household size and publishes the information in Current Population Reports.&nbsp;</li>
 </ol></li>
 <li><strong>Continuous Variables:</strong><br>
 Can take on any value within a certain range and can be measured with precision. Examples include height, weight, temperature, and income.<br>
-Examples are:<br>
-
+Examples are:
 <ol type="i">
-<li>distance,weights<br>
-</li>
-<li>heights of individuals<br>
-</li>
-<li>temperature in a room<br>
-</li>
-<li>liters of gasoline pumped<br>
-</li>
+<li>distance,weights</li>
+<li>heights of individuals</li>
+<li>temperature in a room</li>
+<li>liters of gasoline pumped</li>
 </ol></li>
 </ul></li>
-</ul></li>
 </ul>
-<p>Understanding the distinction between categorical and numerical variables is essential in statistical analysis, as it influences the choice of appropriate statistical methods and techniques for analyzing and interpreting data.<br>
-</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+</div>
+</div>
+<p>Understanding the distinction between categorical and numerical variables is essential in statistical analysis, as it influences the choice of appropriate statistical methods and techniques for analyzing and interpreting data.</p>
+<div class="callout callout-style-default callout-caution callout-titled" style="color: red;">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Remark
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Because qualitative data always have a limited number of alternative values, such variables are also described as discrete. All qualitative data are discrete, while some numeric data are discrete and some are continuous</p>
+<div class="callout callout-style-simple callout-none no-icon" style="color: blue;">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Because qualitative data always have a limited number of alternative values, such variables are also described as discrete. All qualitative data are discrete, while some numeric data are discrete and some are continuous.</p>
 </div>
 </div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="scale-of-measurements" class="level2" data-number="1.9">
 <h2 data-number="1.9" class="anchored" data-anchor-id="scale-of-measurements"><span class="header-section-number">1.9</span> Scale of Measurements</h2>
@@ -678,15 +831,33 @@ Remark
 </p>
 <p>There are four generally used scales of measurement, listed here from weakest to strongest: nominal, ordinal, interval, and ratio.<br>
 </p>
-<ol type="1">
-<li><strong>Nominal Scale:</strong><br>
-</li>
-</ol>
-<ul>
-<li><p><strong>Definition:</strong> The nominal scale is the simplest level of measurement, where data is categorized into mutually exclusive categories with no inherent order or ranking. In other words, nominal data represent different categories or groups, but there is no quantitative significance to the values.<br>
-</p></li>
-<li><p><strong>Examples:</strong><br>
+<section id="nominal-scale" class="level3" data-number="1.9.1">
+<h3 data-number="1.9.1" class="anchored" data-anchor-id="nominal-scale"><span class="header-section-number">1.9.1</span> Nominal Scale:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The nominal scale is the simplest level of measurement, where data is categorized into mutually exclusive categories with no inherent order or ranking. In other words, nominal data represent different categories or groups, but there is no quantitative significance to the values.<br>
 </p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Examples:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>Gender: Male, Female<br>
 </li>
@@ -696,9 +867,19 @@ Remark
 </li>
 <li>Blood Type: A, B, AB, O<br>
 </li>
-</ul></li>
-<li><p><strong>Properties:</strong><br>
-</p>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Properties:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>Categories are mutually exclusive, meaning each observation falls into only one category.<br>
 </li>
@@ -706,17 +887,37 @@ Remark
 </li>
 <li>Operations such as counting and mode are applicable, but arithmetic operations (e.g., addition, subtraction) are not meaningful.<br>
 </li>
-</ul></li>
 </ul>
-<ol start="2" type="1">
-<li><strong>Ordinal Scale:</strong><br>
-</li>
-</ol>
-<ul>
-<li><p><strong>Definition:</strong> The ordinal scale categorizes data into ordered categories or ranks, where the categories have a meaningful order, but the intervals between them are not equal. In other words, ordinal data represent a hierarchy or sequence, but the magnitude of differences between categories is not uniform.<br>
-</p></li>
-<li><p><strong>Examples:</strong><br>
+</div>
+</div>
+</section>
+<section id="ordinal-scale" class="level3" data-number="1.9.2">
+<h3 data-number="1.9.2" class="anchored" data-anchor-id="ordinal-scale"><span class="header-section-number">1.9.2</span> Ordinal Scale:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The ordinal scale categorizes data into ordered categories or ranks, where the categories have a meaningful order, but the intervals between them are not equal. In other words, ordinal data represent a hierarchy or sequence, but the magnitude of differences between categories is not uniform.<br>
 </p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Examples:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>Educational Level: Elementary School &lt; High School &lt; Bachelor’s Degree &lt; Master’s Degree &lt; PhD<br>
 </li>
@@ -724,9 +925,19 @@ Remark
 </li>
 <li>Socioeconomic Status: Low Income &lt; Middle Income &lt; High Income<br>
 </li>
-</ul></li>
-<li><p><strong>Properties:</strong><br>
-</p>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Properties:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>Categories have a meaningful order or ranking.<br>
 </li>
@@ -734,17 +945,37 @@ Remark
 </li>
 <li>Operations such as ranking, median, and mode are applicable, but arithmetic operations are not meaningful.<br>
 </li>
-</ul></li>
 </ul>
-<ol start="3" type="1">
-<li><strong>Interval Scale:</strong><br>
-</li>
-</ol>
-<ul>
-<li><p><strong>Definition:</strong> The interval scale categorizes data into ordered categories with equal intervals between consecutive values, but there is no true zero point. In other words, interval data represent quantities with no meaningful zero point, and ratios between values are not meaningful.<br>
-</p></li>
-<li><p><strong>Examples:</strong><br>
+</div>
+</div>
+</section>
+<section id="interval-scale" class="level3" data-number="1.9.3">
+<h3 data-number="1.9.3" class="anchored" data-anchor-id="interval-scale"><span class="header-section-number">1.9.3</span> Interval Scale:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The interval scale categorizes data into ordered categories with equal intervals between consecutive values, but there is no true zero point. In other words, interval data represent quantities with no meaningful zero point, and ratios between values are not meaningful.<br>
 </p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Examples:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>Temperature (in Celsius or Fahrenheit): 0°C, 10°C, 20°C, etc.<br>
 </li>
@@ -752,9 +983,19 @@ Remark
 </li>
 <li>IQ Scores: 100, 110, 120, etc. (measured on some standardized scales)<br>
 </li>
-</ul></li>
-<li><p><strong>Properties:</strong><br>
-</p>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Properties:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>Categories have equal intervals between consecutive values.<br>
 </li>
@@ -762,27 +1003,57 @@ Remark
 </li>
 <li>Operations such as addition, subtraction, mean, and standard deviation are applicable, but ratios are not meaningful.<br>
 </li>
-</ul></li>
 </ul>
-<ol start="4" type="1">
-<li><strong>Ratio Scale:</strong><br>
-</li>
-</ol>
-<ul>
-<li><p><strong>Definition:</strong> The ratio scale categorizes data into ordered categories with equal intervals between consecutive values and a true zero point. In other words, ratio data represent quantities with a meaningful zero point, and ratios between values are meaningful.<br>
-</p></li>
-<li><p><strong>Examples:</strong><br>
+</div>
+</div>
+</section>
+<section id="ratio-scale" class="level3" data-number="1.9.4">
+<h3 data-number="1.9.4" class="anchored" data-anchor-id="ratio-scale"><span class="header-section-number">1.9.4</span> Ratio Scale:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The ratio scale categorizes data into ordered categories with equal intervals between consecutive values and a true zero point. In other words, ratio data represent quantities with a meaningful zero point, and ratios between values are meaningful.<br>
 </p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Examples:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>Height: 0 cm represents absence of height, and ratios such as double or half are meaningful.<br>
 </li>
 <li>Weight: 0 kg represents absence of weight, and ratios such as double or half are meaningful.<br>
 </li>
-<li>Income: 0 dollars represents absence of income, and ratios such as double or half are meaningful.<br>
+<li>Income: 0 RM represents absence of income, and ratios such as double or half are meaningful.<br>
 </li>
-</ul></li>
-<li><p><strong>Properties:</strong><br>
-</p>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Properties:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>Categories have equal intervals between consecutive values.<br>
 </li>
@@ -790,10 +1061,12 @@ Remark
 </li>
 <li>All arithmetic operations (addition, subtraction, multiplication, division), as well as mean, median, mode, and standard deviation, are applicable.<br>
 </li>
-</ul></li>
 </ul>
+</div>
+</div>
 <p>Understanding the scale of measurement is crucial in selecting appropriate statistical methods and techniques for analyzing data and interpreting results accurately. Each scale has its own properties and implications for statistical analysis and interpretation.<br>
 </p>
+</section>
 </section>
 <section id="what-is-sampling-and-why-we-do-sampling" class="level2" data-number="1.10">
 <h2 data-number="1.10" class="anchored" data-anchor-id="what-is-sampling-and-why-we-do-sampling"><span class="header-section-number">1.10</span> What is sampling and Why we do sampling?</h2>
@@ -824,45 +1097,58 @@ Remark
 <h2 data-number="1.11" class="anchored" data-anchor-id="sampling-versus-census"><span class="header-section-number">1.11</span> Sampling versus Census</h2>
 <p>Sampling and census are two distinct methods used in research and data collection, each with its own characteristics, advantages, and limitations. Let’s discuss the concepts of sampling versus census:<br>
 </p>
-<ol type="1">
-<li><strong>Sampling:</strong><br>
-</li>
-</ol>
-<ul>
-<li><p><strong>Definition:</strong> Sampling is the process of selecting a subset of individuals, items, or elements from a larger population to represent that population. The subset, known as the sample, is chosen in such a way that it is expected to provide accurate and reliable information about the population from which it is drawn.<br>
-</p></li>
-<li><p><strong>Purpose:</strong> The primary objective of sampling is to make inferences or draw conclusions about a population based on observations or measurements collected from the sample. Instead of studying the entire population, which may be impractical or costly, researchers select a representative sample that can provide insights into the characteristics, behaviors, or attributes of the entire population.<br>
-</p></li>
-<li><p><strong>Method:</strong> Sampling involves the systematic selection of individuals or items from the population using various sampling techniques, such as simple random sampling, stratified sampling, cluster sampling, or convenience sampling. These techniques ensure that the sample is representative of the population and that the results are generalizable.<br>
-</p></li>
-<li><p><strong>Advantages:</strong> Sampling is efficient, cost-effective, and practical, especially when studying large populations or when resources are limited. It allows researchers to obtain valuable information about a population without the need to study every individual or item within it.<br>
-</p></li>
-<li><p><strong>Limitations:</strong> Sampling may introduce sampling error, which occurs when the characteristics of the sample differ from those of the population. Additionally, sampling may not capture certain population characteristics or variations, leading to potential biases in the results.<br>
-</p></li>
-</ul>
-<ol start="2" type="1">
-<li><strong>Census:</strong><br>
-</li>
-</ol>
-<ul>
-<li><p><strong>Definition:</strong> A census is a complete enumeration or survey of every individual or item in a population. Unlike sampling, which involves selecting a subset of the population, a census aims to collect data from every member of the population, leaving no individual or item unsampled.<br>
-</p></li>
-<li><p><strong>Purpose:</strong> The primary objective of a census is to obtain comprehensive and accurate information about all members of a population. It provides a complete picture of the population’s characteristics, behaviors, or attributes, without the need for inference or estimation.<br>
-</p></li>
-<li><p><strong>Method:</strong> Conducting a census involves reaching out to every individual or item in the population and collecting data directly from them. This may involve various data collection methods, such as face-to-face interviews, surveys, administrative records, or online forms.<br>
-</p></li>
-<li><p><strong>Advantages:</strong> A census provides complete and accurate information about the entire population, leaving no room for sampling error or bias. It allows for detailed analysis and exploration of population characteristics, trends, and variations.<br>
-</p></li>
-<li><p><strong>Limitations:</strong> Conducting a census can be time-consuming, resource-intensive, and costly, especially for large populations. It may also pose logistical challenges, such as reaching remote or inaccessible populations. Additionally, a census may be impractical or unnecessary for populations with millions or billions of individuals.<br>
-</p></li>
-</ul>
-<p>In summary, sampling involves selecting a subset of individuals or items from a population to represent that population, while a census involves collecting data from every member of the population. Each method has its own advantages and limitations, and the choice between sampling and census depends on factors such as the research objectives, population size, resources available, and practical considerations.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sampling:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition:</strong> Sampling is the process of selecting a subset of individuals, items, or elements from a larger population to represent that population. The subset, known as the sample, is chosen in such a way that it is expected to provide accurate and reliable information about the population from which it is drawn.<br>
+</p>
+<p><strong>Purpose:</strong> The primary objective of sampling is to make inferences or draw conclusions about a population based on observations or measurements collected from the sample. Instead of studying the entire population, which may be impractical or costly, researchers select a representative sample that can provide insights into the characteristics, behaviors, or attributes of the entire population.<br>
+</p>
+<p><strong>Method:</strong> Sampling involves the systematic selection of individuals or items from the population using various sampling techniques, such as simple random sampling, stratified sampling, cluster sampling, or convenience sampling. These techniques ensure that the sample is representative of the population and that the results are generalizable.<br>
+</p>
+<p><strong>Advantages:</strong> Sampling is efficient, cost-effective, and practical, especially when studying large populations or when resources are limited. It allows researchers to obtain valuable information about a population without the need to study every individual or item within it.<br>
+</p>
+<p><strong>Limitations:</strong> Sampling may introduce sampling error, which occurs when the characteristics of the sample differ from those of the population. Additionally, sampling may not capture certain population characteristics or variations, leading to potential biases in the results.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Census:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Definition:</strong> A census is a complete enumeration or survey of every individual or item in a population. Unlike sampling, which involves selecting a subset of the population, a census aims to collect data from every member of the population, leaving no individual or item unsampled.<br>
+</p>
+<p><strong>Purpose:</strong> The primary objective of a census is to obtain comprehensive and accurate information about all members of a population. It provides a complete picture of the population’s characteristics, behaviors, or attributes, without the need for inference or estimation.<br>
+</p>
+<p><strong>Method:</strong> Conducting a census involves reaching out to every individual or item in the population and collecting data directly from them. This may involve various data collection methods, such as face-to-face interviews, surveys, administrative records, or online forms.<br>
+</p>
+<p><strong>Advantages:</strong> A census provides complete and accurate information about the entire population, leaving no room for sampling error or bias. It allows for detailed analysis and exploration of population characteristics, trends, and variations.<br>
+</p>
+<p><strong>Limitations:</strong> Conducting a census can be time-consuming, resource-intensive, and costly, especially for large populations. It may also pose logistical challenges, such as reaching remote or inaccessible populations. Additionally, a census may be impractical or unnecessary for populations with millions or billions of individuals.<br>
+</p>
+</div>
+</div>
+<p>In summary, sampling involves selecting a subset of individuals or items from a population to represent that population, while a census involves collecting data from every member of the population. Each method has its own advantages and limitations, and the choice between sampling and census depends on factors such as the research objectives, population size, resources available, and practical considerations.<br>
+</p>
 </section>
 <section id="random-versus-non-random-sampling" class="level2" data-number="1.12">
 <h2 data-number="1.12" class="anchored" data-anchor-id="random-versus-non-random-sampling"><span class="header-section-number">1.12</span> Random versus Non-Random Sampling</h2>
 <p>There are two main ways sampling method can be applied, either using random sampling or non-random sampling. Sometimes these methods is also know as probability and non-probability sampling.<br>
 </p>
-<p><strong>Random Sampling:</strong><br>
+<p><span style="color:green;"><strong>Random Sampling:</strong></span><br>
 </p>
 <ol type="1">
 <li><p><strong>Definition:</strong> Random sampling is a method of selecting a sample from a population in which every individual or item has an equal chance of being selected.<br>
@@ -872,8 +1158,7 @@ Remark
 <li><p><strong>Method:</strong> Random sampling methods include simple random sampling, systematic sampling, stratified sampling, and cluster sampling.<br>
 </p></li>
 <li><p><strong>Advantages:</strong><br>
-</p></li>
-</ol>
+</p>
 <ul>
 <li>Reduces selection bias and ensures the sample is representative of the population.<br>
 </li>
@@ -881,18 +1166,17 @@ Remark
 </li>
 <li>Facilitates statistical analysis and estimation of population parameters.<br>
 </li>
-</ul>
-<ol start="5" type="1">
-<li><strong>Disadvantages:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Disadvantages:</strong><br>
+</p>
 <ul>
 <li>May be impractical or costly for large or inaccessible populations.<br>
 </li>
 <li>Requires a complete list of population members or sampling frame, which may not always be available.<br>
 </li>
-</ul>
-<p><strong>Non-Random Sampling:</strong><br>
+</ul></li>
+</ol>
+<p><span style="color:green;"><strong>Non-Random Sampling:</strong></span><br>
 </p>
 <ol type="1">
 <li><p><strong>Definition:</strong> Non-random sampling, also known as non-probability sampling, is a method of selecting a sample from a population in which not every individual or item has an equal chance of being selected.<br>
@@ -902,8 +1186,7 @@ Remark
 <li><p><strong>Methods:</strong> Non-random sampling methods include convenience sampling, purposive sampling, quota sampling, and snowball sampling.<br>
 </p></li>
 <li><p><strong>Advantages:</strong><br>
-</p></li>
-</ol>
+</p>
 <ul>
 <li>Convenient and practical for small or homogeneous populations.<br>
 </li>
@@ -911,11 +1194,9 @@ Remark
 </li>
 <li>Allows for targeted sampling of specific groups or individuals of interest.<br>
 </li>
-</ul>
-<ol start="5" type="1">
-<li><strong>Disadvantages:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Disadvantages:</strong><br>
+</p>
 <ul>
 <li>Results may not be generalizable to the entire population.<br>
 </li>
@@ -923,177 +1204,741 @@ Remark
 </li>
 <li>Requires careful consideration and justification of sampling method to ensure validity and reliability of results.<br>
 </li>
-</ul>
+</ul></li>
+</ol>
 <p>In summary, random sampling aims to select a sample that is representative of the population by ensuring every individual or item has an equal chance of being chosen, while non-random sampling methods may introduce bias and may not be representative of the population. Each method has its own advantages and limitations, and the choice of sampling method depends on various factors such as research objectives, population characteristics, and available resources.<br>
 </p>
 </section>
 <section id="random-sampling-techniques" class="level2" data-number="1.13">
-<h2 data-number="1.13" class="anchored" data-anchor-id="random-sampling-techniques"><span class="header-section-number">1.13</span> Random Sampling Techniques<br>
-</h2>
+<h2 data-number="1.13" class="anchored" data-anchor-id="random-sampling-techniques"><span class="header-section-number">1.13</span> Random Sampling Techniques</h2>
 <p>There are several random sampling techniques that we can choose based on the nature of our population under study. However, within this course, we are only going to cover only 5 of them.</p>
-<ol type="1">
-<li><strong>Simple Random Sampling:</strong><br>
-</li>
-</ol>
-<ul>
-<li><p><strong>Definition:</strong> Simple random sampling is a sampling technique where each member of the population has an equal chance of being selected for the sample. It involves selecting individuals from the population in such a way that every possible sample of a given size has an equal chance of being selected.<br>
-</p></li>
-<li><p><strong>Process:</strong> To perform simple random sampling, researchers typically assign a unique identifier to each member of the population and then use random selection methods, such as random number generators or random sampling software, to select the desired sample size.<br>
-</p></li>
-<li><p><strong>Example:</strong> Suppose we want to conduct a simple random sample of 100 students from a university population of 1000 students. Each student in the university has an equal chance of being selected for the sample, ensuring that the sample is representative of the entire population.<br>
-</p></li>
-</ul>
+<section id="simple-random-sampling" class="level3" data-number="1.13.1">
+<h3 data-number="1.13.1" class="anchored" data-anchor-id="simple-random-sampling"><span class="header-section-number">1.13.1</span> Simple Random Sampling:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Simple random sampling is a sampling technique where each member of the population has an equal chance of being selected for the sample. It involves selecting individuals from the population in such a way that every possible sample of a given size has an equal chance of being selected.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Process:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To perform simple random sampling, researchers typically assign a unique identifier to each member of the population and then use random selection methods, such as random number generators or random sampling software, to select the desired sample size.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose we want to conduct a simple random sample of 100 students from a university population of 1000 students. Each student in the university has an equal chance of being selected for the sample, ensuring that the sample is representative of the entire population.<br>
+</p>
+</div>
+</div>
+<section id="illustrative-example" class="level4" data-number="1.13.1.1">
+<h4 data-number="1.13.1.1" class="anchored" data-anchor-id="illustrative-example"><span class="header-section-number">1.13.1.1</span> Illustrative Example<br>
+</h4>
+<p>Sample is selected from population and has equal chance of being selected as a sample. The sample is taken randomly from a sampling frame. Some common sampling frames include the telephone directory, customer list and student list.<br>
+</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Step 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Step 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Step 3</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Researcher needs a sampling frame.<br>
+Example: List of students’ names.<br>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fig1_1.png" class="img-fluid figure-img"></p>
+<figcaption>Table 1: List of students’ names</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Generated random number to determine which elements are to be selected as a sample.<br>
+</p>
+<p>Use a:<br>
+1) Random numbers table<br>
+2) Computer random number generator<br>
+Steps: Type <strong>= RANDBETWEEN (1,15)</strong> in excel<br>
+It will generate random number between 1 to 15<br>
+Drag the column until you get your desire random numbers<br>
+3) Calculator&nbsp; Steps: Press <strong>SHIFT</strong> -&gt; <strong>Ran#</strong> -&gt; <strong>=</strong><br>
+</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Let’s try using <strong>random numbers table</strong>, researcher needs 5 samples out of 15 students. By using the first two column numbers, list down your 5 selected samples.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fig1_2.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 1: Random Number Table</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fig1_3.png" class="img-fluid figure-img"></p>
+<figcaption>Table 2: List of students’ selected</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Hence, the sample corresponding to <em>11</em>, <em>14</em>, <em>8</em>, <em>10</em> and <em>5</em> will be a sample of 5 obtained from 1 to 15 elements in the population.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="systematic-sampling" class="level3" data-number="1.13.2">
+<h3 data-number="1.13.2" class="anchored" data-anchor-id="systematic-sampling"><span class="header-section-number">1.13.2</span> Systematic Sampling:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Systematic sampling is a sampling technique where a sample is drawn by selecting every kth member from a list or sequence of the population. It is a simple and efficient method that provides a representative sample when the population is large and organized in a sequential manner.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Process:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Researchers first determine the sampling interval (k) by dividing the population size by the desired sample size. Then, they randomly select a starting point within the population and select every kth member thereafter until the desired sample size is reached.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose we want to conduct a systematic sample of 200 students from a university population of 2000 students. We would calculate the sampling interval (k = 2000/200 = 10) and randomly select a starting point. Then, we would select every 10th student from the list until we reach a sample size of 200.<br>
+</p>
+</div>
+</div>
+<section id="illustrative-example-1" class="level4" data-number="1.13.2.1">
+<h4 data-number="1.13.2.1" class="anchored" data-anchor-id="illustrative-example-1"><span class="header-section-number">1.13.2.1</span> Illustrative Example<br>
+</h4>
+<p>Consider the previous illustration. In systematic sampling, we divide the population size (N) by the sample size (n) to obtain the range <span class="math inline">\((k)\)</span><br>
+<span class="math display">\[k=\frac{N}{n}\]</span></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Step 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Step 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Step 3</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Step 4</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false">Step5</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Researcher needs a sampling frame.<br>
+Example: List of students’ names.<br>
+</p>
+<p>Refer to <em>Table 1</em><br>
+</p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Researcher needs 5 students (sample size, n =5) out of 15 students (population size, N=15).<br>
+<span class="math display">\[
+k = \frac{15}{5} = 3
+\]</span></p>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<p>Select starting point.<br>
+Since k = 3, random number between 1 or 2 or 3 will be selected.<br>
+Type = RANDBETWEEN(1,3) and press Enter.&nbsp;</p>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Let say number 2 is chosen, start with number 2 and take every k = 3.<br>
+</p>
+<p>2<br>
+2 + k = 5<br>
+5 + k = 8<br>
+8 + k = 11<br>
+11 + k = 14<br>
+</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fig2_1.png" class="img-fluid figure-img"></p>
+<figcaption>Table 3</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
+<p>Hence, the sample corresponding to 2, 5, 8, 11 and 14 will be a sample of 5 obtained from 1 to 15 elements in the population.<br>
+</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="stratified-sampling" class="level3" data-number="1.13.3">
+<h3 data-number="1.13.3" class="anchored" data-anchor-id="stratified-sampling"><span class="header-section-number">1.13.3</span> Stratified Sampling:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Stratified sampling is a sampling technique where the population is divided into homogeneous groups or strata based on certain characteristics (e.g., age, gender, income level), and random samples are taken from each stratum. This ensures that each stratum is represented in the sample proportionally to its size in the population.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Process:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Researchers first identify relevant stratification variables and divide the population into mutually exclusive and exhaustive strata. Then, they randomly select samples from each stratum based on predetermined proportions or sample sizes.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose we want to conduct a survey on student satisfaction at a university. We may divide the student population into strata based on their academic year (e.g., freshman, sophomore, junior, senior) and then randomly select samples from each stratum to ensure representation from each year group.<br>
+</p>
+</div>
+</div>
 <center>
-<img src="https://www.questionpro.com/blog/wp-content/uploads/2018/03/Simple-random-sampling-wt-logo.jpg" class="img-fluid" width="500">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fig2_2.png" class="img-fluid figure-img"></p>
+<figcaption>Diagram 1</figcaption>
+</figure>
+</div>
 </center>
-<ol start="2" type="1">
-<li><strong>Systematic Sampling:</strong><br>
-</li>
-</ol>
-<ul>
-<li><p><strong>Definition:</strong> Systematic sampling is a sampling technique where a sample is drawn by selecting every kth member from a list or sequence of the population. It is a simple and efficient method that provides a representative sample when the population is large and organized in a sequential manner.<br>
-</p></li>
-<li><p><strong>Process:</strong> Researchers first determine the sampling interval (k) by dividing the population size by the desired sample size. Then, they randomly select a starting point within the population and select every kth member thereafter until the desired sample size is reached.<br>
-</p></li>
-<li><p><strong>Example:</strong> Suppose we want to conduct a systematic sample of 200 students from a university population of 2000 students. We would calculate the sampling interval (k = 2000/200 = 10) and randomly select a starting point. Then, we would select every 10th student from the list until we reach a sample size of 200.<br>
-</p></li>
-</ul>
-<ol start="3" type="1">
-<li><strong>Stratified Sampling:</strong><br>
-</li>
-</ol>
-<ul>
-<li><p><strong>Definition:</strong> Stratified sampling is a sampling technique where the population is divided into homogeneous groups or strata based on certain characteristics (e.g., age, gender, income level), and random samples are taken from each stratum. This ensures that each stratum is represented in the sample proportionally to its size in the population.<br>
-</p></li>
-<li><p><strong>Process:</strong> Researchers first identify relevant stratification variables and divide the population into mutually exclusive and exhaustive strata. Then, they randomly select samples from each stratum based on predetermined proportions or sample sizes.<br>
-</p></li>
-<li><p><strong>Example:</strong> Suppose we want to conduct a survey on student satisfaction at a university. We may divide the student population into strata based on their academic year (e.g., freshman, sophomore, junior, senior) and then randomly select samples from each stratum to ensure representation from each year group.<br>
-</p></li>
-</ul>
-<ol start="4" type="1">
-<li><strong>Cluster Sampling:</strong><br>
-</li>
-</ol>
-<ul>
-<li><p><strong>Definition:</strong> Cluster sampling is a sampling technique where the population is divided into clusters or groups, and a random sample of clusters is selected for analysis. Each cluster should ideally be heterogeneous internally but homogeneous externally.<br>
-</p></li>
-<li><p><strong>Process:</strong> Researchers first identify clusters within the population (e.g., geographical regions, classrooms, households) and randomly select a sample of clusters. Then, they collect data from all individuals within the selected clusters.<br>
-</p></li>
-<li><p><strong>Example:</strong> Suppose we want to study the performance of schools in a city. We may divide the city into school districts and randomly select a sample of districts. Then, we collect data from all schools within the selected districts.<br>
-</p></li>
-</ul>
-<ol start="5" type="1">
-<li><strong>Multi-stage Sampling:</strong><br>
-</li>
-</ol>
-<ul>
-<li><p><strong>Definition:</strong> Multi-stage sampling is a sampling technique that combines two or more sampling methods, such as stratified sampling, cluster sampling, and systematic sampling, in multiple stages. It is often used when the population is large and complex, and it allows researchers to efficiently obtain a representative sample.<br>
-</p></li>
-<li><p><strong>Process:</strong> Researchers first divide the population into clusters or strata and then select samples from each cluster or stratum using various sampling methods. This process may involve multiple stages of sampling, with each stage refining the sample selection process.<br>
-</p></li>
-<li><p><strong>Example:</strong> Suppose we want to conduct a national survey on healthcare access. We may first divide the country into regions (clusters) and then randomly select a sample of regions. Within each selected region, we may further stratify the population by demographic characteristics (e.g., age, income) and select samples from each stratum using systematic or random sampling methods.<br>
-</p></li>
-</ul>
+<section id="illustrative-example-2" class="level4" data-number="1.13.3.1">
+<h4 data-number="1.13.3.1" class="anchored" data-anchor-id="illustrative-example-2"><span class="header-section-number">1.13.3.1</span> Illustrative Example<br>
+</h4>
+<p>A manager is interested in studying the job satisfaction level of their staffs. There are 9 staffs in Administrative department, 5 staffs in Marketing department and 6 staffs in Production department. Only 12 staffs will be randomly selected as a sample.<br>
+</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Step 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Step 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Step 3</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Calculate required sample size, n from each strata<br>
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 21%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Department</th>
+<th style="text-align: center;">Population</th>
+<th style="text-align: center;">Sample</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Administrative</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;"><span class="math inline">\(n_1=\frac{9}{20}\times 12 = 5\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Marketing</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math inline">\(n_2=\frac{5}{20}\times 12 = 3\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Production</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><span class="math inline">\(n_3=\frac{6}{20}\times 12 = 4\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Total</strong></td>
+<td style="text-align: center;"><strong>20</strong></td>
+<td style="text-align: center;"><strong>12</strong></td>
+</tr>
+</tbody>
+</table>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fig2_3.png" class="img-fluid figure-img"></p>
+<figcaption>Diagram 2</figcaption>
+</figure>
+</div>
+</center>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>In this case, the strata were the three department. The staffs are extracted using simple random or systematic sampling from each department. Let say, use simple random sampling.<br>
+</p>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fig5.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 2</figcaption>
+</figure>
+</div>
+</center>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<p>Hence, the sample corresponding to 1, 9, 6, 8 and 3 will be a sample for Administrative department. The sample corresponding to 2, 1 and 5 will be a sample for Marketing department and sample corresponding to 5, 6, 3 and 4 will be a sample for Production department.<br>
+</p>
+<div class="columns">
+<div class="column" style="width:505;">
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fig6.png" class="img-fluid figure-img"></p>
+<figcaption>Table 4</figcaption>
+</figure>
+</div>
+</center>
+</div><div class="column" style="width:505;">
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fig7.png" class="img-fluid figure-img"></p>
+<figcaption>Table 5</figcaption>
+</figure>
+</div>
+</center>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="cluster-sampling" class="level3" data-number="1.13.4">
+<h3 data-number="1.13.4" class="anchored" data-anchor-id="cluster-sampling"><span class="header-section-number">1.13.4</span> Cluster Sampling:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cluster sampling is a sampling technique where the population is divided into clusters or groups, and a random sample of clusters is selected for analysis. Each cluster should ideally be heterogeneous internally but homogeneous externally.<br>
+</p>
+<p>Cluster sampling is used when the population of interest is scattered widely across certain geographical area and the sampling frame is available.<br>
+</p>
+<p>Cluster sampling divides the target population into several clusters based on geographical areas.<br>
+</p>
+<p>A random sample of clusters is selected based on probability sampling technique such as simple random sampling to represent the total population. No units from non-selected clusters are included in the sample because they are represented by those from selected clusters.<br>
+</p>
+<p>With stratification, we sample from each of the subgroups but in cluster sampling, we sample from selected subgroups only.<br>
+</p>
+<p>Cluster sampling is most applicable when sampling frame is not available or incomplete.&nbsp;</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Process:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Researchers first identify clusters within the population (e.g., geographical regions, classrooms, households) and randomly select a sample of clusters. Then, they collect data from all individuals within the selected clusters.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose we want to study the performance of schools in a city. We may divide the city into school districts and randomly select a sample of districts. Then, we collect data from all schools within the selected districts.<br>
+</p>
+</div>
+</div>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/diag3.png" class="img-fluid figure-img"></p>
+<figcaption>Diagram 3: Cluster Sampling</figcaption>
+</figure>
+</div>
+</center>
+<section id="illustrative-example-3" class="level4" data-number="1.13.4.1">
+<h4 data-number="1.13.4.1" class="anchored" data-anchor-id="illustrative-example-3"><span class="header-section-number">1.13.4.1</span> Illustrative Example<br>
+</h4>
+<p>A researcher wants to take a cluster sample from a large state. The state consists of 5 towns. A random sample of 2 towns is selected.<br>
+</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Step 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Step 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">Step 3</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>Begin by listing all the towns with residential units. Divide the target population (state) into different clusters (town). These towns may be considered the clusters.<br>
+</p>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/diag4.png" class="img-fluid figure-img"></p>
+<figcaption>Diagram 4: Cluster Sampling</figcaption>
+</figure>
+</div>
+</center>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>A random sample of clusters is selected based on probability sampling technique such as simple random sampling. Use =RANDBETWEEN(1,5) and choose 2 random number. Let say number 1 and 3 are chosen.<br>
+</p>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/diag5.png" class="img-fluid figure-img"></p>
+<figcaption>Diagram 5: Cluster Sampling</figcaption>
+</figure>
+</div>
+</center>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<p>Then, from the selected clusters<br>
+i. Use the entire population in town 1 and 3 as sample, <strong>OR</strong><br>
+ii. Select sample from each town1 and 3 through simple random sampling or systematic sampling.<br>
+</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="multi-stage-sampling" class="level3" data-number="1.13.5">
+<h3 data-number="1.13.5" class="anchored" data-anchor-id="multi-stage-sampling"><span class="header-section-number">1.13.5</span> Multi-stage Sampling:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Multi-stage sampling is a sampling technique that combines two or more sampling methods, such as stratified sampling, cluster sampling, and systematic sampling, in multiple stages. It is often used when the population is large and complex, and it allows researchers to efficiently obtain a representative sample.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Process:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Researchers first divide the population into clusters or strata and then select samples from each cluster or stratum using various sampling methods. This process may involve multiple stages of sampling, with each stage refining the sample selection process.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose we want to conduct a national survey on healthcare access. We may first divide the country into regions (clusters) and then randomly select a sample of regions. Within each selected region, we may further stratify the population by demographic characteristics (e.g., age, income) and select samples from each stratum using systematic or random sampling methods.<br>
+</p>
+</div>
+</div>
 <p>Understanding different sampling techniques is crucial in research and data collection, as it helps researchers obtain representative samples and draw valid conclusions about the population of interest. Each sampling method has its own advantages, limitations, and applicability depending on the characteristics of the population and the research objectives.<br>
 </p>
 </section>
+</section>
 <section id="non-random-sampling-techniques" class="level2" data-number="1.14">
 <h2 data-number="1.14" class="anchored" data-anchor-id="non-random-sampling-techniques"><span class="header-section-number">1.14</span> Non-Random Sampling Techniques</h2>
-<ol type="1">
-<li><strong>Quota Sampling:</strong><br>
-</li>
-</ol>
-<ul>
-<li><p><strong>Definition:</strong> Quota sampling is a non-random sampling technique where researchers divide the population into mutually exclusive groups based on predetermined characteristics or quotas. Within each quota group, individuals are selected non-randomly until the quota for that group is filled. Quota sampling ensures that the final sample reflects the demographic or characteristic composition of the population.<br>
-</p></li>
-<li><p><strong>Process:</strong><br>
+<section id="quota-sampling" class="level3" data-number="1.14.1">
+<h3 data-number="1.14.1" class="anchored" data-anchor-id="quota-sampling"><span class="header-section-number">1.14.1</span> Quota Sampling:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quota sampling is a non-random sampling technique where researchers divide the population into mutually exclusive groups based on predetermined characteristics or quotas. Within each quota group, individuals are selected non-randomly until the quota for that group is filled. Quota sampling ensures that the final sample reflects the demographic or characteristic composition of the population.<br>
 </p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Process:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
-<li><strong>Define Quotas:</strong> Researchers establish quotas based on key demographic variables, such as age, gender, ethnicity, or socioeconomic status, to ensure representation of different groups in the sample.<br>
-</li>
-<li><strong>Identify Quota Groups:</strong> Divide the population into distinct quota groups based on the defined quotas. For example, if the quota for age groups is set at 25% for each decade (e.g., 18-29, 30-39, 40-49), ensure that each group is represented in the sample.<br>
-</li>
-<li><strong>Non-Random Selection:</strong> Select individuals for the sample within each quota group using non-random methods, such as convenience sampling or judgemental sampling. Researchers may recruit participants based on availability, accessibility, or known characteristics.<br>
-</li>
-<li><strong>Filling Quotas:</strong> Continuously select individuals within each quota group until the predetermined quota for that group is filled. Once the quotas for all groups are met, the sampling process is complete.<br>
-</li>
-</ol></li>
-<li><p><strong>Example:</strong> In a study on consumer preferences for a new product, researchers may set quotas based on age, gender, and income level to ensure diversity in the sample. They then recruit participants from different demographic groups until the quotas for each group are filled.<br>
+<li><p><strong>Define Quotas:</strong> Researchers establish quotas based on key demographic variables, such as age, gender, ethnicity, or socioeconomic status, to ensure representation of different groups in the sample.<br>
 </p></li>
-</ul>
-<ol start="2" type="1">
-<li><strong>Convenience Sampling:</strong><br>
-</li>
+<li><p><strong>Identify Quota Groups:</strong> Divide the population into distinct quota groups based on the defined quotas. For example, if the quota for age groups is set at 25% for each decade (e.g., 18-29, 30-39, 40-49), ensure that each group is represented in the sample.<br>
+</p></li>
+<li><p><strong>Non-Random Selection:</strong> Select individuals for the sample within each quota group using non-random methods, such as convenience sampling or judgemental sampling. Researchers may recruit participants based on availability, accessibility, or known characteristics.<br>
+</p></li>
+<li><p><strong>Filling Quotas:</strong> Continuously select individuals within each quota group until the predetermined quota for that group is filled. Once the quotas for all groups are met, the sampling process is complete.<br>
+</p></li>
 </ol>
-<ul>
-<li><p><strong>Definition:</strong> Convenience sampling is a non-random sampling technique where researchers select individuals who are easily accessible or convenient to recruit. Participants are often chosen based on their availability, proximity to the researcher, or willingness to participate. Convenience sampling is quick and cost-effective but may introduce bias and limit generalizability.<br>
-</p></li>
-<li><p><strong>Process:</strong><br>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a study on consumer preferences for a new product, researchers may set quotas based on age, gender, and income level to ensure diversity in the sample. They then recruit participants from different demographic groups until the quotas for each group are filled.<br>
 </p>
+</div>
+</div>
+</section>
+<section id="convenience-sampling" class="level3" data-number="1.14.2">
+<h3 data-number="1.14.2" class="anchored" data-anchor-id="convenience-sampling"><span class="header-section-number">1.14.2</span> Convenience Sampling:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Convenience sampling is a non-random sampling technique where researchers select individuals who are easily accessible or convenient to recruit. Participants are often chosen based on their availability, proximity to the researcher, or willingness to participate. Convenience sampling is quick and cost-effective but may introduce bias and limit generalizability.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Process:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
-<li><strong>Identify Participants:</strong> Researchers select individuals who are readily available and accessible for participation in the study. This may include individuals in close proximity to the researcher or those who voluntarily respond to recruitment efforts.<br>
-</li>
-<li><strong>Recruitment:</strong> Invite potential participants to take part in the study through various methods, such as in-person solicitation, social media posts, or email invitations.<br>
-</li>
-<li><strong>Sampling:</strong> Participants who agree to participate are included in the sample without regard to their representativeness or characteristics relative to the population of interest.<br>
-</li>
-</ol></li>
-<li><p><strong>Example:</strong> A researcher conducting a survey on smartphone usage may recruit participants by approaching people in a public area, such as a shopping mall, and inviting them to complete the survey on the spot.<br>
+<li><p><strong>Identify Participants:</strong> Researchers select individuals who are readily available and accessible for participation in the study. This may include individuals in close proximity to the researcher or those who voluntarily respond to recruitment efforts.<br>
 </p></li>
-</ul>
-<ol start="3" type="1">
-<li><strong>Judgemental Sampling:</strong><br>
-</li>
+<li><p><strong>Recruitment:</strong> Invite potential participants to take part in the study through various methods, such as in-person solicitation, social media posts, or email invitations.<br>
+</p></li>
+<li><p><strong>Sampling:</strong> Participants who agree to participate are included in the sample without regard to their representativeness or characteristics relative to the population of interest.<br>
+</p></li>
 </ol>
-<ul>
-<li><p><strong>Definition:</strong> Judgemental sampling, also known as purposive sampling, is a non-random sampling technique where researchers select participants based on their expertise, knowledge, or judgment of the population. Researchers use their judgment to identify individuals who possess the relevant characteristics or insights needed for the study. Judgemental sampling is often used in qualitative research or when specific expertise is required.<br>
-</p></li>
-<li><p><strong>Process:</strong><br>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A researcher conducting a survey on smartphone usage may recruit participants by approaching people in a public area, such as a shopping mall, and inviting them to complete the survey on the spot.<br>
 </p>
+</div>
+</div>
+</section>
+<section id="judgemental-sampling" class="level3" data-number="1.14.3">
+<h3 data-number="1.14.3" class="anchored" data-anchor-id="judgemental-sampling"><span class="header-section-number">1.14.3</span> Judgemental Sampling:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Judgemental sampling, also known as purposive sampling, is a non-random sampling technique where researchers select participants based on their expertise, knowledge, or judgment of the population. Researchers use their judgment to identify individuals who possess the relevant characteristics or insights needed for the study. Judgemental sampling is often used in qualitative research or when specific expertise is required.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Process:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
-<li><strong>Define Criteria:</strong> Researchers establish criteria for selecting participants based on their expertise, knowledge, or relevance to the research topic.<br>
-</li>
-<li><strong>Identify Participants:</strong> Use judgment to identify individuals who meet the established criteria and possess the desired characteristics or insights.<br>
-</li>
-<li><strong>Recruitment:</strong> Approach selected individuals and invite them to participate in the study based on their expertise or relevance to the research topic.<br>
-</li>
-</ol></li>
-<li><p><strong>Example:</strong> In a study on effective teaching methods, researchers may purposively select experienced teachers known for their innovative instructional techniques and invite them to participate in interviews or focus groups.<br>
+<li><p><strong>Define Criteria:</strong> Researchers establish criteria for selecting participants based on their expertise, knowledge, or relevance to the research topic.<br>
 </p></li>
-</ul>
-<ol start="4" type="1">
-<li><strong>Snowball Sampling:</strong><br>
-</li>
+<li><p><strong>Identify Participants:</strong> Use judgment to identify individuals who meet the established criteria and possess the desired characteristics or insights.<br>
+</p></li>
+<li><p><strong>Recruitment:</strong> Approach selected individuals and invite them to participate in the study based on their expertise or relevance to the research topic.<br>
+</p></li>
 </ol>
-<ul>
-<li><p><strong>Definition:</strong> Snowball sampling is a non-random sampling technique used to recruit participants through referrals or chain sampling. Initially, researchers identify a few individuals who meet the study criteria and ask them to refer other potential participants. The process continues iteratively, with each participant referring additional participants, creating a “snowball” effect. Snowball sampling is commonly used when the population of interest is difficult to access or identify.<br>
-</p></li>
-<li><p><strong>Process:</strong><br>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a study on effective teaching methods, researchers may purposively select experienced teachers known for their innovative instructional techniques and invite them to participate in interviews or focus groups.<br>
 </p>
+</div>
+</div>
+</section>
+<section id="snowball-sampling" class="level3" data-number="1.14.4">
+<h3 data-number="1.14.4" class="anchored" data-anchor-id="snowball-sampling"><span class="header-section-number">1.14.4</span> Snowball Sampling:<br>
+</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style="color:green;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Snowball sampling is a non-random sampling technique used to recruit participants through referrals or chain sampling. Initially, researchers identify a few individuals who meet the study criteria and ask them to refer other potential participants. The process continues iteratively, with each participant referring additional participants, creating a “snowball” effect. Snowball sampling is commonly used when the population of interest is difficult to access or identify.<br>
+</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" style="color:gray;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Process:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
-<li><strong>Identify Initial Participants:</strong> Start by identifying a small number of initial participants who meet the study criteria or possess relevant characteristics.<br>
-</li>
-<li><strong>Referral:</strong> Ask the initial participants to refer other individuals who meet the study criteria and may be interested in participating.<br>
-</li>
-<li><strong>Iterative Process:</strong> Each referred participant becomes part of the sample and is asked to refer additional participants, leading to a chain reaction or “snowball” effect.<br>
-</li>
-<li><strong>Continued Sampling:</strong> Continue the process of recruitment and referral until the desired sample size is reached or until data saturation is achieved.<br>
-</li>
-</ol></li>
-<li><p><strong>Example:</strong> In a study on the experiences of individuals living with a rare medical condition, researchers may identify a few initial participants through patient support groups or online forums and ask them to refer others in their social network who share similar experiences.<br>
+<li><p><strong>Identify Initial Participants:</strong> Start by identifying a small number of initial participants who meet the study criteria or possess relevant characteristics.<br>
 </p></li>
-</ul>
+<li><p><strong>Referral:</strong> Ask the initial participants to refer other individuals who meet the study criteria and may be interested in participating.<br>
+</p></li>
+<li><p><strong>Iterative Process:</strong> Each referred participant becomes part of the sample and is asked to refer additional participants, leading to a chain reaction or “snowball” effect.<br>
+</p></li>
+<li><p><strong>Continued Sampling:</strong> Continue the process of recruitment and referral until the desired sample size is reached or until data saturation is achieved.<br>
+</p></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" style="color:brown;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a study on the experiences of individuals living with a rare medical condition, researchers may identify a few initial participants through patient support groups or online forums and ask them to refer others in their social network who share similar experiences.<br>
+</p>
+</div>
+</div>
 <p>Each of these non-random sampling techniques has its own advantages and limitations. Researchers must carefully consider the appropriateness of each method based on the research objectives, characteristics of the population, and available resources. While non-random sampling techniques may offer practical advantages in terms of feasibility and efficiency, they may also introduce biases and limitations that need to be addressed in data analysis and interpretation.<br>
 </p>
 </section>
+</section>
 <section id="data-collection-methods" class="level2" data-number="1.15">
-<h2 data-number="1.15" class="anchored" data-anchor-id="data-collection-methods"><span class="header-section-number">1.15</span> Data Collection Methods<br>
-</h2>
-<p>Data collection is the process of gathering the required information from our population whether we are measuring it through specific intruements or through a questionnaire (for human responses).</p>
-<ol type="1">
-<li><strong>Personal Interview or Face-to-Face Interview Method:</strong><br>
-</li>
-</ol>
+<h2 data-number="1.15" class="anchored" data-anchor-id="data-collection-methods"><span class="header-section-number">1.15</span> Data Collection Methods</h2>
+<p>Data collection is the process of gathering the required information from our population whether we are measuring it through specific instruements or through a questionnaire (for human responses).</p>
+<section id="personal-interview-or-face-to-face-interview-method" class="level3" data-number="1.15.1">
+<h3 data-number="1.15.1" class="anchored" data-anchor-id="personal-interview-or-face-to-face-interview-method"><span class="header-section-number">1.15.1</span> Personal Interview or Face-to-Face Interview Method:<br>
+</h3>
 <ul>
 <li><p><strong>Definition:</strong> Personal interviews involve direct interaction between the interviewer and the respondent. They are conducted in-person, typically at a predetermined location such as the respondent’s home, workplace, or a neutral venue. Face-to-face interviews allow for detailed questioning, clarification, and rapport building.<br>
 </p></li>
@@ -1116,10 +1961,10 @@ Remark
 <li><p><strong>Limitations:</strong> Time-consuming and resource-intensive. May be subject to interviewer bias or social desirability bias.<br>
 </p></li>
 </ul>
-<ol start="2" type="1">
-<li><strong>Telephone Interview:</strong><br>
-</li>
-</ol>
+</section>
+<section id="telephone-interview" class="level3" data-number="1.15.2">
+<h3 data-number="1.15.2" class="anchored" data-anchor-id="telephone-interview"><span class="header-section-number">1.15.2</span> Telephone Interview:<br>
+</h3>
 <ul>
 <li><p><strong>Definition:</strong> Telephone interviews involve conducting interviews over the phone. They offer a convenient and cost-effective method of data collection, especially for geographically dispersed populations or time-sensitive studies.<br>
 </p></li>
@@ -1142,10 +1987,10 @@ Remark
 <li><p><strong>Limitations:</strong> Limited rapport building and non-verbal cues. May have lower response rates compared to face-to-face interviews.<br>
 </p></li>
 </ul>
-<ol start="3" type="1">
-<li><strong>Postal or Mail Questionnaires:</strong><br>
-</li>
-</ol>
+</section>
+<section id="postal-or-mail-questionnaires" class="level3" data-number="1.15.3">
+<h3 data-number="1.15.3" class="anchored" data-anchor-id="postal-or-mail-questionnaires"><span class="header-section-number">1.15.3</span> Postal or Mail Questionnaires:<br>
+</h3>
 <ul>
 <li><p><strong>Definition:</strong> Postal or mail questionnaires involve sending questionnaires to respondents via postal mail. Respondents complete the questionnaires at their convenience and return them by mail.<br>
 </p></li>
@@ -1166,10 +2011,10 @@ Remark
 <li><p><strong>Limitations:</strong> Low response rates. Limited ability to clarify responses or probe for detailed information. Risk of non-response bias.<br>
 </p></li>
 </ul>
-<ol start="4" type="1">
-<li><strong>Self-Administered Questionnaires:</strong><br>
-</li>
-</ol>
+</section>
+<section id="self-administered-questionnaires" class="level3" data-number="1.15.4">
+<h3 data-number="1.15.4" class="anchored" data-anchor-id="self-administered-questionnaires"><span class="header-section-number">1.15.4</span> Self-Administered Questionnaires:<br>
+</h3>
 <ul>
 <li><p><strong>Definition:</strong> Self-administered questionnaires are completed by respondents without the presence of an interviewer. They can be administered in-person, online, or through postal mail.<br>
 </p></li>
@@ -1192,10 +2037,10 @@ Remark
 <li><p><strong>Limitations:</strong> Limited ability to clarify responses or probe for detailed information. Risk of non-response bias and incomplete responses.<br>
 </p></li>
 </ul>
-<ol start="5" type="1">
-<li><strong>Direct Observation:</strong><br>
-</li>
-</ol>
+</section>
+<section id="direct-observation" class="level3" data-number="1.15.5">
+<h3 data-number="1.15.5" class="anchored" data-anchor-id="direct-observation"><span class="header-section-number">1.15.5</span> Direct Observation:<br>
+</h3>
 <ul>
 <li><p><strong>Definition:</strong> Direct observation involves systematically watching and recording behavior, events, or activities as they occur in real-time. It is commonly used in observational studies, ethnographic research, and behavioral research.<br>
 </p></li>
@@ -1221,136 +2066,116 @@ Remark
 <p>Each data collection method has its own advantages, limitations, and applicability depending on the research objectives, characteristics of the study population, and available resources. Researchers must carefully select and implement the most appropriate method(s) based on their specific research needs.<br>
 </p>
 </section>
+</section>
 <section id="questionnaire-design" class="level2" data-number="1.16">
 <h2 data-number="1.16" class="anchored" data-anchor-id="questionnaire-design"><span class="header-section-number">1.16</span> Questionnaire Design</h2>
 <p>Developing a good survey questionnaire is essential for collecting accurate and meaningful data. Here are comprehensive guidelines to help you create an effective survey questionnaire:<br>
 </p>
 <ol type="1">
-<li><strong>Define Your Objectives:</strong><br>
-</li>
-</ol>
+<li><p><strong>Define Your Objectives:</strong><br>
+</p>
 <ul>
 <li>Clearly outline the purpose and objectives of your survey. What information do you want to gather, and what specific research questions do you aim to answer?<br>
 </li>
-</ul>
-<ol start="2" type="1">
-<li><strong>Know Your Audience:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Know Your Audience:</strong><br>
+</p>
 <ul>
 <li>Understand your target audience’s demographics, preferences, and characteristics. Tailor your questions and language to resonate with your audience.<br>
 </li>
-</ul>
-<ol start="3" type="1">
-<li><strong>Keep it Clear and Concise:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Keep it Clear and Concise:</strong><br>
+</p>
 <ul>
 <li>Use clear and simple language that is easy for respondents to understand. Avoid technical jargon or ambiguous terms.<br>
 </li>
 <li>Keep the questionnaire concise and focused. Minimize unnecessary questions to reduce respondent fatigue and increase completion rates.<br>
 </li>
-</ul>
-<ol start="4" type="1">
-<li><strong>Use Structured Questions:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Use Structured Questions:</strong><br>
+</p>
 <ul>
 <li>Use structured questions, such as multiple-choice, Likert scale, or rating scale questions, whenever possible. These types of questions provide clear response options and facilitate data analysis.<br>
 </li>
 <li>Avoid open-ended questions unless necessary, as they can be time-consuming to analyze and may yield inconsistent responses.<br>
 </li>
-</ul>
-<ol start="5" type="1">
-<li><strong>Sequence Questions Thoughtfully:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Sequence Questions Thoughtfully:</strong><br>
+</p>
 <ul>
 <li>Organize questions logically and sequentially. Start with simple and non-threatening questions to ease respondents into the survey, followed by more complex or sensitive questions.<br>
 </li>
 <li>Group related questions together to maintain coherence and flow.<br>
 </li>
-</ul>
-<ol start="6" type="1">
-<li><strong>Avoid Leading or Biased Questions:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Avoid Leading or Biased Questions:</strong><br>
+</p>
 <ul>
 <li>Ensure that questions are neutral and unbiased, without leading respondents to a particular response. Avoid wording that may influence respondents’ answers.<br>
 </li>
 <li>Use balanced language and avoid making assumptions about respondents’ attitudes or behaviors.<br>
 </li>
-</ul>
-<ol start="7" type="1">
-<li><strong>Include Response Options:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Include Response Options:</strong><br>
+</p>
 <ul>
 <li>Provide clear and exhaustive response options for each question. Include all possible choices and ensure they cover the full range of possible responses.<br>
 </li>
 <li>Use mutually exclusive response options to prevent ambiguity and ensure respondents can easily select their preferred choice.<br>
 </li>
-</ul>
-<ol start="8" type="1">
-<li><strong>Pre-test the Questionnaire:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Pre-test the Questionnaire:</strong><br>
+</p>
 <ul>
 <li>Conduct a pilot test or pre-test of the questionnaire with a small sample of respondents. This helps identify any ambiguities, errors, or issues with question wording, sequencing, or response options.<br>
 </li>
 <li>Use feedback from the pre-test to revise and refine the questionnaire before administering it to the full sample.<br>
 </li>
-</ul>
-<ol start="9" type="1">
-<li><strong>Consider Layout and Design:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Consider Layout and Design:</strong><br>
+</p>
 <ul>
 <li>Pay attention to the layout and design of the questionnaire. Use clear formatting, spacing, and visual elements to enhance readability and usability.<br>
 </li>
 <li>Ensure the questionnaire is accessible and user-friendly, especially if administering it online or via mobile devices.<br>
 </li>
-</ul>
-<ol start="10" type="1">
-<li><strong>Ensure Ethical Considerations:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Ensure Ethical Considerations:</strong><br>
+</p>
 <ul>
 <li>Obtain informed consent from respondents before they begin the survey. Clearly explain the purpose of the survey, how the data will be used, and any confidentiality or privacy measures in place.<br>
 </li>
 <li>Respect respondents’ privacy and anonymity. Avoid collecting personally identifiable information unless necessary, and assure respondents that their responses will be kept confidential.<br>
 </li>
-</ul>
-<ol start="11" type="1">
-<li><strong>Test for Reliability and Validity:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Test for Reliability and Validity:</strong><br>
+</p>
 <ul>
 <li>Assess the reliability and validity of the questionnaire to ensure it measures what it intends to measure consistently and accurately.<br>
 </li>
 <li>Use established methods such as test-retest reliability and content validity to evaluate the questionnaire’s effectiveness.<br>
 </li>
-</ul>
-<ol start="12" type="1">
-<li><strong>Review and Revise:</strong><br>
-</li>
-</ol>
+</ul></li>
+<li><p><strong>Review and Revise:</strong><br>
+</p>
 <ul>
 <li>Review the questionnaire thoroughly for accuracy, clarity, and coherence. Seek feedback from colleagues, experts, or stakeholders, and make revisions as needed.<br>
 </li>
 <li>Continuously refine and improve the questionnaire based on feedback and data collected from previous surveys.<br>
 </li>
-</ul>
+</ul></li>
+</ol>
 <p>By following these comprehensive guidelines, you can develop a survey questionnaire that effectively gathers relevant and reliable data to inform your research objectives and decision-making processes.<br>
 </p>
 </section>
-<section id="solved-examples" class="level2 page-columns page-full" data-number="1.17">
+<section id="solved-examples" class="level2" data-number="1.17">
 <h2 data-number="1.17" class="anchored" data-anchor-id="solved-examples"><span class="header-section-number">1.17</span> Solved Examples</h2>
-<p><strong>Question 1</strong><br>
-State whether the following statements are <strong>TRUE</strong> or <strong>FALSE</strong>.<br>
+<section id="question-1" class="level3" data-number="1.17.1">
+<h3 data-number="1.17.1" class="anchored" data-anchor-id="question-1"><span class="header-section-number">1.17.1</span> Question 1</h3>
+<p>State whether the following statements are <strong>TRUE</strong> or <strong>FALSE</strong>.<br>
 </p>
 <ol type="i">
-<li><p>Selecting sample every jth element of the population is a method of systematic sampling technique.<br>
+<li><p>Selecting sample every <span class="math inline">\(j^{th}\)</span> element of the population is a method of systematic sampling technique.<br>
 </p></li>
 <li><p>Nominal data is categorical data that can be ranked.<br>
 </p></li>
@@ -1361,12 +2186,26 @@ State whether the following statements are <strong>TRUE</strong> or <strong>FALS
 <li><p>A list of all units in a population is called sampling frame.<br>
 </p></li>
 </ol>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>QUESTION 1<br>
-</p>
-</div></div><p><strong>Question 2</strong><br>
-Research was conducted to examine the negative implication of online education to higher education institution undergraduate students from the educator’s perspective. The research was carried out to all universities located in the Klang Valley. There are a total of 12 universities (both public and private) listed under the Ministry of Education database. An online questionnaire was distributed through email to randomly selected respondents from all the 12 universities. Among the information recorded were the respondents age, number of years with the current university, job position (Lecturer, Senior Lecturer, Associate Professor and Professor) and highest education level (Bachelors, Masters and PhD). In addition, the respondents were asked a YES/NO response on 15 items statement related to their perceptions towards the negative implication of online education.&nbsp;Answer the following statements <strong>TRUE</strong> or <strong>FALSE</strong> based on the above research.<br>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>T, F, F, F, T</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-2" class="level3" data-number="1.17.2">
+<h3 data-number="1.17.2" class="anchored" data-anchor-id="question-2"><span class="header-section-number">1.17.2</span> Question 2</h3>
+<p>Research was conducted to examine the negative implication of online education to higher education institution undergraduate students from the educator’s perspective. The research was carried out to all universities located in the Klang Valley. There are a total of 12 universities (both public and private) listed under the Ministry of Education database. An online questionnaire was distributed through email to randomly selected respondents from all the 12 universities. Among the information recorded were the respondents age, number of years with the current university, job position (Lecturer, Senior Lecturer, Associate Professor and Professor) and highest education level (Bachelors, Masters and PhD). In addition, the respondents were asked a YES/NO response on 15 items statement related to their perceptions towards the negative implication of online education.&nbsp;Answer the following statements <strong>TRUE</strong> or <strong>FALSE</strong> based on the above research.<br>
 </p>
 <ol type="i">
 <li><p>The population is all the undergraduate students at higher education institutions in Klang Valley.<br>
@@ -1380,40 +2219,79 @@ Research was conducted to examine the negative implication of online education t
 <li><p>All the variables mentioned above are quantitative.<br>
 </p></li>
 </ol>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>QUESTION 2<br>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>F, F, T, F, F</p>
+</div>
+</div>
+</div>
+</section>
+<section id="question-3" class="level3" data-number="1.17.3">
+<h3 data-number="1.17.3" class="anchored" data-anchor-id="question-3"><span class="header-section-number">1.17.3</span> Question 3</h3>
+<p>A Dean in University X doing a study to determine the opinion of students regarding Online Distance Learning. From 1200 new students register in October 2020 session, only 450 students are selected randomly as a sample. Students are listed according to their student ID. The opinion of students is scale from 1 (strongly disagree) to 5 (strongly agree).<br>
 </p>
-</div></div><p><strong>Question 3</strong><br>
-A Dean in University X doing a study to determine the opinion of students regarding Online Distance Learning. From 1200 new students register in October 2020 session, only 450 students are selected randomly as a sample. Students are listed according to their student ID. The opinion of students is scale from 1 (strongly disagree) to 5 (strongly agree).<br>
-Using this situation, answer the following questions.&nbsp;</p>
-<p>Answer <strong>TRUE (T)</strong> or <strong>FALSE (F)</strong> based on the above study.&nbsp;</p>
+<p>Using this situation, answer the following questions.<br>
+</p>
+<p>Answer <strong>TRUE (T)</strong> or <strong>FALSE (F)</strong> based on the above study.<br>
+</p>
 <ol type="a">
-<li><p>The population is all new students register for October 2020 session in University X.&nbsp;</p></li>
-<li><p>The sampling frame for this study is 450 students in University X.&nbsp;</p></li>
-<li><p>The level of measurement for the interest variable in the study is ratio.&nbsp;</p></li>
-<li><p>The type of variable for the above study is qualitative.&nbsp;</p></li>
+<li><p>The population is all new students register for October 2020 session in University X.<br>
+</p></li>
+<li><p>The sampling frame for this study is 450 students in University X.<br>
+</p></li>
+<li><p>The level of measurement for the interest variable in the study is ratio.<br>
+</p></li>
+<li><p>The type of variable for the above study is qualitative.<br>
+</p></li>
 <li><p>The most appropriate sampling technique for the above study is systematic random sampling.<br>
 </p></li>
 </ol>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>T, F, F, T, T</p>
+</div>
+</div>
+</div>
+<!-- ```{r echo=FALSE, warning=FALSE, message=FALSE} -->
+<!-- library(DiagrammeR)  -->
+<!--   graph <- mermaid(" -->
+<!--   gantt -->
+<!--   dateFormat  HH:mm:ss.SSS -->
+<!--   title Sample Test Gantt -->
+<!--   section A -->
+<!--   thing1          :   15:58:51.556,   16:05:23.494 -->
+<!--   section B -->
+<!--   thing2          :   16:02:00.391,   16:20:46.533 -->
+<!--   section C -->
+<!--   thing3          :   16:18:57.352,   16:23:10.700 -->
+<!--   thing4          :   16:24:11.705,   16:30:30.432 -->
+<!--   ") -->
+<!-- graph -->
+<!-- ``` -->
 
 
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>QUESTION 3<br>
-</p>
-<ol type="a">
-<li><p>T&nbsp;</p></li>
-<li><p>F<br>
-</p></li>
-<li><p>F<br>
-</p></li>
-<li><p>T<br>
-</p></li>
-<li><p>T<br>
-</p></li>
-</ol>
-</div></div></section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1832,12 +2710,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02.html" class="pagination-link" aria-label="Data organization and presentation">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data organization and presentation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Introduction to Statistics for UiTM was edited by Kamarul Ariffin Mansor</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This eBook contents was created with ❤️ by <span class="citation" data-cites="kammyariff">(<a href="references.html#ref-kammyariff" role="doc-biblioref"><strong>kammyariff?</strong></a>)</span></p>
+</div>
+  </div>
+</footer>
 
 
 
