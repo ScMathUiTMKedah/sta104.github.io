@@ -5,15 +5,6 @@ book:
   title: "Introduction to Statistics for UiTM"
   author: "Kamarul Ariffin Mansor"
   date: "08/03/2024"
-  
-  page-footer: 
-    left: |
-      Introduction to Statistics for UiTM was edited by
-      Kamarul Ariffin Mansor
-    right: |
-      This eBook contents was created with ❤️ by @kammyariff
-  cover-image: book_cover.png
-  favicon: book_cover.png
   chapters:
     - index.qmd
     - 01.qmd
