@@ -2,8 +2,7 @@ project:
   type: book
 
 book:
-  title: "Introduction to Statistics"
-  subtitle: "for UiTM"
+  title: "Introduction to Statistics for UiTM"
   # author: "Kamarul Ariffin Mansor"
   # date: "03/08/2024"
   
