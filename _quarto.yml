@@ -2,19 +2,21 @@ project:
   type: book
 
 book:
-  title: "Introduction to Statistics for UiTM"
+  title: "Introduction to Statistics"
+  subtitle: "for UiTM"
   # author: "Kamarul Ariffin Mansor"
   # date: "03/08/2024"
   
   page-footer: 
     left: |
-      Introduction to Statistics for UiTM (First Edition 2024)
+      Introduction to Statistics for UiTM (First Edition 2024) <br>
       Edited by Kamarul Ariffin Mansor
     right: |
-      This eBook contents was created 
+      This eBook contents was created <br>
       with ❤️ by kammyariff with Quarto
   cover-image: book_cover.png
   favicon: book_cover.png
+  repo-actions: [issue]
   chapters:
     - index.qmd
     - 01.qmd

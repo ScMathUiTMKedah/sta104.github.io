@@ -1174,6 +1174,31 @@ e)  The most appropriate sampling technique for the above study is systematic ra
 T, F, F, T, T
 :::
 
+
+
+
+
+## Glossary\
+
+1. **Census**: A method of collecting data from every member of the population of interest.\
+2. **Data**: Information collected for analysis, which can be numerical, categorical, or textual.\
+3. **Descriptive Statistics**: Statistical techniques used to summarize and describe the main features of a dataset.\
+4. **Inferential Statistics**: Statistical techniques used to draw conclusions or make predictions about a population based on a sample of data.\
+5. **Parameter**: A numerical summary of a population, such as a population mean or proportion.\
+6. **Statistic**: A numerical summary of a sample, such as a sample mean or proportion.\
+7. **Sampling Techniques**: Methods used to select a representative sample from a population, such as simple random sampling, stratified sampling, or cluster sampling.\
+8. **Sampling Frame**: A list of individuals or items from which a sample is drawn.\
+9. **Sampling Error**: The difference between a sample statistic and the corresponding population parameter due to random sampling variation.\
+10. **Variable**: Any characteristic, number, or quantity that can be measured or counted.\
+11. **Scale of Measurement**: The level of measurement assigned to a variable, including nominal, ordinal, interval, and ratio scales.\
+12. **Bias**: Systematic error or distortion introduced into sampling or testing by selecting or encouraging one outcome or answer over others.\
+13. **Survey**: A method of collecting data from a sample of individuals or items using questionnaires or interviews.\
+14. **Pilot Study**: A small-scale preliminary study conducted to test the feasibility, time, cost, and other aspects of a larger research project.\
+15. **Data Collection Methods**: Techniques used to gather data, including surveys, experiments, observations, and existing records.\
+16. **Questionnaire Design**: The process of creating effective survey instruments to collect data from respondents.\
+
+
+
 <!-- ```{r echo=FALSE, warning=FALSE, message=FALSE} -->
 
 <!-- library(DiagrammeR)  -->
