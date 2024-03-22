@@ -1,29 +1,3 @@
----
-format: 
-  html: 
-    toc: true
-    toc-depth: 5
-    number-sections: true
-    number-depth: 5
-  
-  pdf: 
-    documentclass: book
-    toc: true
-    lof: true
-    lot: true
-    geometry:
-      - top=30mm
-      - left=20mm
-      - right=70mm
-      - heightrounded
-    fontfamily: libertinus
-    colorlinks: true
-    papersize: f5
-# editor:
-#   markdown:
-#     wrap: 72
----
-
 # Introduction
 
 In today's data-driven world, statistics plays a crucial role in understanding and interpreting the vast amounts of information that surround us. At its core, statistics is the science of collecting, analyzing, interpreting, and presenting data. By employing statistical techniques, we gain insights into patterns, trends, and relationships within data, enabling informed decision-making in various fields ranging from business and finance to healthcare and social sciences.\
@@ -1342,24 +1316,77 @@ e)  The most appropriate sampling technique for the above study is systematic ra
 T, F, F, T, T
 :::
 
+### Question 4
 
-<!-- ```{r echo=FALSE, warning=FALSE, message=FALSE} -->
-<!-- library(DiagrammeR)  -->
-<!--   graph <- mermaid(" -->
-<!--   gantt -->
-<!--   dateFormat  HH:mm:ss.SSS -->
-<!--   title Sample Test Gantt -->
+Define the statistical terms.\
+a)	Statistics\
+b)	Descriptive statistics\
+c)	Pilot study\
+d)	Variables\
+e)	Continuous variables\
+f)	Population\
+g)	Primary data\
+h)	Probability sampling\
+i)	Sampling error\
+j)	Census study\
 
-<!--   section A -->
-<!--   thing1          :   15:58:51.556,   16:05:23.494 -->
+### Question 5\
 
-<!--   section B -->
-<!--   thing2          :   16:02:00.391,   16:20:46.533 -->
+Fill in the blanks with appropriate word/statistical term.\
+a)	Measurements or observations for a variable is called _____________ .\
+b)	A person’s skin colour is an example of a _____________ data.\
+c)	The collection, organizing, summarizing and presentation of data is called ______________ statistics.\
+d)	The weight of school children is classified as _____________in the level of measurement.\
+e)	The age of e-PJJ student is a _______________ variable.\
+f)	A sampling frame is not needed in ____________ sampling.\
+g)	One disadvantage of ____________as a method of data collection is the low response rate.\
+h)	____________ data can be obtain from other sources such as newspaper, economic journal and annual report of company.\
+i)	A ____________ is a subset of a population.\
+j)	A _____________ is the numerical characteristics of a population.\
 
-<!--   section C -->
-<!--   thing3          :   16:18:57.352,   16:23:10.700 -->
-<!--   thing4          :   16:24:11.705,   16:30:30.432 -->
-<!--   ") -->
-<!-- graph -->
-<!-- ``` -->
+::: {.callout-note collapse="true" icon="false"}
+#### Answers
 
+a)	Inferential\
+b)	Descriptive\
+c)	Descriptive\
+d)	inferential\
+e)	inferential\
+f)	inferential\
+g)	Descriptive\
+
+:::
+
+## Glossary
+
+**Census**: A method of collecting data from every member of the population of interest.\
+
+**Data**: Information collected for analysis, which can be numerical, categorical, or textual.\
+
+**Descriptive Statistics**: Statistical techniques used to summarize and describe the main features of a dataset.\
+
+**Inferential Statistics**: Statistical techniques used to draw conclusions or make predictions about a population based on a sample of data.\
+
+**Parameter**: A numerical summary of a population, such as a population mean or proportion.\
+
+**Statistic**: A numerical summary of a sample, such as a sample mean or proportion.\
+
+**Sampling Techniques**: Methods used to select a representative sample from a population, such as simple random sampling, stratified sampling, or cluster sampling.\
+
+**Sampling Frame**: A list of individuals or items from which a sample is drawn.\
+
+**Sampling Error**: The difference between a sample statistic and the corresponding population parameter due to random sampling variation.\
+
+**Variable**: Any characteristic, number, or quantity that can be measured or counted.\
+
+**Scale of Measurement**: The level of measurement assigned to a variable, including nominal, ordinal, interval, and ratio scales.\
+
+**Bias**: Systematic error or distortion introduced into sampling or testing by selecting or encouraging one outcome or answer over others.\
+
+**Survey**: A method of collecting data from a sample of individuals or items using questionnaires or interviews.\
+
+**Pilot Study**: A small-scale preliminary study conducted to test the feasibility, time, cost, and other aspects of a larger research project.\
+
+**Data Collection Methods**: Techniques used to gather data, including surveys, experiments, observations, and existing records.\
+
+**Questionnaire Design**: The process of creating effective survey instruments to collect data from respondents.\
