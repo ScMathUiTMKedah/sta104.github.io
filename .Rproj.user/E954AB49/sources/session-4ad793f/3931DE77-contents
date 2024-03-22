@@ -1174,10 +1174,6 @@ e)  The most appropriate sampling technique for the above study is systematic ra
 T, F, F, T, T
 :::
 
-
-
-
-
 ## Glossary\
 
 1. **Census**: A method of collecting data from every member of the population of interest.\
@@ -1196,37 +1192,3 @@ T, F, F, T, T
 14. **Pilot Study**: A small-scale preliminary study conducted to test the feasibility, time, cost, and other aspects of a larger research project.\
 15. **Data Collection Methods**: Techniques used to gather data, including surveys, experiments, observations, and existing records.\
 16. **Questionnaire Design**: The process of creating effective survey instruments to collect data from respondents.\
-
-
-
-<!-- ```{r echo=FALSE, warning=FALSE, message=FALSE} -->
-
-<!-- library(DiagrammeR)  -->
-
-<!--   graph <- mermaid(" -->
-
-<!--   gantt -->
-
-<!--   dateFormat  HH:mm:ss.SSS -->
-
-<!--   title Sample Test Gantt -->
-
-<!--   section A -->
-
-<!--   thing1          :   15:58:51.556,   16:05:23.494 -->
-
-<!--   section B -->
-
-<!--   thing2          :   16:02:00.391,   16:20:46.533 -->
-
-<!--   section C -->
-
-<!--   thing3          :   16:18:57.352,   16:23:10.700 -->
-
-<!--   thing4          :   16:24:11.705,   16:30:30.432 -->
-
-<!--   ") -->
-
-<!-- graph -->
-
-<!-- ``` -->

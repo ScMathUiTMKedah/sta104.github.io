@@ -3,7 +3,7 @@
     "path": "~/R Projects/temporary draft/01.qmd",
     "project_path": null,
     "type": "quarto_markdown",
-    "hash": "536385362",
+    "hash": "2525756036",
     "contents": "",
     "dirty": false,
     "created": 1710805812252.0,
@@ -17,15 +17,15 @@
         "rmdVisualModeLocation": "2:0",
         "rmdVisualWrapConfigured": "true",
         "docOutlineVisible": "1",
-        "cursorPosition": "1180,11",
+        "cursorPosition": "1176,0",
         "scrollLine": "1170"
     },
     "folds": "",
-    "lastKnownWriteTime": 1711069068,
+    "lastKnownWriteTime": 1711069438,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1711069068246,
+    "last_content_update": 1711069438376,
     "read_only": false,
     "read_only_alternatives": []
 }
